@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+
+.hint {
+  display:none;
+  position: absolute;
+  width: 160px;
+  margin-top: -4px;
+  border: 1px solid #c93;
+  padding: 10px 12px;
+  background: #ffc url('../images/general/pointer.gif') no-repeat -100px -100px;
+  z-index:99;
+  font-size:small;
+}
+
+.hint .hint-pointer {
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url('../images/general/pointer.gif') left top no-repeat;
+  	z-index:99;
+}

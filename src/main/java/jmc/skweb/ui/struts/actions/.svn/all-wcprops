@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/ui/struts/actions
+END
+UsersAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/36/trunk/skweb/src/main/java/jmc/skweb/ui/struts/actions/UsersAction.java
+END
+ServicesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/45/trunk/skweb/src/main/java/jmc/skweb/ui/struts/actions/ServicesAction.java
+END
+LoginAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/36/trunk/skweb/src/main/java/jmc/skweb/ui/struts/actions/LoginAction.java
+END

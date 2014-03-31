@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/skweb/src/main/webapp/tiles
+END
+headerTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/46/trunk/skweb/src/main/webapp/tiles/headerTemplate.jsp
+END
+headerTemplateLogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41/trunk/skweb/src/main/webapp/tiles/headerTemplateLogin.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/46/trunk/skweb/src/main/webapp/tiles/footer.jsp
+END
+defaultTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/46/trunk/skweb/src/main/webapp/tiles/defaultTemplate.jsp
+END
+basicDefaultTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/22/trunk/skweb/src/main/webapp/tiles/basicDefaultTemplate.jsp
+END
+defaultTemplateBasic.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/6/trunk/skweb/src/main/webapp/tiles/defaultTemplateBasic.jsp
+END

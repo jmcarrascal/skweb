@@ -1,0 +1,32 @@
+Parametrizacion,ComunSql.dbo
+Gente,ComunSql.dbo				
+Existencias,ComunSql.dbo
+Fam,ComunSql.dbo
+SubFam,ComunSql.dbo
+Stock,ComunSql.dbo
+ExiArt,ComunSql.dbo
+Transac,texsur.dbo
+TipoComprob,texsur.dbo
+ArtMadre,ComunSql.dbo
+DondeEstaFactuMail,ComunSql.dbo
+Preferencias,texsur.dbo
+UsuarioWeb,ComunSql.dbo
+EmpresaWeb,ComunSql.dbo
+Rol,ComunSql.dbo
+Vendedor,ComunSql.dbo
+Paseban,texsur.dbo
+Imagenes,ComunSql.dbo
+Items,texsur.dbo
+ClieArticPrecio,ComunSql.dbo
+Impuestos,texsur.dbo
+Numeraciones,texsur.dbo
+Domicilios,ComunSql.dbo
+Operadores,ComunSql.dbo
+ImagenesArticulos,Imagenes.dbo
+Colores,ComunSql.dbo
+StockPiezas,ComunSql.dbo
+Condi,ComunSql.dbo
+EstadiTipoReporte, ComunSql.dbo 
+EstadiOrigen, ComunSql.dbo 
+EstadiReporte, ComunSql.dbo
+StockPiezas, ComunSql.dbo  

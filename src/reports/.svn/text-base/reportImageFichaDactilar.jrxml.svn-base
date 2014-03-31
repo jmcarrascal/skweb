@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="reportImageFichaDactilar"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="535"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="2" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="accion" class="java.lang.String">
+		<fieldDescription><![CDATA[accion]]></fieldDescription>
+	</field>
+	<field name="accionPersistencia" class="java.lang.String">
+		<fieldDescription><![CDATA[accionPersistencia]]></fieldDescription>
+	</field>
+	<field name="agenteFiscalInterviniente" class="java.lang.String">
+		<fieldDescription><![CDATA[agenteFiscalInterviniente]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
+	</field>
+	<field name="antecedenteSign" class="gba.sgi.core.model.FileContent">
+		<fieldDescription><![CDATA[antecedenteSign]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[apellido]]></fieldDescription>
+	</field>
+	<field name="apodo" class="java.lang.String">
+		<fieldDescription><![CDATA[apodo]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentes" class="java.io.File">
+		<fieldDescription><![CDATA[archivoAntecedentes]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentesContentType" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoAntecedentesContentType]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentesFileName" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoAntecedentesFileName]]></fieldDescription>
+	</field>
+	<field name="archivoHuellas" class="java.io.File">
+		<fieldDescription><![CDATA[archivoHuellas]]></fieldDescription>
+	</field>
+	<field name="archivoHuellasContentType" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoHuellasContentType]]></fieldDescription>
+	</field>
+	<field name="archivoHuellasFileName" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoHuellasFileName]]></fieldDescription>
+	</field>
+	<field name="aspectoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[aspectoPersonal]]></fieldDescription>
+	</field>
+	<field name="casadoCon" class="java.lang.String">
+		<fieldDescription><![CDATA[casadoCon]]></fieldDescription>
+	</field>
+	<field name="catalogadoComo" class="java.lang.String">
+		<fieldDescription><![CDATA[catalogadoComo]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[ciudad]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="concuvino" class="java.lang.String">
+		<fieldDescription><![CDATA[concuvino]]></fieldDescription>
+	</field>
+	<field name="delito" class="java.lang.String">
+		<fieldDescription><![CDATA[delito]]></fieldDescription>
+	</field>
+	<field name="descargado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[descargado]]></fieldDescription>
+	</field>
+	<field name="descargoHuellas" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[descargoHuellas]]></fieldDescription>
+	</field>
+	<field name="domicilio" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilio]]></fieldDescription>
+	</field>
+	<field name="dtoJudicial" class="java.lang.String">
+		<fieldDescription><![CDATA[dtoJudicial]]></fieldDescription>
+	</field>
+	<field name="edadDichoImputado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[edadDichoImputado]]></fieldDescription>
+	</field>
+	<field name="edadPresuntaImputado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[edadPresuntaImputado]]></fieldDescription>
+	</field>
+	<field name="entreCalle1" class="java.lang.String">
+		<fieldDescription><![CDATA[entreCalle1]]></fieldDescription>
+	</field>
+	<field name="entreCalle2" class="java.lang.String">
+		<fieldDescription><![CDATA[entreCalle2]]></fieldDescription>
+	</field>
+	<field name="escribe" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[escribe]]></fieldDescription>
+	</field>
+	<field name="estadoCivil" class="gba.sgi.core.model.EstadoCivil">
+		<fieldDescription><![CDATA[estadoCivil]]></fieldDescription>
+	</field>
+	<field name="estatura" class="java.lang.Double">
+		<fieldDescription><![CDATA[estatura]]></fieldDescription>
+	</field>
+	<field name="exhibeDoc" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[exhibeDoc]]></fieldDescription>
+	</field>
+	<field name="expedidoPor" class="java.lang.String">
+		<fieldDescription><![CDATA[expedidoPor]]></fieldDescription>
+	</field>
+	<field name="fechaComision" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaComision]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaNacimiento]]></fieldDescription>
+	</field>
+	<field name="fechaSolicitud" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaSolicitud]]></fieldDescription>
+	</field>
+	<field name="formatedFechaNacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[formatedFechaNacimiento]]></fieldDescription>
+	</field>
+	<field name="formattedFechaSolicitud" class="java.lang.String">
+		<fieldDescription><![CDATA[formattedFechaSolicitud]]></fieldDescription>
+	</field>
+	<field name="hasPedidoSolicitud" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[hasPedidoSolicitud]]></fieldDescription>
+	</field>
+	<field name="idSolicitud" class="java.lang.Long">
+		<fieldDescription><![CDATA[idSolicitud]]></fieldDescription>
+	</field>
+	<field name="instruccion" class="gba.sgi.core.model.Instruccion">
+		<fieldDescription><![CDATA[instruccion]]></fieldDescription>
+	</field>
+	<field name="ipp" class="java.lang.String">
+		<fieldDescription><![CDATA[ipp]]></fieldDescription>
+	</field>
+	<field name="juezIntervencion" class="java.lang.String">
+		<fieldDescription><![CDATA[juezIntervencion]]></fieldDescription>
+	</field>
+	<field name="juzgadoGarantias" class="java.lang.String">
+		<fieldDescription><![CDATA[juzgadoGarantias]]></fieldDescription>
+	</field>
+	<field name="lee" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[lee]]></fieldDescription>
+	</field>
+	<field name="letrado" class="java.lang.String">
+		<fieldDescription><![CDATA[letrado]]></fieldDescription>
+	</field>
+	<field name="lugar" class="java.lang.String">
+		<fieldDescription><![CDATA[lugar]]></fieldDescription>
+	</field>
+	<field name="lugarComision" class="java.lang.String">
+		<fieldDescription><![CDATA[lugarComision]]></fieldDescription>
+	</field>
+	<field name="madre" class="java.lang.String">
+		<fieldDescription><![CDATA[madre]]></fieldDescription>
+	</field>
+	<field name="mediosEmpleados" class="java.lang.String">
+		<fieldDescription><![CDATA[mediosEmpleados]]></fieldDescription>
+	</field>
+	<field name="modalidadDeHecho" class="java.lang.String">
+		<fieldDescription><![CDATA[modalidadDeHecho]]></fieldDescription>
+	</field>
+	<field name="nacionalidad" class="java.lang.String">
+		<fieldDescription><![CDATA[nacionalidad]]></fieldDescription>
+	</field>
+	<field name="nombreDamnificado" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreDamnificado]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[nombres]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="numeroDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[numeroDoc]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[observacion]]></fieldDescription>
+	</field>
+	<field name="otipFiscaliaGeneral" class="gba.sgi.core.model.OtipFiscaliaGeneral">
+		<fieldDescription><![CDATA[otipFiscaliaGeneral]]></fieldDescription>
+	</field>
+	<field name="padre" class="java.lang.String">
+		<fieldDescription><![CDATA[padre]]></fieldDescription>
+	</field>
+	<field name="partido" class="java.lang.String">
+		<fieldDescription><![CDATA[partido]]></fieldDescription>
+	</field>
+	<field name="piso" class="java.lang.String">
+		<fieldDescription><![CDATA[piso]]></fieldDescription>
+	</field>
+	<field name="policiaActuante" class="java.lang.String">
+		<fieldDescription><![CDATA[policiaActuante]]></fieldDescription>
+	</field>
+	<field name="poseeDoc" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[poseeDoc]]></fieldDescription>
+	</field>
+	<field name="poseeOrden" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[poseeOrden]]></fieldDescription>
+	</field>
+	<field name="provincia" class="java.lang.String">
+		<fieldDescription><![CDATA[provincia]]></fieldDescription>
+	</field>
+	<field name="registroDependencia" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[registroDependencia]]></fieldDescription>
+	</field>
+	<field name="seccional" class="java.lang.String">
+		<fieldDescription><![CDATA[seccional]]></fieldDescription>
+	</field>
+	<field name="senasParticulares" class="java.lang.String">
+		<fieldDescription><![CDATA[senasParticulares]]></fieldDescription>
+	</field>
+	<field name="sexo" class="gba.sgi.core.model.Sexo">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<field name="solicitudSeguimiento" class="gba.sgi.core.model.SolicitudSeguimiento">
+		<fieldDescription><![CDATA[solicitudSeguimiento]]></fieldDescription>
+	</field>
+	<field name="solicitudSign" class="gba.sgi.core.model.FileContent">
+		<fieldDescription><![CDATA[solicitudSign]]></fieldDescription>
+	</field>
+	<field name="tieneHuellas" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tieneHuellas]]></fieldDescription>
+	</field>
+	<field name="tienePedido" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tienePedido]]></fieldDescription>
+	</field>
+	<field name="tipoAspectoPersonal" class="gba.sgi.core.model.TipoAspectoPersonal">
+		<fieldDescription><![CDATA[tipoAspectoPersonal]]></fieldDescription>
+	</field>
+	<field name="tipoDoc" class="gba.sgi.core.model.TipoDoc">
+		<fieldDescription><![CDATA[tipoDoc]]></fieldDescription>
+	</field>
+	<field name="ufi" class="java.lang.String">
+		<fieldDescription><![CDATA[ufi]]></fieldDescription>
+	</field>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="223"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="11"
+						y="11"
+						width="513"
+						height="203"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5"/>
+</graphicElement>
+				</rectangle>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12"
+						y="12"
+						width="510"
+						height="200"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Documents and Settings\\Administrator\\workspace\\SGI_v0\\src\\reports\\FichaDactilar.jpg"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="438"
+						y="12"
+						width="40"
+						height="10"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Long"><![CDATA[$F{idSolicitud}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

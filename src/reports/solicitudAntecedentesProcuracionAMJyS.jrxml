@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="solicitudAntecedentesProcuracionAMJyS"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="AllSectionsNoDetail"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="localidad" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="cargo_recepcion" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nombre" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="texto" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="apyn_imputado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="fecha_nac_imputado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="lugar_nac_imputado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="tipo_doc_imputado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nro_doc_imputado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nro_solicitud" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dependencia_recepcion" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="direccion_recepcion" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="texto_footer" isForPrompting="false" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="500"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="425"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{localidad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd MMMMM yyyy" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="437"
+						y="0"
+						width="91"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="528"
+						y="0"
+						width="7"
+						height="18"
+						key="staticText-1"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Times New Roman" isBold="false"/>
+					</textElement>
+				<text><![CDATA[.-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="424"
+						y="0"
+						width="12"
+						height="18"
+						key="staticText-2"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<text><![CDATA[ ,]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="60"
+						width="430"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{cargo_recepcion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="104"
+						y="126"
+						width="172"
+						height="18"
+						key="staticText-4"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false" isItalic="false" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[S/D:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="80"
+						width="430"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="162"
+						width="431"
+						height="106"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top" lineSpacing="Single">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{texto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="269"
+						y="273"
+						width="266"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{apyn_imputado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="118"
+						y="273"
+						width="151"
+						height="18"
+						key="staticText-5"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Apellido/s y nombre completo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="118"
+						y="291"
+						width="111"
+						height="18"
+						key="staticText-6"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Fecha de Nacimiento:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="118"
+						y="309"
+						width="103"
+						height="18"
+						key="staticText-7"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Tipo de Documento:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="118"
+						y="327"
+						width="45"
+						height="18"
+						key="staticText-9"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Número:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="461"
+						width="82"
+						height="28"
+						key="staticText-10"/>
+					<box></box>
+					<textElement verticalAlignment="Top" rotation="None">
+						<font fontName="Times New Roman" size="18" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Solicitud:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="229"
+						y="291"
+						width="306"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{fecha_nac_imputado}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="221"
+						y="309"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{tipo_doc_imputado}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="82"
+						y="461"
+						width="453"
+						height="28"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Times New Roman" size="18" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nro_solicitud}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="163"
+						y="327"
+						width="372"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nro_doc_imputado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="40"
+						y="22"
+						width="0"
+						height="0"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Static Text]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="20"
+						width="430"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{dependencia_recepcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="40"
+						width="431"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{direccion_recepcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="104"
+						y="370"
+						width="430"
+						height="40"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{texto_footer}]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

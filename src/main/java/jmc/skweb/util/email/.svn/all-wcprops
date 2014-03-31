@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/email
+END
+Email.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/email/Email.java
+END
+SendEmailThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/42/trunk/skweb/src/main/java/jmc/skweb/util/email/SendEmailThread.java
+END
+messages_es.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/email/messages_es.properties
+END
+connection.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/email/connection.properties
+END

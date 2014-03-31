@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="reportFichaDactilar"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="accion" class="java.lang.String">
+		<fieldDescription><![CDATA[accion]]></fieldDescription>
+	</field>
+	<field name="accionPersistencia" class="java.lang.String">
+		<fieldDescription><![CDATA[accionPersistencia]]></fieldDescription>
+	</field>
+	<field name="agenteFiscalInterviniente" class="java.lang.String">
+		<fieldDescription><![CDATA[agenteFiscalInterviniente]]></fieldDescription>
+	</field>
+	<field name="anio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[anio]]></fieldDescription>
+	</field>
+	<field name="antecedenteSign" class="gba.sgi.core.model.FileContent">
+		<fieldDescription><![CDATA[antecedenteSign]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[apellido]]></fieldDescription>
+	</field>
+	<field name="apodo" class="java.lang.String">
+		<fieldDescription><![CDATA[apodo]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentes" class="java.io.File">
+		<fieldDescription><![CDATA[archivoAntecedentes]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentesContentType" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoAntecedentesContentType]]></fieldDescription>
+	</field>
+	<field name="archivoAntecedentesFileName" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoAntecedentesFileName]]></fieldDescription>
+	</field>
+	<field name="archivoHuellas" class="java.io.File">
+		<fieldDescription><![CDATA[archivoHuellas]]></fieldDescription>
+	</field>
+	<field name="archivoHuellasContentType" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoHuellasContentType]]></fieldDescription>
+	</field>
+	<field name="archivoHuellasFileName" class="java.lang.String">
+		<fieldDescription><![CDATA[archivoHuellasFileName]]></fieldDescription>
+	</field>
+	<field name="aspectoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[aspectoPersonal]]></fieldDescription>
+	</field>
+	<field name="casadoCon" class="java.lang.String">
+		<fieldDescription><![CDATA[casadoCon]]></fieldDescription>
+	</field>
+	<field name="catalogadoComo" class="java.lang.String">
+		<fieldDescription><![CDATA[catalogadoComo]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[ciudad]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="concuvino" class="java.lang.String">
+		<fieldDescription><![CDATA[concuvino]]></fieldDescription>
+	</field>
+	<field name="delito" class="java.lang.String">
+		<fieldDescription><![CDATA[delito]]></fieldDescription>
+	</field>
+	<field name="descargado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[descargado]]></fieldDescription>
+	</field>
+	<field name="descargoHuellas" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[descargoHuellas]]></fieldDescription>
+	</field>
+	<field name="domicilio" class="java.lang.String">
+		<fieldDescription><![CDATA[domicilio]]></fieldDescription>
+	</field>
+	<field name="dtoJudicial" class="java.lang.String">
+		<fieldDescription><![CDATA[dtoJudicial]]></fieldDescription>
+	</field>
+	<field name="edadDichoImputado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[edadDichoImputado]]></fieldDescription>
+	</field>
+	<field name="edadPresuntaImputado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[edadPresuntaImputado]]></fieldDescription>
+	</field>
+	<field name="entreCalle1" class="java.lang.String">
+		<fieldDescription><![CDATA[entreCalle1]]></fieldDescription>
+	</field>
+	<field name="entreCalle2" class="java.lang.String">
+		<fieldDescription><![CDATA[entreCalle2]]></fieldDescription>
+	</field>
+	<field name="escribe" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[escribe]]></fieldDescription>
+	</field>
+	<field name="estadoCivil" class="gba.sgi.core.model.EstadoCivil">
+		<fieldDescription><![CDATA[estadoCivil]]></fieldDescription>
+	</field>
+	<field name="estatura" class="java.lang.Double">
+		<fieldDescription><![CDATA[estatura]]></fieldDescription>
+	</field>
+	<field name="exhibeDoc" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[exhibeDoc]]></fieldDescription>
+	</field>
+	<field name="expedidoPor" class="java.lang.String">
+		<fieldDescription><![CDATA[expedidoPor]]></fieldDescription>
+	</field>
+	<field name="fechaComision" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaComision]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaNacimiento]]></fieldDescription>
+	</field>
+	<field name="fechaSolicitud" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[fechaSolicitud]]></fieldDescription>
+	</field>
+	<field name="formatedFechaNacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[formatedFechaNacimiento]]></fieldDescription>
+	</field>
+	<field name="formattedFechaSolicitud" class="java.lang.String">
+		<fieldDescription><![CDATA[formattedFechaSolicitud]]></fieldDescription>
+	</field>
+	<field name="hasPedidoSolicitud" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[hasPedidoSolicitud]]></fieldDescription>
+	</field>
+	<field name="idSolicitud" class="java.lang.Long">
+		<fieldDescription><![CDATA[idSolicitud]]></fieldDescription>
+	</field>
+	<field name="instruccion" class="gba.sgi.core.model.Instruccion">
+		<fieldDescription><![CDATA[instruccion]]></fieldDescription>
+	</field>
+	<field name="ipp" class="java.lang.String">
+		<fieldDescription><![CDATA[ipp]]></fieldDescription>
+	</field>
+	<field name="juezIntervencion" class="java.lang.String">
+		<fieldDescription><![CDATA[juezIntervencion]]></fieldDescription>
+	</field>
+	<field name="juzgadoGarantias" class="java.lang.String">
+		<fieldDescription><![CDATA[juzgadoGarantias]]></fieldDescription>
+	</field>
+	<field name="lee" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[lee]]></fieldDescription>
+	</field>
+	<field name="letrado" class="java.lang.String">
+		<fieldDescription><![CDATA[letrado]]></fieldDescription>
+	</field>
+	<field name="lugar" class="java.lang.String">
+		<fieldDescription><![CDATA[lugar]]></fieldDescription>
+	</field>
+	<field name="lugarComision" class="java.lang.String">
+		<fieldDescription><![CDATA[lugarComision]]></fieldDescription>
+	</field>
+	<field name="madre" class="java.lang.String">
+		<fieldDescription><![CDATA[madre]]></fieldDescription>
+	</field>
+	<field name="mediosEmpleados" class="java.lang.String">
+		<fieldDescription><![CDATA[mediosEmpleados]]></fieldDescription>
+	</field>
+	<field name="modalidadDeHecho" class="java.lang.String">
+		<fieldDescription><![CDATA[modalidadDeHecho]]></fieldDescription>
+	</field>
+	<field name="nacionalidad" class="java.lang.String">
+		<fieldDescription><![CDATA[nacionalidad]]></fieldDescription>
+	</field>
+	<field name="nombreDamnificado" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreDamnificado]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[nombres]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="numeroDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[numeroDoc]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[observacion]]></fieldDescription>
+	</field>
+	<field name="otipFiscaliaGeneral" class="gba.sgi.core.model.OtipFiscaliaGeneral">
+		<fieldDescription><![CDATA[otipFiscaliaGeneral]]></fieldDescription>
+	</field>
+	<field name="padre" class="java.lang.String">
+		<fieldDescription><![CDATA[padre]]></fieldDescription>
+	</field>
+	<field name="partido" class="java.lang.String">
+		<fieldDescription><![CDATA[partido]]></fieldDescription>
+	</field>
+	<field name="piso" class="java.lang.String">
+		<fieldDescription><![CDATA[piso]]></fieldDescription>
+	</field>
+	<field name="policiaActuante" class="java.lang.String">
+		<fieldDescription><![CDATA[policiaActuante]]></fieldDescription>
+	</field>
+	<field name="poseeDoc" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[poseeDoc]]></fieldDescription>
+	</field>
+	<field name="poseeOrden" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[poseeOrden]]></fieldDescription>
+	</field>
+	<field name="provincia" class="java.lang.String">
+		<fieldDescription><![CDATA[provincia]]></fieldDescription>
+	</field>
+	<field name="registroDependencia" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[registroDependencia]]></fieldDescription>
+	</field>
+	<field name="seccional" class="java.lang.String">
+		<fieldDescription><![CDATA[seccional]]></fieldDescription>
+	</field>
+	<field name="senasParticulares" class="java.lang.String">
+		<fieldDescription><![CDATA[senasParticulares]]></fieldDescription>
+	</field>
+	<field name="sexo" class="gba.sgi.core.model.Sexo">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<field name="solicitudSeguimiento" class="gba.sgi.core.model.SolicitudSeguimiento">
+		<fieldDescription><![CDATA[solicitudSeguimiento]]></fieldDescription>
+	</field>
+	<field name="solicitudSign" class="gba.sgi.core.model.FileContent">
+		<fieldDescription><![CDATA[solicitudSign]]></fieldDescription>
+	</field>
+	<field name="tieneHuellas" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tieneHuellas]]></fieldDescription>
+	</field>
+	<field name="tienePedido" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[tienePedido]]></fieldDescription>
+	</field>
+	<field name="tipoAspectoPersonal" class="gba.sgi.core.model.TipoAspectoPersonal">
+		<fieldDescription><![CDATA[tipoAspectoPersonal]]></fieldDescription>
+	</field>
+	<field name="tipoDoc" class="gba.sgi.core.model.TipoDoc">
+		<fieldDescription><![CDATA[tipoDoc]]></fieldDescription>
+	</field>
+	<field name="ufi" class="java.lang.String">
+		<fieldDescription><![CDATA[ufi]]></fieldDescription>
+	</field>
+	<field name="ocupacion" class="java.lang.String">
+		<fieldDescription><![CDATA[ocupacion]]></fieldDescription>
+	</field>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="20"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="245"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="57"
+						y="19"
+						width="191"
+						height="12"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{apellido}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="19"
+						width="32"
+						height="12"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Apellido:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="292"
+						y="19"
+						width="276"
+						height="12"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nombres}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="255"
+						y="19"
+						width="32"
+						height="12"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Nombre:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="57"
+						y="28"
+						width="122"
+						height="12"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{madre}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="28"
+						width="32"
+						height="12"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Hijo de:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="352"
+						y="28"
+						width="32"
+						height="12"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Sexo:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="384"
+						y="28"
+						width="88"
+						height="12"
+						key="textField-5"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{sexo}.getDescrip()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="219"
+						y="28"
+						width="126"
+						height="12"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{padre}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="182"
+						y="28"
+						width="32"
+						height="12"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[y de:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="72"
+						y="37"
+						width="122"
+						height="12"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nacionalidad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="37"
+						width="47"
+						height="12"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Nacionalidad:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="233"
+						y="37"
+						width="97"
+						height="12"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{provincia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="201"
+						y="37"
+						width="32"
+						height="12"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Pcia:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="335"
+						y="37"
+						width="60"
+						height="12"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Ciudad o Pueblo:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="403"
+						y="37"
+						width="116"
+						height="12"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{nacionalidad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="46"
+						width="47"
+						height="12"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Nacido el día:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="72"
+						y="46"
+						width="122"
+						height="12"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{formatedFechaNacimiento}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="248"
+						y="46"
+						width="88"
+						height="12"
+						key="textField-11"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{numeroDoc}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="201"
+						y="46"
+						width="38"
+						height="12"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Doc.Ident:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="345"
+						y="46"
+						width="38"
+						height="12"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Expedido:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="392"
+						y="46"
+						width="127"
+						height="12"
+						key="textField-12"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{expedidoPor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="55"
+						width="47"
+						height="12"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Ocupacion:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="72"
+						y="55"
+						width="89"
+						height="12"
+						key="textField-13"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ocupacion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="219"
+						y="55"
+						width="59"
+						height="12"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{estadoCivil}.getDescrip()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="168"
+						y="55"
+						width="47"
+						height="12"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Estado Civil:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="287"
+						y="55"
+						width="38"
+						height="12"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="330"
+						y="55"
+						width="189"
+						height="12"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{domicilio} + " " + $F{numero} + " " + $F{piso}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="20"
+						y="72"
+						width="500"
+						height="0"
+						forecolor="#CCCCCC"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="20"
+						y="79"
+						width="83"
+						height="12"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Departamento Judicial:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="103"
+						y="79"
+						width="416"
+						height="12"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{dtoJudicial}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="88"
+						width="22"
+						height="12"
+						key="staticText-16"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[UFIJ:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="42"
+						y="88"
+						width="96"
+						height="12"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ufi}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="143"
+						y="88"
+						width="71"
+						height="12"
+						key="staticText-17"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Agente Fiscal Dr/a:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="88"
+						width="157"
+						height="12"
+						key="textField-18"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{agenteFiscalInterviniente}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="377"
+						y="88"
+						width="32"
+						height="12"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[IPP nº:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="409"
+						y="88"
+						width="110"
+						height="12"
+						key="textField-19"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ipp}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="97"
+						width="83"
+						height="12"
+						key="staticText-19"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Juzgado de Garantías nº:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="109"
+						y="97"
+						width="152"
+						height="12"
+						key="textField-20"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{juzgadoGarantias}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="278"
+						y="97"
+						width="83"
+						height="12"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Juez de Garantías Dr/a:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="367"
+						y="97"
+						width="152"
+						height="12"
+						key="textField-21"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{juezIntervencion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="106"
+						width="78"
+						height="12"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Dependencia Policial:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="103"
+						y="106"
+						width="416"
+						height="12"
+						key="textField-22"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{policiaActuante}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="115"
+						width="37"
+						height="12"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Delito/s:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="62"
+						y="115"
+						width="457"
+						height="12"
+						key="textField-23"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{delito}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="20"
+						y="124"
+						width="174"
+						height="12"
+						key="staticText-23"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Lugar y fecha del hecho o inicio de las actuaciones:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="201"
+						y="124"
+						width="318"
+						height="12"
+						key="textField-24"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{lugarComision} + " " + $F{fechaComision}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="20"
+						y="142"
+						width="500"
+						height="0"
+						forecolor="#CCCCCC"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="20"
+						y="147"
+						width="99"
+						height="12"
+						key="staticText-24"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Oficina de toma de huellas:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="125"
+						y="147"
+						width="136"
+						height="12"
+						key="textField-25"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{otipFiscaliaGeneral}.getDescrip()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="269"
+						y="147"
+						width="99"
+						height="12"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Prontuario n°:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="374"
+						y="147"
+						width="145"
+						height="12"
+						key="textField-26"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="20"
+						y="212"
+						width="118"
+						height="0"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="20"
+						y="217"
+						width="118"
+						height="12"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="7" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Firma del Identificado y aclaración:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="450"
+						y="217"
+						width="118"
+						height="12"
+						key="staticText-27"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="7" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Sello y firma del Comisario:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="201"
+						y="217"
+						width="126"
+						height="12"
+						key="staticText-28"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" pdfFontName="Times-Roman" size="7" isBold="false" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[Firma y aclaración del Identificador:]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="201"
+						y="212"
+						width="124"
+						height="0"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.25"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="447"
+						y="212"
+						width="124"
+						height="0"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.25"/>
+</graphicElement>
+				</line>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

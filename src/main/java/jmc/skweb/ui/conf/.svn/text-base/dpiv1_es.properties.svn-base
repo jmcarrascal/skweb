@@ -1,0 +1,539 @@
+## buttons
+button.submit=Ingresar
+button.changePassword=Cambiar Password
+button.ok=Aceptar
+button.new=Nuevo
+button.cancel=Cancelar
+button.newOrganismo=Crear Organismo
+button.newOperador=Agregar Operador
+button.newOficina=Agregar Oficina
+button.aditionalKeywords=mas Palabras Clave
+button.back=Volver a la lista de Organismos
+button.addTema=Agregar Tema
+button.addSubTema=Agregar Subtema
+button.save=Guardar
+button.seach=Buscar
+button.yes=Si
+button.no=No
+button.edit=Editar
+button.backListInProyecto=Bandeja de entrada
+button.backListOutProyecto=Bandeja de salida
+button.newAnexoImg=Adjuntar Imagen
+button.newAnexoText=Adjuntar Texto
+button.newAnexoRtf=Adjuntar RTF
+button.newArticulo=Agregar Artículo
+button.newDocumento=Adjuntar
+button.addInciso=Agregar Inciso
+button.removeInciso=Eliminar Inciso
+button.addApartado=Agregar Apartado
+button.selectAll=Marcar Todos
+button.deselectAll=Desmarcar Todos
+button.reciveSelected=Recibir Seleccionados
+button.newRol=Agregar Rol
+button.send=Enviar
+button.sendAsesoria=A Asesoria
+button.sendFiscalia=A Fiscalia
+button.end=Terminar
+button.approve=Aprobar
+button.reject=Rechazar
+button.inbox=Entrada
+button.outbox=Salida
+button.out=Salida
+button.recivedbox=A Recibir
+button.addComentario=Agregar Comentario
+button.newOperador=Agregar Operador
+button.verifyRoles=Verificar Roles
+button.downloadDocumento=Descargar Documento
+button.downloadXML=Descargar Archivo XML 
+button.changeOficina=Cambiar Oficina
+button.downloadExtracto=Descargar Extracto
+button.notPublishedProyectos=No Publicados
+button.publishedProyectos=Publicados
+button.newAgregado=Agregados/Acumulados
+button.verify=Verificar
+button.recovery=Reingresar
+button.findExp=Búsq. Exp.
+button.newExp=Nuevo Exp.
+button.viewReport=Ver Reporte
+
+## Botones para las acciones del workflows
+
+workflow.button.send=Enviar
+workflow.button.end=Fin Edición
+workflow.button.approve=Aprobar
+workflow.button.reject=Rechazar
+workflow.button.finish=Finalizar
+workflow.button.edition=Edición
+workflow.button.sign=Firmar
+workflow.button.countersign=Refrendar
+workflow.button.sendOffice=Enviar a Oficina
+workflow.button.register=Registrar
+workflow.button.registerExpediente=Inf. Registro
+workflow.button.public=Publicar
+workflow.button.publicBO=Publicar BO
+workflow.button.publicSIMBA=Publicar SIMBA
+workflow.button.officialPublic=Publicación Oficial
+workflow.button.government=SSLTyAL
+workflow.button.registration=Registración
+workflow.button.misteriojgyg=MJGyG
+workflow.button.published=Publicado
+workflow.button.signAndPublish=Firmar y Publicar
+workflow.button.sendRNormas=Archivar
+workflow.button.sendLegislativa=A Dto. Leg.
+
+## titles
+title.login=BIENVENIDO AL SUBSISTEMA DE GESTIÓN Y FIRMA DE ACTOS ADMINISTRATIVOS
+subtitle.login=Por favor, coloque sus datos y pulse sobre Ingresar
+titleFooter.login=Si tiene alguna duda o desea contactarse con nosotros, puede comunicarse 	
+titleFooter.login.phone=telefónicamente al (0221) 429-4362
+titleFooter.login.sign=Dirección de Nuevas Tecnologías - Dirección Provincial de Informática
+titlePublicacion.login=Para visualizar Decretos y Resoluciones que han sido publicados en el Subsistema, ingrese
+##--Organismo	
+title.organismos=Organismos
+title.viewOrganismo=Información del organismo
+title.newOrganismo=Crear Organismo
+title.editOrganismo=Editar Organismo
+title.listOrganismo=Lista de Organismos
+title.listInProyectos=Proyectos Disponibles
+title.listOutProyectos=Proyectos Enviados
+title.listProyectoHistory=Proyectos del Organismo
+title.viewProyectoHistory=Historial de Proyecto 
+title.currentState=Estado Actual
+title.listPublishedProyectos=Lista de Proyectos Publicados
+title.listNotPublishedProyectos=Lista de Proyectos No Publicados
+title.listRegisteredInProyectos=Actos Administrativos Disponibles
+title.listRegisteredNotRecivedProyectos=Actos Administrativos a Recibir
+title.listNotRecivedProyectos=Proyectos a Recibir
+title.listRegisteredOutProyectos=Actos Administrativos Enviados
+title.listTemaSubtema=Lista de Temas / Subtemas
+	##--Remito	
+title.listRemitosAImprimir=Remitos a Imprimir
+	##--Oficina
+title.listOficinas=Oficinas
+title.newOficina=Nueva Oficina
+title.editOficina=Editar Oficina
+	
+	##--Operadores
+title.operadores=Operadores	
+title.newOperador=Agregar Operador
+title.roles=Lista de Roles
+title.newRol=Agregar Rol
+title.newOperador=Agregar Operador a la Oficina
+
+	##--Proyectos
+title.newProyecto=Crear Nuevo Proyecto	
+title.viewProyecto=Información del proyecto
+title.viewActo=Información del acto
+title.editProyecto=Editar información del proyecto
+title.viewImageProceso=Imagen Proceso
+title.viewProyectoOficina=Información de procedencia
+title.viewRegistracionProyecto=Información de Registración
+title.viewDatosRegistracion=Información sobre la Registración
+title.viewVistaRegistracion=Vista de la Registración
+title.findProyecto=Buscar Proyecto
+title.newAgregado=Agregar Expediente
+title.parametrosBusq=Parámetros de Búsqueda
+
+	
+	##--Documentos
+title.viewDocumento=Información del documento
+title.listArticulos=Lista de artículos
+title.newArticulo=Crear Nuevo Artículo
+title.newTema=Crear Nuevo Tema
+title.newSubTema=Crear Nuevo SubTema
+title.listIncisos=Lista de Incisos
+title.listApartados=Lista de Apartados
+title.addInciso=Crear Nuevo Inciso
+title.addApartado=Crear Nuevo Apartado
+title.editInciso=Editar Inciso
+title.editApartado=Editar Apartado
+title.viewDocumentoPDF= Ver Documento
+title.moveArticulo=Mover Artículo
+title.articulo.organismos=Lista de todos los Organismos
+title.articulo.refrendantes=Organismos que se incluirán como Refrendantes
+title.firmas=Firmas
+title.viewRegistration=Vista de Registración
+title.divisionArticulado=División Superior del Articulado
+
+	##--Anexo
+title.listAnexos=Lista de anexos
+title.newAnexo=Nuevo Anexo
+title.editAnexo=Editar Anexo
+	##--Proceso
+title.listOficinasDestino=Oficinas Destinatarias
+	##--Adjuntos
+title.newAdjunto=Nuevo Adjunto
+title.listAdjunto=Lista de adjuntos
+title.editAdjunto=Editar Adjunto
+
+	##--Comentario
+title.viewComentarios=Comentarios
+title.addComentario=Agregar un Comentario
+title.editComentario=Editar Comentario
+
+	##--public
+title.public.download=Opciones de Descarga
+
+	##--Reportes
+title.expedientesEnSolicitud=Expedientes en Trámite
+title.expedientesDemorados=Expedientes Demorados
+	
+## Tabs
+
+	##--Organismo
+tab.organismos=Organismos
+tab.viewOrganismo=Información Básica
+tab.editOrganismo=Editar Organismo
+	
+	##--Oficina
+tab.oficinas=Oficinas
+	
+	##--Operador
+tab.operadores=Operadores
+subtab.operador.roles=Roles
+subtab.viewOperadoresOficina=Operadores
+
+	##--Proyecto
+tab.proyectos=Proyectos
+tab.inProyecto=Bandeja de Entrada
+tab.setPrioridad=Proyectos con Prioridad
+tab.outProyecto=Bandeja de Salida
+tab.recivedProyecto=Bandeja a Recibir
+tab.viewProyecto=Información Básica
+tab.title.viewProyectoEstadia=Estadia de Proyecto
+tab.timeOutProyecto=Proyectos Demorados
+tab.remitosAgrupados=Remitos Agrupados por Oficinas
+tab.proyectoEstadia=Estadia del Proyecto
+tab.imageProces=Vista Proceso
+tab.proyectoHistory=Seguimiento de Proyectos
+tab.viewProyectoHistory=Seguimiento de Proyecto
+tab.signProyecto=Firmar Documento
+tab.registerProyecto=Registrar Documento
+tab.selectRemitos=Imprimir Remitos
+tab.registracion=Registración
+tab.registracionData=Datos de Registración
+tab.registracionView=Vista de Registración	
+tab.notPublishedProyectos=No Publicados
+tab.publishedProyectos=Publicados
+	##--Documento
+tab.documento=Documento
+tab.documento.viewDocumentoPDF=Vista Final
+subtab.viewDocumento=Información Básica
+subtab.documento.anexos=Anexos
+subtab.documento.articulos=Artículos
+subtab.documento.viewDocumentoPDF=Vista Preliminar
+subtab.documento.viewDocumentoHTML=Vista Preliminar
+tab.articulos=Artículos
+tab.articulo=Artículo
+tab.incisos=Incisos
+subtab.apartados=Apartados
+tab.proyectoComentario=Comentarios
+tab.proyectoAdjunto=Adjuntos
+tab.registeredProyecto=Proyecto Registrado
+tab.signRegistration=Firmar Registración
+tab.devolutionExpediente=Devolución Expediente
+
+	##--Proceso
+tab.procesos=Procesos
+subtab.proceso.decreto=Decretos
+subtab.proceso.resolFacDel=Resoluciones de Facultad Delegada
+subtab.proceso.resolFacProp=Resoluciones de Facultad Propia
+subtab.proceso.decretoPers=Decreto Personal
+subtab.proceso.resolFacDelPers=Resoluciones Delegada de Personal
+
+   ##-- Publico
+tab.public.viewDocumento=Ver Documento
+tab.public.viewRegDocumento=Ver Documento Registrado
+tab.public.downDocumento=Descargar Documento
+   
+## Fields
+field.user=Nombre de usuario
+field.password=Clave de acceso
+
+	##--Organismo	
+field.organismo=Organismo
+field.organismo.operador=Administrador
+field.organismo.nombre=Nombre
+field.organismo.descripcion=Descripción
+
+
+	##--Oficina	
+field.oficina.nombre=Nombre
+field.oficina.descripcion=Descripción
+field.oficina=Oficina
+
+	##--Operador
+field.operador=Operador
+field.rol=Rol
+
+	##--Proyectos
+field.expediente.caracteristica=Característica de Expediente 
+field.expediente.numero=Número de Expediente
+field.expediente.Tema=Tema
+field.expediente.Subtema=SubTema
+field.expediente.anio=Año de Expediente
+field.expediente.alcance=Alcance del Expediente
+field.expediente.cuerpo=Número de Cuerpo del Expediente
+field.expediente.objeto=Objeto
+field.expediente.iniciador=Iniciador
+field.expediente.tema=Tema
+field.expediente.subTema=SubTema
+field.expediente.numeroYear=Número de Expediente y Año
+field.proyecto.expediente=Expediente
+field.proyecto.nroExpte=Nro. Expediente
+field.proyecto.archivo=Nombre de archivo de Adjuntos
+field.proyecto.acto=Acto
+field.proyecto.numeroActo=Numero de Acto
+field.proyecto.registracion=Fecha de Registracion
+field.proyecto.infoExtracto=Extracto
+field.proyecto.tipoNorma=Tipo de Norma
+field.proyecto.oficinaOrigen=Origen
+field.proyecto.oficina=Oficina
+field.proyecto.usuarioRecepcion=Usuario Recepcion
+field.proyecto.usuarioSalida=Usuario Salida
+field.proyecto.estadia=Estadia
+field.proyecto.oficinaDestino=Destino
+field.proyecto.observaciones=Observaciones
+field.proyecto.deOficio=Expediente de Oficio
+field.proyecto.fechaCreacion=Fecha de Creación
+field.proyecto.fechaIngreso=Fecha Ingreso
+field.proyecto.fechaIngresoDesde=Fecha Ingreso desde
+field.proyecto.fechaIngresoHasta=hasta
+field.proyecto.keyWords=Palabras Clave
+field.proyecto.leido=Leído
+field.proyecto.oficio=De oficio
+field.proyecto.oficina=Oficina
+field.proyecto.tiempoEstadia=Tiempo total
+field.proyectoOficina.prioridad=Prioridad
+field.proyectoOficina.fechaEntrada=Fecha de Entrada
+field.proyectoOficina.fechaRecepcion=Fecha de Recepcion
+field.proyectoOficina.fechaSalida=Fecha de Salida
+field.proyectoOficina.comentario=Comentario
+field.proyectoOficina.oficinaAnterior=Oficina de envío
+field.proyecto.CUIN=CUIN
+field.proyecto.numeroReg=Número Registro
+fiel.proyecto.registracion.numero=Número
+fiel.proyecto.registracion.fecha=Fecha
+field.proyectoOficina.oficinaActual=Posición Actual
+field.registracion.fecha=Fecha de Registración
+field.registracion.numero=Número de Decreto
+field.resolucion.countersign=Resolución Conjunta
+field.proyecto.extracto=Extracto
+field.registracion.numero=Número de Registración
+	##--Remitos
+field.remito.fechaRemito=Fecha envío
+field.remito.nombreOficinaDestino=Nombre Oficina Destino
+field.remito.cantidad=cantidad
+	##--Proyecto Datos Externos
+field.proyectoDatosExternos.tema=Tema
+field.proyectoDatosExternos.subtema=Subtema	
+field.proyectoDatosExternos.objeto=Objeto
+field.proyectoDatosExternos.iniciador=Iniciador	
+field.proyecto.origen=Origen
+field.proyecto.destino=Remitido por
+field.proyecto.destinoReg=Destino
+	##--Documento
+field.documento.visto=Visto
+field.documento.considerando=Y considerando
+field.documento.dispone=Por ello
+field.documento.capitulado=Utilizar División Superior del Articulado
+field.articulo.numero=Número
+field.articulo.cuerpo=Cuerpo
+field.articulo.comentario=Comentario
+field.articulo.titulo=Capítulo
+field.articulo.seccion=Sección
+field.articulo.subseccion=Subsección
+field.articulo.inciso=Inciso
+field.articulo.apartado=Apartado
+field.articulo.bis=Bis
+field.articulo.generateBis=Crear Bis
+field.articulo.insert=Insertar
+field.articulo.capitulo=Capítulo
+field.articulo.countersign=Artículo de Refrenda
+field.apartado.letra=Letra
+field.apartado.cuerpo=Cuerpo
+field.inciso.cuerpo=Cuerpo
+field.inciso.numero=Numero
+field.articulo.hasCapitulo=Capitulo
+field.articulo.moveArticulo=Mover Artículo
+	
+	#--Anexo
+field.anexo.nombre=Nombre
+field.anexo.file=Archivo
+	##--Comentario
+field.comentario.cuerpo=Cuerpo
+
+	##--Reporte
+field.reporte.criterio=Criterio
+
+	
+	
+## Data
+data.proyecto.leido=Leido
+data.proyecto.noleido=No Leido
+
+## Table
+table.actions=Acciones
+
+## Select
+option.selectOrganismo=--Seleccione Organismo--
+option.selectOperador=--Seleccione Operador--
+option.selectAdministrador=--Seleccione Administrador--
+option.selectOficina=--Seleccione Oficina--
+option.selectNorma=--Seleccione Tipo de Norma--
+option.selectRol=--Seleccione Rol--
+option.selectTipoExpediente=--Seleccione Tipo de Expediente--
+option.selectTema=--Seleccione un Tema--
+option.selectSubTema=--Seleccione un SubTema--
+
+
+## tool-tips
+tip.obligatory=Campo obligatorio
+tip.upMove=Mover Hacia Arriba
+tip.downMove=Mover Hacia Abajo
+tip.articulo.edit=Editar Articulo
+tip.articulo.viewIncisos=Ver Incisos
+tip.articulo.remove=Eliminar Articulo
+tip.inciso.edit=Editar Inciso
+tip.inciso.viewApartados=Ver Apartados
+tip.inciso.remove=Eliminar Inciso
+tip.proyecto.view=Ver Proyecto
+tip.proyecto.remove=Eliminar Proyecto
+tip.apartado.edit=Editar Apartado
+tip.apartado.remove=Eliminar Apartado
+tip.organismo.viewOperadores=Ver Operadores
+tip.organismo.viewOficinas=Ver Oficinas
+tip.oficina.remove=Eliminar Oficina
+tip.oficina.viewUsers=Ver Operadores
+tip.oficina.viewProceso=Ver Destinatarios
+tip.operador.viewRoles=Ver Roles
+tip.rol.remove=Eliminar Rol
+tip.comentario.edit=Editar Comentario
+tip.comentario.remove=Eliminar Comentario
+tip.move=Mover
+tip.operador.remove=Remove Operador
+tip.refrenda.addOficina=Agregar Oficina a las Refrendas
+tip.refrenda.removeOficina=Eliminar Oficina de las Refrendas
+tip.oficina.change=Cambiar de Oficina
+
+tip.remito.view=Ver Remitos
+
+## days of the week
+day.Sun=Domingo
+day.Mon=Lunes
+day.Tue=Martes
+day.Wed=Miércoles
+day.Thu=Jueves
+day.Fri=Viernes
+day.Sat=Sábado
+
+## errors
+error.missingFields=Falta completar algunos<br/>campos obligatorios.
+error.onlyNumberFields=Algunos campos<br/>numéricos son incorrectos.
+error.emailFields=Hay algún error en campos<br/>de correo electrónico.
+error.generalFillFields=Hay varios errores<br/>en el llenado de los campos.
+error.reallyContinue=Si continúa perderá<br/>los datos modificados.
+error.dateFields=Alguna de las fechas<br/>no es válida.
+
+## Intros
+intro.organismo=Administración de Organismos.
+intro.proyecto=Administración de Proyectos.
+intro.articulo=Agregar artículo para el Proyecto
+intro.inciso=Incisos del Artículo
+intro.inciso.proyecto=del Proyecto 
+intro.articulo.list=Artículos del proyecto
+intro.articulo.edit=Artículo del proyecto
+intro.apartado=Apartados del Inciso
+intro.apartado.articulo=del Artículo
+intro.apartado.proyecto=Proyecto
+intro.documento=Documento del Proyecto correspondiente al expediente
+intro.documento.acto=Documento del Acto correspondiente al número de registración
+intro.destinatarios=Administración de Destinatarios para la oficina
+intro.roles=Administración de Roles del Operador 
+intro.comentarios=Información de comentarios para el Proyecto
+intro.comentarios.acto=Información de comentarios para el Acto
+intro.proceso=Administrar oficinas del organismo
+intro.operadores=Operadores del organismo
+intro.roles=Roles para el operador
+intro.operadoresOficina=Operadores de la oficina
+intro.oficina=Oficinas del organismo
+
+## Messages & alerts
+explanation.keyWords=Escribir al menos una
+explanation.newCapituloDescription=< Ingrese la Descripción del Capítulo aquí >
+documento.capitulo.noname=Sin Descripción
+message.inciso.DuplicatedNumber=El inciso se insertará en esa posición
+message.apartado.DuplicatedNumber=El apartado se insertará en esa posición
+message.globalSuccess=Acción Realizada con Éxito
+message.globalError=La Operación no se ha Podido Realizar
+message.expedientes.noTableData=No hay expedientes para mostrar.
+message.articulo.noTableData=No hay Artículos para mostrar
+message.inciso.noTableData=No hay Incisos para mostrar
+message.apartado.noTableData=No hay Apartados para mostrar
+message.proyecto.noTableData=No hay Proyectos para mostrar
+message.anexo.noTableData=No hay Anexos para mostrar
+message.adjunto.noTableData=No hay Adjuntos para mostrar
+message.proceso.noTableData=No hay Oficinas para mostrar
+message.oficina.noTableData=No hay Oficinas para mostrar
+message.destino.noTableData=No hay Oficinas Destino para mostrar
+message.operadorOficina.noTableData=No hay Operadores en esta Oficina
+message.rol.noTableData=No hay Roles para mostrar
+message.imageError=EL archivo ingresado no es una imagen
+message.rtfError=EL archivo ingresado no es una rtf
+message.fileError=EL archivo ingresado no es una archivo válido
+message.proyecto.registracion.noData=El proyecto no ha sido registrado.
+message.articulo.notWellCapitulado=El Orden de los Capítulos, Secciones o Subsecciones no es correcto,<br>por favor revise el/los artículo/s:<br>
+message.errorNotArticulosInOrder=El Orden de los Capítulos, Secciones o Subsecciones no es correcto, por favor revise los artículos del documento.
+message.errorNotCoutersignedDecreto=No se puede enviar un documento que no contiene un Artículo de Refrenda, por favor incluya el artículo y vuelva a intentar
+message.comentario.noTableData=No hay Comentarios para mostrar
+message.captchaError=Las Letras de Control no han sido ingresadas correctamente.
+message.fileSizeError=El archivo es demasiado grande. Para poder anexar un archivo, éste debe tener un tamaño máximo de 3MB.
+message.acto.noTableData=No hay Actos Administrativos para mostrar
+alert.sureRemoveOperador=¿Está seguro que desea<br>eliminar al usuario?
+alert.sureSendAsesoria=¿Está seguro que desea<br>enviar a Dictamen de Asesoría General de Gobierno?
+alert.sureSendFiscalia=¿Está seguro que desea<br>enviar a Fiscalia?
+alert.sureSendLegislativa=¿Está seguro que desea<br>enviar a Dto. Organización Legislativa?
+alert.sureRemoveOperadorOficina=¿Está seguro que desea<br>eliminar al operador de la oficina?
+alert.sureRemoveOficina=¿Está seguro que desea<br>eliminar la Oficina?
+alert.sureRemoveOrganismo=¿Está seguro que desea<br>eliminar el Organismo?
+alert.sureRemoveInciso=¿Está seguro que desea<br>eliminar el Inciso?
+alert.sureRemoveAdjunto=¿Está seguro que desea<br>eliminar el Adjunto?
+alert.sureDontSaveDocumento=El documento ha cambiado<br>¿Desea salir sin guardar?
+alert.sureRemoveArticulo=¿Está seguro que desea<br>eliminar el Artículo?
+alert.sureRemoveApartado=¿Está seguro que desea<br>eliminar el Apartado?
+alert.sureRemoveRol=¿Está seguro que desea<br>quitar el Rol?
+alert.sureEndProyecto=¿Está seguro que desea finalizar la edición y enviar<br>el proyecto al Superior Autorizante?
+alert.sureApproveProyecto=¿Está seguro que desea<br>aprobar el proyecto?
+alert.sureRejectProyecto=¿Está seguro que desea<br>rechazar el proyecto?
+alert.sureRemoveOficina=¿Está seguro que desea<br>eliminar la oficina?
+alert.sureRemoveProyecto=¿Está seguro que desea<br>eliminar el Proyecto?
+alert.sureRemoveSubTema=¿Está seguro que desea<br>eliminar el SubTema?
+alert.sureSendCountersign=¿Está seguro que desea<br>enviar el Proyecto a Refrendar?
+alert.sureRemoveComentario=¿Está seguro que desea<br>eliminar el comentario?
+alert.sureRemoveCapitulos=Se eliminarán todos los capítulos<br>¿Desea continuar?
+alert.sureAddCapitulo=Todos los Artículos existentes<br>se ubicarán en el capítulo 1
+alert.sureSendEdition=¿Está seguro que desea<br>enviar a edición el proyecto?
+alert.sureSignProyecto=¿Está seguro que desea<br> firmar el proyecto?
+alert.sureSendGovernmet=¿Está seguro que desea enviar el proyecto<br> a la Subsecretaria Legal Técnica y de Asuntos Legislativos?
+alert.sureSendPendientePublicacion=¿Está seguro que desea enviar el proyecto<br> a la oficina de publicación?
+alert.notOrderedArticulos=No se puede aprobar el proyecto<br>Los artículos no estan en correcto orden.
+alert.sureSendMJGyG=¿Está seguro que desea enviar el proyecto<br> al Ministerio de Jefatura de Gabinete y Gobierno?
+alert.sureSendPendienteRegistracion=¿Está seguro que desea enviar el proyecto<br> a la oficina de registración?
+alert.sureAprobarPublicacion=¿Está seguro que desea aprobar<br>la publicación del proyecto?
+alert.sureSendRepositorioNormas=¿Está seguro que desea<br>enviar el proyecto al Repositorio de Normas?
+alert.sureSendBoletinOficial=¿Está seguro que desea<br>enviar el proyecto al Boletín Oficial?
+alert.surePublishFromRNormas=¿Está seguro que desea<br>publicar el proyecto en SIMBA?
+alert.sureInitSignerSecretario=¿Está seguro que desea<br>aprobar el proyecto?
+alert.sureFinalizeProyecto=¿Está seguro que desea finalizar <br>el proyecto?
+## Public_Decretos
+
+##Fiel
+fiel_public.proyecto.cuin=Cuin
+fiel_publi.proyecto.fechaReg=Fecha de registración
+
+#Title
+title_public.listPublishedProyectos=Proyectos Publicados
+
+#Tip
+tip_public.documentoFirmado=Ver Documento Firmado
+tip_public.documentoRegistrado=Ver Documento Registrado

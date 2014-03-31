@@ -1,0 +1,1 @@
+C:\Program Files\Java\jdk1.6.0_02\bin>jarsigner -keystore c:\ks3.p12 -storetype PKCS12 "C:\Eclipse WSDPI\SGI_v0\applets\SignerApplet.jar" "coinse"

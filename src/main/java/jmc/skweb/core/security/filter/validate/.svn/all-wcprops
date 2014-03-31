@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/security/filter/validate
+END
+ActionValidate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/44/trunk/skweb/src/main/java/jmc/skweb/core/security/filter/validate/ActionValidate.xml
+END
+ValidateDataCertificate.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/security/filter/validate/ValidateDataCertificate.java
+END
+ValidacionCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/security/filter/validate/ValidacionCache.java
+END

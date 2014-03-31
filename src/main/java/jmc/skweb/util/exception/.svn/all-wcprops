@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/exception
+END
+WebServiceAntecentesException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/exception/WebServiceAntecentesException.java
+END
+GenerationTimerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/exception/GenerationTimerException.java
+END
+DataAccessDPIv1Exception.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/util/exception/DataAccessDPIv1Exception.java
+END

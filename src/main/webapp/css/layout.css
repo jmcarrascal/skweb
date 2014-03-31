@@ -1,0 +1,402 @@
+@html {background-color: #00539B;}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	line-height: 14px;
+	text-align: left;
+}
+
+p {
+	font-size:1.2em;
+}
+
+
+a {
+	text-decoration: none;
+	color:#00539B;
+}
+
+a:hover {
+	color:#666;
+}
+.generalcontent {
+	width: 774px;
+	margin:auto;
+	padding: 0px;
+	left: 50%;
+}
+
+.header {
+	width: 774px;
+	height: 66px;
+	padding: 0px;
+	background: url(../images/bck_header.jpg) repeat-x;
+}
+
+.boxbuttons {
+	width: 669px;
+	height: 32px;
+	margin: 10px 0px 0px 0px;
+	float: left;
+}
+
+.boxbuttons ul {
+	padding: 0px;
+	list-style: none;
+	display: inline;
+}
+
+.boxbuttons ul li {float: left;}
+
+.boxbuttons ul li a {
+	float: left;
+	padding: 32px 0px 0px 0px;
+	margin: 0px 1px 0px 0px;
+	overflow: hidden;
+	height: 0px;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+.boxbuttons ul li a:link {background-position: 0 -0px;}	
+
+.boxbuttons ul li a:hover {background-position: 0 -32px;}
+
+.boxbuttons ul li a:active, .boxbuttons ul li a.active {background-position: 0 -64px;}
+
+.webmail {
+	text-align:right;
+	width:65px;
+	float:right;
+	font-size:1.05em;
+	padding:10px 0 0 0;
+}
+	.webmail img {
+		float:left;
+		padding:2px 2px 0 0;
+	}
+	.webmail a {
+		color:#fff;
+	}
+.introduccion {
+	width: 120px;
+	background-image: url(../images/buttons/introduccion.jpg);
+}
+
+.miviva {
+	width: 180px;
+	background-image: url(../images/buttons/mision-vision-valores.jpg);
+}
+
+.rrhh {
+	width: 90px;
+	background-image: url(../images/buttons/rrhh.jpg);
+}
+
+.politcadepriv {
+	width: 167px;
+	background-image: url(../images/buttons/politica-privacidad.jpg);
+}
+
+.contacto {
+	width: 107px;
+	background-image: url(../images/buttons/contacto.jpg);
+}
+
+.hdright {
+	width: 52px;
+	height: 66px;
+	margin: 0px;
+	float: right;	
+	background: url(../images/bck_hdright.jpg);
+}
+
+.content {
+	width: 774px;
+	float: left;
+	display: block;
+	background: url(../images/bck_content.jpg) repeat-y;
+}
+
+.mainbox {
+	width: 729px;
+	min-height:445px;
+	padding: 0px 0px 15px 0px;
+	float: left;
+	background-image: url(../images/bck_mainbox.jpg);
+	background-repeat: no-repeat;
+	background-color: #fff;
+}
+
+.lines {
+	width: 25px;
+	margin: 0px 20px 0px 0px;
+	float: right;
+}
+
+.linestop {
+	height: 440px;
+	background: url(../images/bck_linestop.jpg) repeat-y;
+}
+
+.linesbottom {
+	height: 17px;
+	background: url(../images/bck_linesbottom.jpg) no-repeat;
+}
+
+.leftcolumn {
+	width: 500px;
+	margin: 29px 0px 0px 21px;
+	float: left;
+	display: inline;
+}
+	.leftcolumn p {
+		margin-top: 20px;
+		line-height: 1.4em;
+	}
+
+.onecolumn {
+	width: 662px;
+	margin: 29px 0px 0px 33px;
+	float: left;
+	display: inline;
+}
+
+.welcome {
+	width: 362px;
+	margin: 28px 0px 0px 14px;
+	float: left;
+	display: inline;
+}
+
+.bottomLine {
+	width: 654px;
+	margin: 0px;
+	margin-bottom: 22px;
+	border-bottom: 1px solid #ccc;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 1.4em;
+	margin: 18px 0px 18px 0px;
+}
+
+h5 {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-transform:uppercase;
+	color: #00539B;
+	margin-bottom:-10px;
+}
+	h5.code {
+		padding-bottom:20px;
+		text-align: left;
+	}
+	
+
+img {display: block; border:0;}	
+
+#logo {margin: 0px 0px 0px 20px;}
+
+#logo2 {
+	margin: 0px;
+	float: right;
+}
+
+#wlc {margin: 5px 0px 0px 20px;}
+
+.wlcpic {margin: 46px 0px 0px 0px;}
+
+.sectionsbox {
+	/*width: 754px;*/
+	width: 165px;
+	height: auto;
+	float: right;
+	/*background: url(../images/background.jpg) repeat-y;*/
+	padding:20px 20px 30px 20px;
+}
+	/*.sectionsbox img {
+		margin-right:10px;
+		float:left;
+	}*/
+	
+	.sectionsbox img {
+		margin-bottom: 1px;
+	}
+
+.insecbox {
+	height: 366px;
+	float: left;
+}
+
+.insecboxpic {
+	width: 165px;
+	height: 197px;
+	float: left;
+	margin-right:10px;
+}
+
+#tools {
+	width: 251px;
+	border-right: 1px solid #fff;
+}
+
+#fourwheels {
+	width: 250px;
+	border-right: 1px solid #fff;
+}
+
+#plastics {width: 251px;}
+
+h3 {margin-top: 27px;}
+
+#herramientas {margin-left: 40px;}
+
+#cuatriciclos {margin-left: 53px;}
+
+#plasticos {margin-left: 73px;}
+
+.viewsite {
+	margin: 8px 16px 0px 0px;
+	float: right;
+	font-size: 1.4em;
+	font-weight:bold;
+	color: #fff;
+}
+.viewsite:hover {
+	color: #000;
+}
+
+.gamma {margin: 68px 0px 0px 23px;}
+
+.cuatri {margin: 84px 0px 0px 34px;}
+
+.plasticos2 {margin: 45px 0px 0px 0px;}
+
+.bottombuttons {
+	width: 754px;
+	height: 35px;
+	margin: 0px;
+	background: url(../images/bck_bottombuttons.jpg) repeat-x;
+	float: left;
+}
+
+.bottombuttons ul {
+	padding: 0px;
+	list-style: none;
+	margin: 10px 0px 0px 246px;
+}
+
+.bottombuttons ul li, .bottombuttons ul li a {
+	float: left;
+	font-size: 1.05em;
+	color: #000;
+}
+.bottombuttons ul li a:hover {
+	color:#333;
+}
+.bbright {
+	width: 20px;
+	height: 35px;
+	float: right;
+	background: url(../images/bck_bbright.jpg);
+}
+
+.footer {
+	width: 754px;
+	height: 43px;
+	padding: 17px 0px 0px 0px;
+	float: left;
+	color: #000;
+	font-size: 1.1em;
+	text-align: center;
+	line-height: 13px;
+	font-weight:normal;
+}
+
+.footer a {color: #ccc;}
+
+.footer a:hover {color: #fff;}
+
+.footer p {
+	display: inline;
+	font-weight: bold;
+	color: #ccc;
+}
+span {
+	font-size:0.9em;
+}
+
+/* Tables */
+
+table {
+	margin:20px 0 20px 0;
+	padding:0;
+	width:100%;
+	font-size:1.2em;
+}
+	table tr {
+		line-height:20px;
+		vertical-align:top;
+	}
+	table th {
+		font-weight:normal;
+		text-align:left;
+		width:140px;
+	}
+		table th.col2 {
+			width:100px;
+		}
+	table td {
+		width:auto;
+	}
+		.fecha {
+			width:80px !important;
+		}
+input, select {
+	border:1px solid #ccc;
+	font-family:Arial, Helvetica, sans-serif;
+	width:150px;
+}
+textarea {
+	border:1px solid #ccc;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	width:540px;
+}
+	input.long {
+		width:500px;
+	}
+	input.short {
+		width:auto;
+		border:0;
+	}
+.button {
+	width:100px;
+	background-color:#fff;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:15px 0 0 10px;
+}
+
+/* Form */
+.alert {
+	background-color: #090;
+	display:block;
+	font-size:1.1em;
+	color:#fff;
+	text-indent:10px;
+}
+.error {
+	background-color: #F00;
+	display:block;
+	font-size:1.1em;
+	color:#fff;
+	padding:2px;
+	text-indent:10px;
+}

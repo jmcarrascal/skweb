@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="hibernateDesa">
+        <property name="hibernate.connection.driver_class">com.hxtt.sql.access.AccessDriver</property>
+        <property name="hibernate.connection.url">jdbc:access:///c:/test_base.mdb</property>
+
+        <property name="hibernate.dialect">com.hxtt.support.hibernate.HxttAccessDialect</property>
+
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto">none</property>		
+					
+		
+		<mapping class="jmc.skweb.core.model.Parametrizacion"/>		
+		<mapping class="jmc.skweb.core.model.Gente"/>		
+		<mapping class="jmc.skweb.core.model.WebPermisos"/>		
+		<mapping class="jmc.skweb.core.model.Existencias"/>		
+		<mapping class="jmc.skweb.core.model.Fam"/>		
+		<mapping class="jmc.skweb.core.model.SubFam"/>		
+		<mapping class="jmc.skweb.core.model.Stock"/>		
+		<mapping class="jmc.skweb.core.model.ExiArt"/>		
+
+    </session-factory>
+</hibernate-configuration>

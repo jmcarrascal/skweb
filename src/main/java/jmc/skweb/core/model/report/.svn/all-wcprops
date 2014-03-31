@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/model/report
+END
+DatosCot.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/43/trunk/skweb/src/main/java/jmc/skweb/core/model/report/DatosCot.java
+END
+EstadisticaPedido.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/44/trunk/skweb/src/main/java/jmc/skweb/core/model/report/EstadisticaPedido.java
+END
+TransacJoin.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/41/trunk/skweb/src/main/java/jmc/skweb/core/model/report/TransacJoin.java
+END
+DatosReporte.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/45/trunk/skweb/src/main/java/jmc/skweb/core/model/report/DatosReporte.java
+END
+TipoReporte.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/26/trunk/skweb/src/main/java/jmc/skweb/core/model/report/TipoReporte.java
+END
+SaldoAcumulado.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/model/report/SaldoAcumulado.java
+END

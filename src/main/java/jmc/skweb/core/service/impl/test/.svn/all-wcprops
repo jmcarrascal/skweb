@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test
+END
+TestRedondeo.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestRedondeo.java
+END
+TestExcelFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestExcelFile.java
+END
+TestCopyFolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestCopyFolder.java
+END
+TestParseDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestParseDate.java
+END
+TestPorcentajeEnCadena.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/17/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestPorcentajeEnCadena.java
+END
+TestList.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestList.java
+END
+TestParseName.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestParseName.java
+END
+TestGetImageCheque.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestGetImageCheque.java
+END
+TestUnionImages.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestUnionImages.java
+END
+TestEjecuta.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestEjecuta.java
+END
+TestSubString.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestSubString.java
+END
+TestInsertSQLValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/6/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestInsertSQLValue.java
+END
+TestMDBJoin.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestMDBJoin.java
+END
+TestFormattedDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestFormattedDate.java
+END
+TestOpenURL.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/18/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestOpenURL.java
+END
+TestCargaClase.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestCargaClase.java
+END
+TestFormatDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestFormatDate.java
+END
+TestCalcCtaCte.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestCalcCtaCte.java
+END
+TestTifToJpg.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/6/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestTifToJpg.java
+END
+TestLlenarConCero.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/19/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestLlenarConCero.java
+END
+TestAddTextInImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestAddTextInImage.java
+END
+TestBdTif.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestBdTif.java
+END
+MergePDF.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/MergePDF.java
+END
+TestRecuperarImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestRecuperarImage.java
+END
+TestSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestSplit.java
+END
+TestIndexOf.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3/trunk/skweb/src/main/java/jmc/skweb/core/service/impl/test/TestIndexOf.java
+END

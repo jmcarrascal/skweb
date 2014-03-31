@@ -1,0 +1,41 @@
+.panelheader {
+  background-color : #566d56;
+  height: 26px;
+  color : #ced7ef;
+  font-weight : normal;
+  font-size: smaller;
+  border-bottom:1px solid #182052;
+  border-top:1px solid #BDC7E7;
+  padding-left: 5px;
+  cursor:pointer;
+}
+
+.panelheader img{
+	float:left;
+	margin-top: 4px;
+}
+
+.mdHover {
+  background-color : #566d56;
+  color : #ffffff;
+}
+.mdSelected {
+  background-color : #617d61;
+  color : #ffffff;
+  font-weight : bold;
+  cursor:default;
+}
+.panelContent {
+  border : 1px solid #1f669b;
+  border-top-width    : 0px;
+  border-bottom-width : 0px;
+  font-size: smaller;
+  overflow: auto;
+  text-align: left;
+  padding: 1em;
+}
+#accordionExample {
+  margin : 2.5%;
+  border : 1px solid #4f4f4f;
+  width: 85%;
+}
