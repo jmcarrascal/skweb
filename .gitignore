@@ -1,5 +1,4 @@
-target
-.settings
-.classpath
-.project
-.svn
+siaci/target
+siaci/.settings
+siaci/.classpath
+siaci/.project
