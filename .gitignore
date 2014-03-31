@@ -1,4 +1,9 @@
-siaci/target
-siaci/.settings
-siaci/.classpath
-siaci/.project
+target
+.settings
+.classpath
+.project
+.svn-base
+*.svn-base
+*.class
+work/
+.svn/

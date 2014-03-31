@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="tjpzoom.js"></script>
+  
+<html>
+<head>
+<script>
+$(document).ready(function(){
+	 $.ajaxSetup({
+		    cache: false
+		});
+	 
+  $("#b1").click(function(){
+    $("#d2").empty().append($("<img src= 'testfinal.jpg' style='width:640px; height: 380px;' onmouseover= \"TJPzoom(this);\" />"));
+
+  });
+  $("#b2").click(function(){
+	    //alert('llamo a la img');
+	  	$("#d2").empty().append($("#img1", {src: "http://media.eldia.com/ediciones/20120305/fotos/20120305140112.jpg" } ));
+	  	//alert('llego');
+	  });
+
+});
+</script>
+</head>
+<body>
+
+<div id = "d1" ><h2>Let AJAX change this text</h2>
+	<div  id = "d2">
+		
+	</div>
+</div>
+<button id="b1" >Change Content1</button>
+<button id="b2">Change Content2</button>
+</body>
+</html>

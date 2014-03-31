@@ -1,0 +1,773 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+text-decoration:none;
+}
+ul {
+list-style:none;
+}
+img {
+	vertical-align: middle;
+	border: 0 none;
+}
+input, textarea {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+}
+input, textarea {
+	padding: 1px 3px;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear {
+	clear: both;
+}
+#pedidos-usuario th, td {
+border-bottom:1px dashed #666666;
+text-align:center!important;
+}
+#pedidos-usuario tr {
+border:1px solid #666666;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	background:#FFFFFF!important;
+	}
+
+#container {
+	width: 775px;
+	margin: auto;
+	font-size: 1.2em;
+}
+
+	#header {
+		padding-bottom: 20px;
+	}
+
+	#logo {
+		float: left;
+	}
+	
+	div.full {
+		background-image: url('../img/topBg.jpg');
+		background-repeat: no-repeat;
+		height: 61px;
+		text-align: center;
+		padding-top: 37px;
+		padding-right: 70px;
+		margin: 0;
+	}
+	
+	h2 {
+		margin: 20px 0;
+	}
+		
+	h2.full {
+		background-image: url('../img/topBg.jpg');
+		background-repeat: no-repeat;
+		height: 61px;
+		text-align: center;
+		padding-top: 37px;
+		padding-right: 70px;
+		margin: 0;
+		color:#00529C;
+	}
+	h2.page {
+		height: 61px;
+		padding:0;
+		margin:0;
+	}
+
+	h3 {
+		color: #00529C;
+		font-size: 1.3em;
+		margin: 20px 0;
+	}
+
+	h3.square {
+		color: #FFF;
+		background: #00529C;
+		font-size: 1.2em;
+		padding: 2px;
+		margin-bottom: 5px;
+		margin-top: 0;
+		padding-bottom:65px;
+	}
+	
+#login {
+color:#666666;
+float:left;
+font-size:0.8em;
+padding-left:12em;
+padding-top:12em;
+}
+	}
+	
+		#login span {
+			padding: 0 10px;
+		}
+		
+		#login label {
+			margin: 0 5px 0 10px;
+		}
+	
+		#login input {			
+			width: 60px;
+			background: #FFF;
+			color: #666;
+		}
+		
+		#login .btn {
+			width: 20px;
+		}
+		
+		#login a:link, #login a:hover, #login a:visited {
+			text-decoration: none;
+			color: #666;
+			margin-left: 10px;
+		} 
+		
+#main {
+background:url("../img/mainBg.jpg") repeat scroll top right transparent;
+display:block;
+float:right;
+}	
+	
+		#left {
+			width: 165px;
+			float: left;
+			color: #333;
+			font-size: 0.9em;
+		}
+	
+		#menu {
+			list-style-type: none;
+		}
+		
+			#menu a:link, #menu a:hover, #menu a:visited {
+				color: #666;
+				text-decoration: none;
+			} 
+
+			#menu li {
+				
+				background-image: url("../img/buttonBg.gif");
+				background-repeat: repeat-y;
+				
+				line-height: 34px;
+				padding-left: 10px;
+				color: #666;
+				font-size: 1.2em;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			
+				#menu li a {
+					display: block;
+					width: 100%;
+				}
+			
+			li.active {
+				background-image: url("../img/buttonBgAll.gif") !important;
+			}
+			
+			.active a:link, .active a:hover, .active a:visited {
+				color: #FFF !important;
+			}
+			
+			#left p {
+				margin: 20px;
+			}
+			
+			#left p a:link, #left p a:hover, #left p a:visited {
+				color: #333;
+				font-weight: bold;
+			}
+			
+			#carritoMenu {
+				color: #002487;
+			}
+			
+			#carritoMenu ol {
+				list-style-position: inside;
+				width: 145px;
+				margin-left: 10px;
+				border-bottom: 1px solid #C1C1C1;
+				padding-bottom: 5px;
+				margin-bottom: 5px;
+			}
+			
+			#carritoMenu ol.noborder {
+				border: 0 none;
+			}
+			
+			ol li.first {
+				list-style-type: none;
+				border-bottom: 1px solid #C1C1C1;
+				padding-bottom: 5px;
+				margin-bottom: 5px;
+			}
+			
+			#carritoMenu p {
+				margin: 0 !important;
+				padding: 0  !important;
+			}
+			
+			ol li div {
+				margin-left: 80px;
+				_position: relative;
+				_top: -15px;
+			}
+			
+			ol li.first img {
+				float: left;
+				padding-right: 10px;
+				_margin-top: 5px;
+			}
+			
+			#carritoMenu .totales {
+				margin: 0 0 10px 10px !important;
+			}
+			
+			#carritoMenu .links {
+				margin: 10px !important;
+				text-align: center;
+			}
+			
+				#carritoMenu .links img {
+					margin-bottom: 1px;
+				}
+			
+		#content {
+			width: 610px;
+			margin-top: 1px;
+			float: right;
+			min-height:500px;
+		}
+		
+		#block {
+			float: right;
+			position: relative;
+			left: -25px;
+			top: -9px;
+		}
+		
+			#block div {
+				background: #FFF;
+				width: 20px;
+				height: 10px;
+				position: absolute;
+			}
+		
+		.text {
+			margin: 0 40px 0 20px;
+			color: #000;
+			font-size: 0.9em;
+		}
+		
+			.text p {
+				margin: 0 0 15px 0;
+			}
+			
+			.text a:link, .text a:visited {
+				color: #666;
+			}
+
+			.text a:hover {
+				color: #00529c;
+			}
+				
+		#bottom {
+			clear: both;
+		}
+		
+		#footer {
+			text-align: left;
+			color: #666;
+			font-size: 0.85em;
+			padding-bottom:20px;
+		}
+			#footer span {
+				color:#00529C;
+				font-weight:bold;
+			}
+			#footer a {
+				color:#00529C;
+				text-decoration:none;
+			}
+			#footer a:hover {
+				color:#666;
+			}
+		
+.exito {
+	color: #24A22C;
+	padding-top: 5px;
+	font-weight: bold;
+}
+
+.error {
+	font-weight: bold;
+}
+
+#errorLog {
+	color: #F00;
+	float: right;
+	padding-top: 10px;
+}
+
+/* Banners */
+
+.banner {
+	background-image: url('../img/topBanner.jpg');
+	background-repeat: repeat-y;
+	height: 61px;
+	text-align: right;
+	padding: 17px 40px 20px 0;
+	margin: 0;
+}
+
+/* Floating pop up */
+
+#dropin {
+	width:605px;
+	height:262px;
+	position:absolute;
+	visibility:hidden;
+	left:200px;
+	top:100px;
+	display:block;
+}
+	#dropin img {
+	}
+	#dropin  a {
+		display:block;
+		width:595px;
+		background-color:#231f20;
+		text-decoration:none;
+		color:#666;
+		text-align:right;
+		padding:5px 5px 5px 0;
+	}
+#crear-usuario input {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:60px;
+margin-left:6px;
+}
+.crear-usuario p {
+padding-bottom:10px;
+padding-left:10px;
+}
+#lista-usuarios ul {
+padding-left:20px;
+font-size:14px;
+}
+#lista-usuarios ul li a {
+padding-left:20px;
+color:#000;
+}
+#lista-usuarios ul li {
+padding-top:15px;
+padding-left:10px;
+}
+#lista-usuarios {
+color:#666666;
+float:left;
+padding-left:20px;
+}
+#datos-factura {
+padding-left:20px;
+}
+#datos-factura p {
+padding-bottom:10px;
+padding-left:10px;
+}
+#datos-factura p span {
+width:160px;
+float:left;
+}
+#datos-factura input {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+margin-left:6px;
+}
+#datos-comprador {
+padding-left:20px;
+}
+#datos-comprador p {
+padding-bottom:10px;
+padding-left:10px;
+}
+#datos-comprador input {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+margin-left:6px;
+}
+#error-factura  h4{
+font-size:15px;
+text-align:center;
+width:578px;
+color:red;
+padding-bottom:30px;
+}
+#crear-usuario {
+padding-left:10px;
+}
+#datos-reparacion input {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+}
+#datos-reparacion {
+padding-left:10px;
+}
+.form-datos-reparacion p{
+padding-left:10px;
+padding-top:10px;
+}
+.msgerror {
+color:red;
+font-weight:bold;
+font-size:12px;
+padding-top:10px;
+}
+#repuestos {
+border:1px solid #666666;
+font-size:13px;
+height:180px;
+overflow:auto;
+text-decoration:none;
+width:483px;
+}
+#repuestos li {
+padding-left:15px;
+}
+#repuestos a {
+padding-left:10px;
+padding-right:10px;
+float:right;
+color:#666666;
+}
+.form-datos-reparacion {
+padding-bottom:10px;
+}
+#cuadro-repuestos h4 {
+padding-bottom:5px;
+color:#00529C;
+font-weight:normal;
+}
+#solicitar-autorizacion {
+padding-left:15px;
+}
+#solicitar-autorizacion input, #solicitar-autorizacion textarea {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+}
+#solicitar-autorizacion p {
+padding-bottom:10px;
+}
+#verificar {
+float:right;}
+#series p {
+padding-top:10px;
+padding-bottom:10px;}
+#submit {
+background:#f3f3f3!important;
+cursor:pointer;
+}
+.datos-comprador p span {
+width:100px;
+float:left;
+}
+.form-datos-reparacion p span {
+width:180px;
+float:left;
+}
+#cuadro-repuestos {
+padding-left:10px;
+padding-top:10px;}
+.form-datos-reparacion select {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+}
+#gracias {
+border:1px solid;
+float:none;
+font-size:13px;
+margin-left:39px;
+text-align:center;
+width:500px;
+}
+#lista-usuarios span {
+width:360px;
+float:left;
+}
+#crear-user a:hover{
+color:#666666;
+}
+#crear-user a {
+color:#000;
+}
+.crear-usuario p span {
+width:130px;
+float:left;
+}
+.crear-usuario input {
+width:130px!important;
+}
+#eliminar input {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #666666;
+color:#666666;
+width:100px;
+}
+#eliminar {
+padding-left:15px;
+}
+#eliminar p {
+font-size:13px;
+padding-bottom:10px;
+}
+#lista-repuestos {
+width:360px;}
+.agregar-repuesto {
+margin-left:180px;
+margin-top:10px;
+}
+.ui-state-default {
+width:25px;
+height:25px;
+}
+#ui-datepicker-div {
+width:240px;
+}
+.ui-datepicker td {
+font-size:13px;
+}
+.ui-datepicker .ui-datepicker-header {
+height:50px;
+}
+.ui-datepicker .ui-datepicker-title {
+font-size:18px;
+}
+.ui-datepicker th {
+font-size:14px;
+}
+#panel-admin {
+font-size:19px;
+padding-left:40px;
+}
+#panel-admin ul li a:hover {
+color:#00529C;
+}
+#panel-admin ul li a{
+padding-bottom:10px;
+color:#000;}
+#panel-admin ul li {
+padding-bottom:15px;
+}
+.producto {
+font-size:14px;
+color:#00529C;}
+th {
+padding-left:22px;
+padding-right:22px;
+text-align:center;
+width:100px;
+}
+.costo-total {
+border:1px solid #666666;
+height:50px;
+text-align:center;
+width:550px;
+}
+.costo-total span {
+color:#000000;
+display:block;
+font-size:14px;
+padding-top:4px;
+}
+#pedidos-usuarios table {
+padding-bottom:20px;
+width:550px;
+}
+#datos-garantia {
+padding-left:20px;
+}
+#datos-garantia p {
+padding-bottom:10px;
+padding-left:10px;
+float:left;
+}
+#datos-garantia p span {
+float:left;
+width:160px;
+}
+#pedidos-usuarios {
+float:left;
+padding-top:15px;
+}
+#datos-garantia .indicar {
+width:100%;
+}
+.costo {
+padding-bottom:20px;
+}
+#pedidos-usuarios .primero {
+border-left:1px dashed #666666;
+}
+#pedidos-usuarios .ultimo {
+border-right:1px dashed #666666;
+}
+#pedidos-usuarios th {
+border-left:1px dashed #666666;
+border-bottom:1px dashed #666666;
+border-top:1px dashed #666666;
+}
+#pedidos-usuarios .thultimo {
+border-right:1px dashed #666666;
+}
+.exportar {
+display:block;
+float:left;
+text-align:center;
+width:110px;
+font-size:14px;
+color:#000;
+}
+.exportar a:hover {
+color:#666666;
+border:1px solid #666666;
+}
+.exportar a {
+border:1px solid #000000;
+color:#000000;
+display:block;
+width:110px;
+}
+#solicitar-autorizacion span{
+width:180px;
+float:left;
+}
+#solicitar-autorizacion  textarea {
+width:300px;
+}
+#precios table {
+width:550px;
+}
+#precios {
+width:565px;
+}
+#precios table td {
+margin-bottom:10px;
+width:400px;
+}
+#rankings {
+float:none;
+margin:0 auto;
+padding:0;
+width:500px;
+}
+#rankings h3 {
+text-align:center;
+}
+#rankings table {
+float:none;
+margin:0 auto;
+padding:0;
+}
+#precios1 {
+width:500px;
+}
+#precios1 .centrar {
+    float: none;
+    margin: 0 auto;
+    padding: 10px 0 0;
+    width: 110px;
+}
+#precios {
+padding:20px;
+}
+#pendientes ul li span {
+float:left;
+padding-bottom:5px;
+padding-left:20px;
+padding-top:5px;
+width:380px;
+}
+#pendientes ul li {
+border-bottom:1px dashed;
+display:block;
+height:109px;
+}
+#pendientes {
+padding:20px;
+width:530px;
+}
+#pendientes ul li input{
+display:block;
+position:relative;
+top:62px;
+}
+#contacto {
+padding:0 20px;
+width:500px;
+}
+#contacto p {
+padding-bottom:10px;
+padding-top:10px;
+}
+#contacto textarea {
+height:150px;
+width:325px;
+}
+#ingresar_productos{
+float:none;
+margin:0 auto;
+padding:0;
+width:500px;
+}
+#ingresar_productos #productos-ingresados .siguiente {
+background:none repeat scroll 0 0 #F3F3F3;
+padding:1px 3px;
+border:1px solid #666666;
+color:#666666;
+width:150px;
+display:block;
+float:right;
+text-align:center;
+}
+#productos-ingresados a {
+color:#00529C;
+}
+#productos-ingresados ul {
+padding-bottom:10px;
+}
+#pendientes #info, #eliminar_rep #info {
+    float: left;
+    width: 335px;
+}
+#pendientes #form {
+    float: left;
+    height: 100px;
+    width: 185px;
+}
+#precios1 p {
+	padding-left:10px;
+}

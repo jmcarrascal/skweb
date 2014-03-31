@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+div.blockMsg {
+    width:  20%;
+    top:    10%;
+    left:   10%;
+    text-align: center;
+   
+    font-family: arial;
+    font-size: 8;
+   
+    opacity:.9;
+   
+    color: #fff;
+}

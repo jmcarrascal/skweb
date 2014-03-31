@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+       xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://jax-ws.dev.java.net/spring/core
+        http://jax-ws.dev.java.net/spring/core.xsd
+        http://jax-ws.dev.java.net/spring/servlet
+        http://jax-ws.dev.java.net/spring/servlet.xsd">
+	
+	
+	<!-- Importa el data source -->
+	<!--<import resource="applicationContextHibernateDPIDesa.xml" /> -->
+	<import resource="applicationContextHibernate.xml" />
+
+
+	<!-- Hibernate session factory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<!--<prop key="hibernate.default_schema">jj</prop> -->
+				<prop key="hibernate.default_schema">Empresa1.dbo</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.use_sql_comments">true</prop>				
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.connection.SetBigStringTryClob">true</prop>
+				<prop key="hibernate.format_sql">true</prop>				
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>jmc.skweb.core.model.Parametrizacion</value>
+				<value>jmc.skweb.core.model.Gente</value>				
+				<value>jmc.skweb.core.model.Existencias</value>
+				<value>jmc.skweb.core.model.Fam</value>
+				<value>jmc.skweb.core.model.SubFam</value>
+				<value>jmc.skweb.core.model.Stock</value>
+				<value>jmc.skweb.core.model.ExiArt</value>
+				<value>jmc.skweb.core.model.Transac</value>
+				<value>jmc.skweb.core.model.TipoComprob</value>
+				<value>jmc.skweb.core.model.ArtMadre</value>
+				<value>jmc.skweb.core.model.DondeEstaFactuMail</value>
+				<value>jmc.skweb.core.model.Preferencias</value>
+				<value>jmc.skweb.core.model.UsuarioWeb</value>
+				<value>jmc.skweb.core.model.EmpresaWeb</value>
+				<value>jmc.skweb.core.model.Rol</value>
+				<value>jmc.skweb.core.model.Vendedor</value>
+				<value>jmc.skweb.core.model.Paseban</value>
+				<value>jmc.skweb.core.model.Imagenes</value>
+				<value>jmc.skweb.core.model.Items</value>
+				<value>jmc.skweb.core.model.ClieArticPrecio</value>
+				<value>jmc.skweb.core.model.Impuestos</value>
+				<value>jmc.skweb.core.model.Numeraciones</value>
+				<value>jmc.skweb.core.model.Domicilios</value>
+				<value>jmc.skweb.core.model.Operadores</value>
+				<value>jmc.skweb.core.model.shortEntities.GenteBasic</value>				
+				<value>jmc.skweb.core.model.ImagenesArticulos</value>	
+				<value>jmc.skweb.core.model.StockPiezas</value>	
+				<value>jmc.skweb.core.model.Colores</value>	
+				<value>jmc.skweb.core.model.Condi</value>	
+				<value>jmc.skweb.core.model.EstadiTipoReporte</value>	
+				<value>jmc.skweb.core.model.EstadiOrigen</value>	
+				<value>jmc.skweb.core.model.EstadiReporte</value>	
+				</list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+
+
+	<!-- Transaction Proxy Template -->
+	<bean id="transactionProxyTemplate" abstract="true" lazy-init="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="proxyTargetClass" value="true" />
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,timeout_300</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="services" scope="request"	class="jmc.skweb.ui.struts.actions.ServicesAction">
+		<property name="parametrizacionManager" ref="ParametrizacionManager" />
+		<property name="articuloManager" ref="ArticuloManager" />
+		<property name="cuentaCorrienteManager" ref="CuentaCorrienteManager" />
+		<property name="tesoreriaManager" ref="TesoreriaManager" />
+		<property name="transaccionManager" ref="TransaccionManager" />
+		<property name="usuarioManager" ref="UsuarioManager" />
+		<property name="reportManager" ref="ReportManager" />
+	</bean>
+
+	<bean id="users" scope="request"
+		class="jmc.skweb.ui.struts.actions.UsersAction">
+		<property name="parametrizacionManager" ref="ParametrizacionManager" />
+		<property name="usuarioManager" ref="UsuarioManager" />
+	</bean>
+
+	<bean id="login" scope="request" class="jmc.skweb.ui.struts.actions.LoginAction">
+		<property name="parametrizacionManager" ref="ParametrizacionManager" />
+		<property name="usuarioManager" ref="UsuarioManager" />
+	</bean>
+
+
+	<bean id="ParametrizacionManager" class="jmc.skweb.core.service.impl.ParametrizacionManagerImpl"
+		scope="request">
+		<property name="parametrizacionDAO" ref="ParametrizacionDAO" />
+	</bean>
+
+	<bean id="ArticuloManager" class="jmc.skweb.core.service.impl.ArticuloManagerImpl">
+		<property name="existenciasDAO" ref="ExistenciasDAO" />
+		<property name="famDAO" ref="FamDAO" />
+		<property name="subFamDAO" ref="SubFamDAO" />
+		<property name="stockDAO" ref="StockDAO" />
+		<property name="exiArtDAO" ref="ExiArtDAO" />
+		<property name="extendedStockDAO" ref="ExtendedStockDAO" />
+		<property name="extendedStockPiezasDAO" ref="ExtendedStockPiezasDAO" />
+		<property name="extendedExiArtDAO" ref="ExtendedExiArtDAO" />
+		<property name="extendedFamDAO" ref="ExtendedFamDAO" />
+		<property name="extendedSubFamDAO" ref="ExtendedSubFamDAO" />
+		<property name="extendedGenteDAO" ref="ExtendedGenteDAO" />
+		<property name="extendedGenteBasicDAO" ref="ExtendedGenteBasicDAO" />
+		<property name="extendedTransacDAO" ref="ExtendedTransacDAO" />
+		<property name="extendedArtMadreDAO" ref="ExtendedArtMadreDAO" />
+		<property name="dondeEstaFactuMailDAO" ref="DondeEstaFactuMailDAO" />
+		<property name="parametrizacionDAO" ref="ParametrizacionDAO" />	
+		<property name="imagenesArticulosDAO" ref="ImagenesArticulosDAO" />
+		<property name="estadiTipoReporteDAO" ref="EstadiTipoReporteDAO" />
+				
+	</bean>
+
+	<bean id="TransaccionManager" class="jmc.skweb.core.service.impl.TransaccionManagerImpl"
+		scope="request">
+		<property name="extendedGenteDAO" ref="ExtendedGenteDAO" />
+		<property name="extendedItemsDAO" ref="ExtendedItemsDAO" />
+		<property name="extendedTransacDAO" ref="ExtendedTransacDAO" />
+		<property name="tipoComprobDAO" ref="TipoComprobDAO" />
+		<property name="dondeEstaFactuMailDAO" ref="DondeEstaFactuMailDAO" />
+		<property name="extendedClieArticPrecioDAO" ref="ExtendedClieArticPrecioDAO" />
+		<property name="extendedStockDAO" ref="ExtendedStockDAO" />
+		<property name="numeracionesDAO" ref="NumeracionesDAO" />
+		<property name="extendedDomiciliosDAO" ref="ExtendedDomiciliosDAO" />
+		<property name="usuarioManager" ref="UsuarioManager" />
+		<property name="parametrizacionDAO" ref="ParametrizacionDAO" />
+		<property name="coloresDAO" ref="ColoresDAO" />
+		<property name="extendedTrazabiDAO" ref="ExtendedTrazabiDAO" />	
+		<property name="extendedCondiDAO" ref="ExtendedCondiDAO" />									
+		<property name="estadiTipoReporteDAO" ref="EstadiTipoReporteDAO" />	
+		<property name="estadiOrigenDAO" ref="EstadiOrigenDAO" />
+		<property name="estadiReporteDAO" ref="EstadiReporteDAO" />
+	</bean>
+	
+	<bean id="ReportManager" class="jmc.skweb.core.service.impl.ReportManagerImpl"
+		scope="request">
+		<property name="parametrizacionDAO" ref="ParametrizacionDAO" />
+		<property name="extendedTransacDAO" ref="ExtendedTransacDAO" />
+		<property name="transaccionManager" ref="TransaccionManager" />
+		<property name="empresaWebDAO" ref="EmpresaWebDAO" />
+		<property name="estadiReporteDAO" ref="EstadiReporteDAO" />
+		<property name="estadiOrigenDAO" ref="EstadiOrigenDAO" />
+	</bean>
+
+	<bean id="CuentaCorrienteManager" class="jmc.skweb.core.service.impl.CuentaCorrienteManagerImpl"
+		scope="request">
+		<property name="extendedGenteDAO" ref="ExtendedGenteDAO" />
+		<property name="extendedTransacDAO" ref="ExtendedTransacDAO" />
+		<property name="tipoComprobDAO" ref="TipoComprobDAO" />
+		<property name="dondeEstaFactuMailDAO" ref="DondeEstaFactuMailDAO" />
+	</bean>
+
+	<bean id="TesoreriaManager" class="jmc.skweb.core.service.impl.TesoreriaManagerImpl"
+		scope="request">
+		<property name="extendedGenteDAO" ref="ExtendedGenteDAO" />
+		<property name="extendedTransacDAO" ref="ExtendedTransacDAO" />
+		<property name="tipoComprobDAO" ref="TipoComprobDAO" />
+		<property name="extendedPasebanDAO" ref="ExtendedPasebanDAO" />
+		<property name="extendedImagenesDAO" ref="ExtendedImagenesDAO" />
+	</bean>
+
+	<bean id="UsuarioManager" class="jmc.skweb.core.service.impl.UsuarioManagerImpl"
+		scope="request">
+		<property name="genteDAO" ref="GenteDAO" />
+		<property name="usuarioWebDAO" ref="UsuarioWebDAO" />
+		<property name="preferenciasDAO" ref="PreferenciasDAO" />
+		<property name="empresaWebDAO" ref="EmpresaWebDAO" />
+		<property name="rolDAO" ref="RolDAO" />
+		<property name="extendedVendedorDAO" ref="ExtendedVendedorDAO" />
+		<property name="extendedOperadoresDAO" ref="ExtendedOperadoresDAO" />
+		<property name="parametrizacionDAO" ref="ParametrizacionDAO" />	
+	</bean>
+
+	<bean id="ParametrizacionDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Parametrizacion</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="EstadiTipoReporteDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.EstadiTipoReporte</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="EstadiOrigenDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.EstadiOrigen</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+
+	
+	
+	
+	
+	
+	<bean id="EstadiReporteDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.EstadiReporte</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+			
+	<bean id="NumeracionesDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Numeraciones</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>		
+
+	<bean id="TipoComprobDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.TipoComprob</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="RolDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Rol</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="ColoresDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Colores</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+
+
+	<bean id="ImagenesArticulosDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.ImagenesArticulos</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="EmpresaWebDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.EmpresaWeb</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+
+	<bean id="PreferenciasDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Preferencias</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExiArtDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.ExiArt</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="DondeEstaFactuMailDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.DondeEstaFactuMail</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+
+
+	<bean id="GenteDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Gente</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean id="FamDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Fam</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="SubFamDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.SubFam</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="StockDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Stock</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExistenciasDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.Existencias</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="UsuarioWebDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenericDAOImpl">
+				<constructor-arg>
+					<value>jmc.skweb.core.model.UsuarioWeb</value>
+				</constructor-arg>
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedStockDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.StockDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<bean id="ExtendedCondiDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.CondiDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="ExtendedStockPiezasDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.StockPiezasDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="ExtendedDomiciliosDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.DomiciliosDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedTrazabiDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.TrazabiDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedImagenesDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.ImagenesDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedPasebanDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.PasebanDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedClieArticPrecioDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.ClieArticPrecioDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedVendedorDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.VendedorDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+
+	<bean id="ExtendedArtMadreDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.ArtMadreDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedTransacDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.TransacDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedItemsDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.ItemsDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedOperadoresDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.OperadoresDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean id="ExtendedGenteDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenteDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedGenteBasicDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.GenteBasicDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedExiArtDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.ExiArtDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedFamDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.FamDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ExtendedSubFamDAO" parent="transactionProxyTemplate">
+		<property name="target">
+			<bean class="jmc.skweb.core.dao.impl.SubFamDAOImpl">
+				<property name="sessionFactory">
+					<ref bean="sessionFactory" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+
+    <!-- Web service methods -->
+    <bean id="serviceArticuloWS" class="jmc.skweb.ui.ws.ServiceArticuloWS" >
+		<property name="extendedFamDAO" ref="ExtendedFamDAO" />
+		<property name="articuloManager" ref="ArticuloManager" />
+    </bean>
+    
+    <wss:binding url="/webServices.services">
+        <wss:service>
+            <ws:service bean="#serviceArticuloWS"/>
+        </wss:service>
+    </wss:binding>
+    
+	
+</beans>

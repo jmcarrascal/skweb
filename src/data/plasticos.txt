@@ -1,0 +1,30 @@
+Parametrizacion,ComunSql.dbo
+Gente,ComunSql.dbo				
+Existencias,ArtPlas.dbo
+Fam,ArtPlas.dbo
+SubFam,ArtPlas.dbo
+Stock,ArtPlas.dbo
+ExiArt,ArtPlas.dbo
+Transac,Plasticos.dbo
+TipoComprob,Plasticos.dbo
+ArtMadre,ComunSql.dbo
+DondeEstaFactuMail,ComunSql.dbo
+Preferencias,Plasticos.dbo
+UsuarioWeb,ComunSql.dbo
+EmpresaWeb,ComunSql.dbo
+Rol,ComunSql.dbo
+Vendedor,ComunSql.dbo
+Paseban,Teso.dbo
+Imagenes,Imagenes.dbo
+Items,Plasticos.dbo
+ClieArticPrecio,ComunSql.dbo
+Impuestos,Plasticos.dbo
+Numeraciones,Plasticos.dbo
+Domicilios,ComunSql.dbo
+Operadores,ComunSql.dbo
+ImagenesArticulos,Imagenes.dbo
+Condi,ComunSql.dbo
+Colores,ComunSql.dbo
+EstadiTipoReporte, ComunSql.dbo 
+EstadiOrigen, ComunSql.dbo 
+EstadiReporte, ComunSql.dbo 
