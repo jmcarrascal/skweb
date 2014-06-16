@@ -124,12 +124,16 @@ de Comprobante - Finalizar Transacción</b></legend>
 	rowsDisplayed="100" showPagination="false" showStatusBar="false"
 	showTitle="false" showTooltips="false" showExports="false">
 	<ec:row>
-		<ec:column width="80px" property="articulo" title="Clave"
-			sortable="true" sortable="false" filterable="false" />
+		<ec:column width="60px" property="articulo"
+					title="Clave" sortable="false" filterable="false" alias = "read1">
+					<span style="white-space: nowrap;">${items.articulo}</span>
+				</ec:column>
 		<ec:column width="40px" property="id.itemNr" title="Nr" sortable="false"
 			filterable="false" />
-		<ec:column width="auto" property="descrip" title="Articulo"
-			sortable="true" sortable="false" filterable="false" />
+		<ec:column width="60px" property="descrip"
+					title="Articulo" sortable="false" filterable="false" alias = "read2">
+					<span style="white-space: nowrap;">${items.descrip}</span>
+				</ec:column>
 		<%
 			if (logicaColor == -1){
 		%>

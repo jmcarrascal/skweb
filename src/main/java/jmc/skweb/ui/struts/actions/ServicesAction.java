@@ -3,7 +3,10 @@ package jmc.skweb.ui.struts.actions;
 
 
 import java.io.DataInputStream;
+
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang.xwork.StringUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -58,8 +61,6 @@ import jmc.skweb.util.PreferenciasUtil;
 import jmc.skweb.util.email.Email;
 import jmc.skweb.util.email.SendEmailThread;
 
-import org.apache.batik.script.Window.GetURLHandler;
-import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.extremecomponents.table.context.Context;
 import org.extremecomponents.table.context.HttpServletRequestContext;
@@ -69,7 +70,6 @@ import org.extremecomponents.table.limit.Limit;
 import org.extremecomponents.table.limit.LimitFactory;
 import org.extremecomponents.table.limit.TableLimit;
 import org.extremecomponents.table.limit.TableLimitFactory;
-
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -929,7 +929,7 @@ public class ServicesAction extends ActionSupport  {
 	 * 
 	 */
 	public String preparedFindGentePorNombre_CC_C() throws Exception {	        		
-		//Preguntar si el Rol es proveedor, por Sí Tomar el genteNr y envialo directo Pro No ir a buscar el 
+		//Preguntar si el Rol es proveedor, por S Tomar el genteNr y envialo directo Pro No ir a buscar el 
 		Usuario usuario = getUsuarioSesion();
 		return "showSoloImpagosC";
 	}
@@ -1073,7 +1073,7 @@ public class ServicesAction extends ActionSupport  {
 
 	/**
 	 * 
-	 * Agrega Items a la Transacción
+	 * Agrega Items a la Transaccin
 	 * 
 	 */
 	public String vaciarCarrito_Carr() throws Exception {	        												
@@ -1442,7 +1442,7 @@ public class ServicesAction extends ActionSupport  {
 
 		if (result.equals("error")){			
 		}else{
-			result = "Se ha generado la Transacción Nr. " + result;
+			result = "Se ha generado la Transaccin Nr. " + result;
 			
 		}
 		
@@ -1786,7 +1786,7 @@ public class ServicesAction extends ActionSupport  {
 		// Lista de Domicilios
 		ActionContext.getContext().getSession().put("domiciliosList", domiciliosList);
 		
-		//Listo Condición de Vta
+		//Listo Condicin de Vta
 		List<Condi> condiList = transaccionManager.getCondiAll();
 		
 		// Lista de Domicilios
@@ -2153,7 +2153,7 @@ public class ServicesAction extends ActionSupport  {
 
 	
 	/**
-	 * Envía el comprobante por Mail al cliente
+	 * Envï¿½a el comprobante por Mail al cliente
 	 * 
 	 */
 	public String sendComprobCliente() throws Exception {	        								
@@ -2163,7 +2163,7 @@ public class ServicesAction extends ActionSupport  {
 		
 		String result = "";
 		
-		//Obtengo la transacción
+		//Obtengo la transaccin
 		Transac transacN = transaccionManager.getTransacByPK(transac.getTransacNr());
 		
 		//Obtengo el domicilio que tiene como descripcion @adm
@@ -2174,15 +2174,15 @@ public class ServicesAction extends ActionSupport  {
 			//Obtengo el documento
 			File fileDownload = cuentaCorrienteManager.getComprobantePdf(transac.getTransacNr(), getUsuarioSesion());
 			
-			//Obtener la dirección de correo del destinatario
+			//Obtener la direcciï¿½n de correo del destinatario
 			Email email = new Email("Simpa - Comprobante Electronico","Se adjunta el Comprobante tipo: " + transacN.getTipoComprob().getDescripcion() + " Numero : " + transacN.getPrefijo() + "-" + transacN.getNrComprob(),fileDownload, domicilios.getInternet());
 			
 			usuarioManager.sendMail(email);
 			
-			result = "<div class = space/>" +"<div class = space/>"+ "<b>Se ha enviado el correo con éxito al la dirección de correo " + domicilios.getInternet() + "</b>";
+			result = "<div class = space/>" +"<div class = space/>"+ "<b>Se ha enviado el correo con ï¿½xito al la direcciï¿½n de correo " + domicilios.getInternet() + "</b>";
 		
 		}else{
-			result = "<div class = space/>" +"<div class = space/>"+ "<b>El agendado " + transacN.getGente().getRazonSocial() + " no tiene cargada una dirección de correo electrónico en su domicilio \"@adm\"</b>";
+			result = "<div class = space/>" +"<div class = space/>"+ "<b>El agendado " + transacN.getGente().getRazonSocial() + " no tiene cargada una direcciï¿½n de correo electrï¿½nico en su domicilio \"@adm\"</b>";
 		}		
 		
 		ServletOutputStream sos = null;

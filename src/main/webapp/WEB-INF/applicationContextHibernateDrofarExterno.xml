@@ -10,7 +10,7 @@
 			<value>net.sourceforge.jtds.jdbc.Driver</value>
 		</property>
 		<property name="jdbcUrl">
-			<value>jdbc:jtds:sqlserver://server:1433</value>
+			<value>jdbc:jtds:sqlserver://181.47.24.148:1433</value>
 		</property>
 		<property name="minPoolSize">
 			<value>1</value>

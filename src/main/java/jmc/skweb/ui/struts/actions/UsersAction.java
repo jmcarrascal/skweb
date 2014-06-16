@@ -32,7 +32,6 @@ import jmc.skweb.core.service.ParametrizacionManager;
 import jmc.skweb.core.service.UsuarioManager;
 import jmc.skweb.util.Constants;
 
-import org.apache.batik.script.Window.GetURLHandler;
 import org.apache.struts2.ServletActionContext;
 
 

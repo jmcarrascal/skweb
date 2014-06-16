@@ -18,6 +18,10 @@ insert into ComunSql.dbo.parametrizacion (idparametrizacion, descrip, valor) val
 insert into ComunSql.dbo.parametrizacion (idparametrizacion, descrip, valor) values (65,'mail.smtp.pass', 'ti26ti26');
 insert into ComunSql.dbo.parametrizacion (idparametrizacion, descrip, valor) values (70,'mail del Administrador', 'nicolas@infanti.com.ar');
 
+insert into empresa1.dbo.preferencias (nr, descrip, valor) values (195,'Puede usar el cambio masivo de precio/bonificacion en los items? 0.No -1.Si', 0);
+insert into empresa1.dbo.preferencias (nr, descrip, valor) values (196,'Cuando encuentra un Art por Cod preciso muestra los demas 0.No -1.Si', 0);
+insert into empresa1.dbo.preferencias (nr, descrip, valor) values (197,'Usa Lógica de Colores en Stock 0.No -1.Si', 0);
 insert into empresa1.dbo.preferencias (nr, descrip, valor) values (198,'Muestra cantidad de stock? 0.No -1.Si', 0);
 insert into empresa1.dbo.preferencias (nr, descrip, valor) values (199,'Muestra todas las existencias 0.No -1.Si', -1);
 insert into empresa1.dbo.preferencias (nr, descrip, valor) values (200,'Tipo de Vista Stock? 1=Completa, 2=Semaforo, 3=Formula Herramientas, 4=Tabla corta', 4);
+

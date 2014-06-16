@@ -1,8 +1,8 @@
 /*
 
- * Copyright 2008 Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires.  All Rights Reserved
+ * Copyright 2008 Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires.  All Rights Reserved
 
- * Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires Proprietary and Confidential.
+ * Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires Proprietary and Confidential.
 
  *
 
@@ -10,7 +10,7 @@
 
  * from unauthorized copy or use. The software source code represents and embodies
 
- * trade secrets of Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires and/or its licensors.
+ * trade secrets of Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires and/or its licensors.
 
  * The source code and embodied trade secrets are not licensed to you and any modification,
 
@@ -24,27 +24,27 @@
 
  *
 
- * Derecho de autor 2008 Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires.  Todos los derechos reservados.
+ * Derecho de autor 2008 Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires.  Todos los derechos reservados.
 
- * Propiedad de Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires y Confidencial.
+ * Propiedad de Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires y Confidencial.
 
  *
 
- * Por la presente acuerdo hacer mi mayor esfuerzo para proteger el software y la documentaci�n
+ * Por la presente acuerdo hacer mi mayor esfuerzo para proteger el software y la documentaci???n
 
- * de la copia o el uso no autorizados. El c�digo fuente del software representa e incluye
+ * de la copia o el uso no autorizados. El c???digo fuente del software representa e incluye
 
- * secretos comerciales de Direcci�n Provincial de Inform�tica de la Provincia de Buenos Aires y/o sus licenciantes. 
+ * secretos comerciales de Direcci???n Provincial de Inform???tica de la Provincia de Buenos Aires y/o sus licenciantes. 
 
- * No se le otorga licencia del c�digo fuente ni los secretos comerciales incluidos;
+ * No se le otorga licencia del c???digo fuente ni los secretos comerciales incluidos;
 
- * y cualquier modificaci�n, agregado o eliminaci�n se encuentra estrictamente prohibida.
+ * y cualquier modificaci???n, agregado o eliminaci???n se encuentra estrictamente prohibida.
 
  * Asimismo, por la presente me comprometo a no desarmar, descompilar, o de alguna forma utilizar
 
- * t�cnicas de ingenier�a inversa sobre el software para descubrir su fuente y/o los
+ * t???cnicas de ingenier???a inversa sobre el software para descubrir su fuente y/o los
 
- * secretos comerciales contenidos en el c�digo fuente.
+ * secretos comerciales contenidos en el c???digo fuente.
 
  *
 

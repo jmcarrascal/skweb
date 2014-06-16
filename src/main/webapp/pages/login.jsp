@@ -16,7 +16,7 @@
 		if (0) {
 			$("#pNavegador").show();
 		} else {	
-			$("#validateEmpresa table").show();	
+			$("#validateMS table").show();	
 		}
 	});
 </script>
@@ -27,7 +27,7 @@
 	<div class="panel_100">
 		<div class="space"></div>
 		<div align="center">
-			<s:form action="validateEmpresa">
+			<s:form action="validateMS">
 				<table style="display: none">
 					<tr>
 						<td><s:textfield label="Usuario" name="usuario" /></td>

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 //@Table(name = "TipoComprob")
 //Simpa Plasticos
 //@Table(name = "TipoComprob", schema="Plasticos.dbo")
-@Table(name = "TipoComprob", schema = "Empresa1.dbo")
+@Table(name = "TipoComprob", schema = "TransacSQL.dbo")
 public class TipoComprob implements java.io.Serializable {
 
 	private int nr;

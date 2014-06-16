@@ -1,0 +1,31 @@
+Parametrizacion,ComunSql.dbo
+Gente,ComunSql.dbo				
+Existencias,ComunSql.dbo
+Fam,ComunSql.dbo
+SubFam,ComunSql.dbo
+Stock,ComunSql.dbo
+ExiArt,ComunSql.dbo
+Transac,TransacSQL.dbo
+TipoComprob,TransacSQL.dbo
+ArtMadre,ComunSql.dbo
+DondeEstaFactuMail,ComunSql.dbo
+Preferencias,TransacSQL.dbo
+UsuarioWeb,ComunSql.dbo
+EmpresaWeb,ComunSql.dbo
+Rol,ComunSql.dbo
+Vendedor,ComunSql.dbo
+Paseban,TransacSQL.dbo
+Imagenes,ComunSql.dbo
+Items,TransacSQL.dbo
+ClieArticPrecio,ComunSql.dbo
+Impuestos,TransacSQL.dbo
+Numeraciones,TransacSQL.dbo
+Domicilios,ComunSql.dbo
+Operadores,ComunSql.dbo
+ImagenesArticulos,Imagenes.dbo
+Condi,ComunSql.dbo
+Colores,ComunSql.dbo
+EstadiTipoReporte, ComunSql.dbo 
+EstadiOrigen, ComunSql.dbo 
+EstadiReporte, ComunSql.dbo 
+StockPiezas, ComunSql.dbo 

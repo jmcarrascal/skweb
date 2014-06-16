@@ -2,19 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Antecedentes</groupId>
-	<artifactId>Antecedentes</artifactId>
+	<groupId>skweb</groupId>
+	<artifactId>skweb</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Antecedentes Maven Webapp</name>
+	<name>skweb</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-		
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.16</version>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -252,12 +246,12 @@
 			</exclusions>
 		</dependency>
 
-<dependency>
-	<groupId>org.springframework.security</groupId>
-	<artifactId>spring-security-web</artifactId>
-	<version>3.1.0.RELEASE</version>
-</dependency>
-            
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -291,6 +285,37 @@
 			<artifactId>itext</artifactId>
 			<version>1.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>5.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.extremecomponents</groupId> -->
+<!-- 			<artifactId>extremecomponents</artifactId> -->
+<!-- 			<version>1.0.4</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>net.sourceforge.jtds</groupId>
+			<artifactId>jtds</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -306,6 +331,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>Antecedentes</finalName>
+		<finalName>skweb</finalName>
 	</build>
 </project>

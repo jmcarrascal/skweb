@@ -17,19 +17,20 @@ public class SetSchema {
 	/**
 	 * @param args
 	 */
-	private String rutaArchivos = "C:/Eclipse WS/Eclipse WSDPI/skweb/src/data/";
+	private String rutaArchivos = "/Users/juanmanuelcarrascal/projects/jmc/skweb/src/data/";
 	
 	private String anotacion = "@Table";
 	
 	public static void main(String[] args) {			
 		
 		//Recorrer los archivos
-		String rutaModel = "C:/Eclipse WS/Eclipse WSDPI/skweb/src/main/java/jmc/skweb/core/model/";
-		String empresa = "local.txt";
+		String rutaModel = "/Users/juanmanuelcarrascal/projects/jmc/skweb/src/main/java/jmc/skweb/core/model/";
+//		String empresa = "local.txt";
 //		String empresa = "plasticos.txt";
 //		String empresa = "herramientas.txt";
 //		String empresa = "texsur.txt";
 //		String empresa = "localL.txt";
+		String empresa= "drofar.txt";
 		File repositorio = new File(rutaModel);
 		File[] fileList = repositorio.listFiles();
 		SetSchema setSchema = new SetSchema();

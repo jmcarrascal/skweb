@@ -19,7 +19,7 @@ import jmc.skweb.util.MathUtil;
  */
 @Entity
 //@Table(name = "Paseban", schema = "Empresa1.dbo")
-@Table(name = "Paseban", schema = "Empresa1.dbo")
+@Table(name = "Paseban", schema = "TransacSQL.dbo")
 public class Paseban implements java.io.Serializable {
 
 	private Integer transacNr;

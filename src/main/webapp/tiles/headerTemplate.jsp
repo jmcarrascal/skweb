@@ -23,6 +23,7 @@
 	</div>
 	
 		<%
+			System.out.println("Rol: " + usuarioActual.getRol());
 			switch (usuarioActual.getRol()) {
 			case Constants.ID_USR_VENDEDOR:
 		%>
@@ -122,6 +123,7 @@
 		<%
 			break;
 			case Constants.ID_USR_PROVEEDOR:
+				
 		%>
 			<div id="menu" >
 		    <ul class="menu">
@@ -140,6 +142,7 @@
 		<%
 			break;
 			case Constants.ID_USR_ADMIN:
+			System.out.println("Entro por adminv");
 		%>
 			<div id="menu" >
 		    <ul class="menu">
@@ -172,6 +175,7 @@
 		<%
 			break;
 			case Constants.ID_USR_TRAZA:
+			
 		%>
 			<div id="menu" >
 		    <ul class="menu">

@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
-<%@ page import="jmc.skweb.core.model.Items" %>
+<%@ page import="jmc.skweb.core.model.Items"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
@@ -12,7 +12,7 @@
 <link href="<%=request.getContextPath()%>/css/styles.css"
 	rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/blockuiv1.css"
-	rel="stylesheet" type="text/css" />	
+	rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/jquery-ui.css"
 	rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/popup.css"
@@ -23,8 +23,7 @@
 <script src="<%=request.getContextPath()%>/js/jquery.blockUI.js"
 	type="text/javascript"></script>
 
-<script
-	src="<%=request.getContextPath()%>/js/jquery.autocomplete.js"
+<script src="<%=request.getContextPath()%>/js/jquery.autocomplete.js"
 	type="text/javascript"></script>
 
 <script type="text/javascript"
@@ -936,32 +935,38 @@ function callGetStock(articuloClave) {
 	
 </script>
 <%
-			//Tomar el usuario desde el Request
-			Usuario usuarioActual = (Usuario) request.getSession().getAttribute("usuario");
-			int logicaColor = 0;
-			if (PreferenciasUtil.comparePreferencia(usuarioActual.getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1){
-				logicaColor = -1;
-			}
-			int usaCambioMasivo = 0;
-			if (PreferenciasUtil.comparePreferencia(usuarioActual.getListPreferencias(), Constants.PREF_ID_USA_CAMBIOS_MASIVO) == -1){
-				usaCambioMasivo = -1;
-			}
-			int usaCadenaBonif = 0;
-			if (PreferenciasUtil.comparePreferencia(usuarioActual.getListPreferencias(), Constants.PREF_ID_USA_CADENA_BONIF) == -1){
-				usaCadenaBonif = -1;
-			}
-			if (usuarioActual.getRol() == 5){
-				usaCambioMasivo = 0;
-			}
-			
+	//Tomar el usuario desde el Request
+	Usuario usuarioActual = (Usuario) request.getSession()
+			.getAttribute("usuario");
+	int logicaColor = 0;
+	if (PreferenciasUtil.comparePreferencia(
+			usuarioActual.getListPreferencias(),
+			Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1) {
+		logicaColor = -1;
+	}
+	int usaCambioMasivo = 0;
+	if (PreferenciasUtil.comparePreferencia(
+			usuarioActual.getListPreferencias(),
+			Constants.PREF_ID_USA_CAMBIOS_MASIVO) == -1) {
+		usaCambioMasivo = -1;
+	}
+	int usaCadenaBonif = 0;
+	if (PreferenciasUtil.comparePreferencia(
+			usuarioActual.getListPreferencias(),
+			Constants.PREF_ID_USA_CADENA_BONIF) == -1) {
+		usaCadenaBonif = -1;
+	}
+	if (usuarioActual.getRol() == 5) {
+		usaCambioMasivo = 0;
+	}
 %>
 
 
 <html>
-<s:form action="finComprob_Tran" id="finComprobForm">	
+<s:form action="finComprob_Tran" id="finComprobForm">
 	<s:hidden key="gente.genteNr" id="idAgendadoFinCombrobTran" />
-	<s:hidden key="countItems" id="idCountItemsHidden"/>
-	<s:hidden key="gente.idRol" id="idRolHidden"/>
+	<s:hidden key="countItems" id="idCountItemsHidden" />
+	<s:hidden key="gente.idRol" id="idRolHidden" />
 </s:form>
 
 <s:form action="removeItem_OP" id="removeItemForm">
@@ -972,569 +977,657 @@ function callGetStock(articuloClave) {
 </s:form>
 
 <s:form action="guardarCarrito_Carr" id="guardarCarritoForm">
-<s:hidden key="gente.genteNr"  />
+	<s:hidden key="gente.genteNr" />
 </s:form>
 
 <s:form action="preparedFindArticuloPorFlia_Carr" id="addProductosForm">
-<s:hidden key="gente.genteNr" />
+	<s:hidden key="gente.genteNr" />
 </s:form>
 
 
 
-		<div class="panel_100 tab">
-	    	<div class="space"></div>
+<div class="panel_100 tab">
+	<div class="space"></div>
 
 
-<fieldset class="defaultFieldset"><legend><b>Gestión
-de Comprobante -  Ingreso de Items del Comprobante</b></legend> 
+	<fieldset class="defaultFieldset">
+		<legend>
+			<b>Gestión de Comprobante - Ingreso de Items del Comprobante</b>
+		</legend>
 
-					<div align="right"><img	src="<%=request.getContextPath()%>/images/general/Paso2_v1.png"  alt="Paso2" title="Paso2" border="0"></img></div>
+		<div align="right">
+			<img src="<%=request.getContextPath()%>/images/general/Paso2_v1.png"
+				alt="Paso2" title="Paso2" border="0"></img>
+		</div>
 
 
 
-<input type="hidden" id="idEstadoPantalla" value="0" />
-<input type="hidden" id="idLogicaColor" value="<%=logicaColor%>" />
-<input type="hidden" id="idCantidadItemsCargados" value="<%=((List<Items>)request.getSession().getAttribute("items_OP")).size()%>" />
+		<input type="hidden" id="idEstadoPantalla" value="0" /> <input
+			type="hidden" id="idLogicaColor" value="<%=logicaColor%>" /> <input
+			type="hidden" id="idCantidadItemsCargados"
+			value="<%=((List<Items>) request.getSession().getAttribute(
+					"items_OP")).size()%>" />
 
 
-<div class="space"></div>
-<div align="left">
-<s:label id="idRazonSocial" name="gente.descripC" cssClass="entidadGrande"/>
-<div class="separator"></div>
+		<div class="space"></div>
+		<div align="left">
+			<s:label id="idRazonSocial" name="gente.descripC"
+				cssClass="entidadGrande" />
+			<div class="separator"></div>
 
-<label class="label_00 field">Tipo de Comprobante:</label> 
-<b><s:label	name="transac.tipoComprob.descripcion" /></b>
-</div>
-<div class="space"></div>
-<%
-				if ( usaCambioMasivo == -1){
-%>
-						<div id="idSelectUnSelect" align="right" style="display: inline;"><img
-							src="images/general/icon_selec-deseleccionar.png" alt="Seleccionar todos" border="0">
-						</div>
-<%				
-					
-				}
-%>
-<ec:table tableId="notReg" items="itemsList" var="items" locale="es_ES"
-	action="listItems_OP" imagePath="images/table/*.gif" width="100%"
-	rowsDisplayed="100" filterable="false" showPagination="false" showStatusBar="false"
-	showTitle="false"  showTooltips="false" showExports="false">
-	<ec:row>
+			<label class="label_00 field">Tipo de Comprobante:</label> <b><s:label
+					name="transac.tipoComprob.descripcion" /></b>
+		</div>
+		<div class="space"></div>
 		<%
-				if ( usaCambioMasivo == -1){
+			if (usaCambioMasivo == -1) {
 		%>
-		<ec:column width="60" property="porcentajeImpuesto" title="Selec"
-			sortable="false" filterable="false" >	
-			<input type="checkbox" value="${items.id.itemNr}"> 
-		</ec:column>
-		<%
-				}
-		%>
-		<ec:column width="40px" title=" " filterable="false" sortable="false"
-			alias="read">
-			<%
-				if (logicaColor == -1){
-			%>			
-				<a href="#"> <img src="images/general/edit.png" 
-		          	alt="Editar Item" title=" Editar Item " 
-		          	onclick="editItem('${items.id.itemNr}', '${items.bonif}','${items.bonif1}','${items.bonif2}','${items.bonif3}','${items.bonif4}','','${items.clave}','${items.cant1}','${items.precio}','${items.colores.descrip}','${items.colores.nr}'  );" border="0" ></img>
-				</a>				
-			<%
-				}else{
-			%>
-				<a href="#"> <img src="images/general/edit.png" 
-		          	alt="Editar Item" title=" Editar Item " 
-		          	onclick="editItem('${items.id.itemNr}', '${items.bonif}','${items.bonif1}','${items.bonif2}','${items.bonif3}','${items.bonif4}','','${items.clave}','${items.cant1}','${items.precio}','','0' );" border="0" ></img>
-				</a>				
-
-			<%
-				}
-			%>
-
-			<a href="#"> <img src="images/general/remove.png"
-				alt=" Eliminar Item " title=" Eliminar Item"
-				onclick="removeItems('${items.id.itemNr}')" border="0"></img> </a>
-		</ec:column>
-		<ec:column width="80px" property="articulo" title="Clave"
-			sortable="true" sortable="false" filterable="false">
-		</ec:column>
-		<ec:column width="40px" property="id.itemNr" title="Nr" sortable="false"
-			filterable="false" >
-		</ec:column>
-		<ec:column width="auto" property="descrip" title="Articulo"
-			sortable="true" sortable="false" filterable="false" >
-			</ec:column>
-		<%
-			if (logicaColor == -1){
-		%>
-		<ec:column width="100" property="colores.descrip" title="Color"
-			sortable="false" filterable="false" >
-			</ec:column>		
+		<div id="idSelectUnSelect" align="right" style="display: inline;">
+			<img src="images/general/icon_selec-deseleccionar.png"
+				alt="Seleccionar todos" border="0">
+		</div>
 		<%
 			}
 		%>
-		<ec:column width="60" property="cant1" title="Cantidad"
-			sortable="false" filterable="false" >
-			</ec:column>
-		<ec:column width="60" property="precio" title="Precio Un"
-			sortable="false" filterable="false" >
-			</ec:column>
-		<ec:column width="60" property="bonif" title="Bonificacion"
-			sortable="false" filterable="false" >
-			</ec:column>
+		<ec:table tableId="notReg" items="itemsList" var="items"
+			locale="es_ES" action="listItems_OP" imagePath="images/table/*.gif"
+			width="100%" rowsDisplayed="100" filterable="false"
+			showPagination="false" showStatusBar="false" showTitle="false"
+			showTooltips="false" showExports="false">
+			<ec:row>
+				<%
+					if (usaCambioMasivo == -1) {
+				%>
+				<ec:column width="60" property="porcentajeImpuesto" title="Selec"
+					sortable="false" filterable="false">
+					<input type="checkbox" value="${items.id.itemNr}">
+				</ec:column>
+				<%
+					}
+				%>
+				<ec:column width="40px" title=" " filterable="false"
+					sortable="false" alias="read">
+					<%
+						if (logicaColor == -1) {
+					%>
+					<a href="#"> <img src="images/general/edit.png"
+						alt="Editar Item" title=" Editar Item "
+						onclick="editItem('${items.id.itemNr}', '${items.bonif}','${items.bonif1}','${items.bonif2}','${items.bonif3}','${items.bonif4}','','${items.clave}','${items.cant1}','${items.precio}','${items.colores.descrip}','${items.colores.nr}'  );"
+						border="0"></img>
+					</a>
+					<%
+						} else {
+					%>
+					<a href="#"> <img src="images/general/edit.png"
+						alt="Editar Item" title=" Editar Item "
+						onclick="editItem('${items.id.itemNr}', '${items.bonif}','${items.bonif1}','${items.bonif2}','${items.bonif3}','${items.bonif4}','','${items.clave}','${items.cant1}','${items.precio}','','0' );"
+						border="0"></img>
+					</a>
+
+					<%
+						}
+					%>
+
+					<a href="#"> <img src="images/general/remove.png"
+						alt=" Eliminar Item " title=" Eliminar Item"
+						onclick="removeItems('${items.id.itemNr}')" border="0"></img>
+					</a>
+				</ec:column>
+				<ec:column width="60px" property="articulo"
+					title="Clave" sortable="false" filterable="false" alias = "read1">
+					<span style="white-space: nowrap;">${items.articulo}</span>
+				</ec:column>
+<%-- 				<ec:column width="80px" property="articulo" title="Clave" --%>
+<%-- 					sortable="true" sortable="false" filterable="false" --%>
+<%-- 					alias="articulo"> --%>
+<%-- 				</ec:column> --%>
+				<ec:column width="40px" property="id.itemNr" title="Nr"
+					sortable="false" filterable="false">
+				</ec:column>
+				<ec:column width="60px" property="descrip"
+					title="Articulo" sortable="false" filterable="false" alias = "read2">
+					<span style="white-space: nowrap;">${items.descrip}</span>
+				</ec:column>
+<%-- 				<ec:column width="auto" property="descrip" title="Articulo" --%>
+<%-- 					sortable="true" sortable="false" filterable="false" alias="descrip"> --%>
+<%-- 				</ec:column> --%>
+				<%
+					if (logicaColor == -1) {
+				%>
+				<ec:column width="100" property="colores.descrip" title="Color"
+					sortable="false" filterable="false">
+				</ec:column>
+				<%
+					}
+				%>
+				<ec:column width="60" property="cant1" title="Cantidad"
+					sortable="false" filterable="false">
+				</ec:column>
+				<ec:column width="60" property="precio" title="Precio Un"
+					sortable="false" filterable="false">
+				</ec:column>
+				<ec:column width="60" property="bonif" title="Bonificacion"
+					sortable="false" filterable="false">
+				</ec:column>
+				<%
+					if (usaCadenaBonif == -1) {
+				%>
+				<ec:column width="60" property="obser" title="Cadena Bonif"
+					sortable="false" filterable="false">
+				</ec:column>
+				<%
+					}
+				%>
+				<ec:column width="60" property="totalItem" title="SubTotal"
+					sortable="false" filterable="false">
+				</ec:column>
+
+
+			</ec:row>
+		</ec:table>
+		<%
+			if (usaCambioMasivo == -1) {
+				if (usaCadenaBonif == -1) {
+		%>
+		<div id="idSelectItems" align="right" style="display: inline;">
+			<img src="images/general/icon_editar_cadena_bonif.png"
+				alt="Editar Cadena de Modificación" border="0">
+		</div>
+
+		<div id="idSelectAddCadenaItems" align="right"
+			style="display: inline;">
+			<img src="images/general/icon_agregar_cadena.png"
+				alt="Agregar Cadena de Bonificación" border="0">
+		</div>
+		<%
+			} else {
+		%>
+		<div id="idSelectBonifItems" align="right" style="display: inline;">
+			<img src="images/general/icon_editar_bonificacion.png"
+				alt="Editar Bonificación" border="0">
+		</div>
+		<%
+			}
+		%>
+		<div id="idSelectPrecioItems" align="right" style="display: inline;">
+			<img src="images/general/icon_edita_precio.png" alt="Editar Precio"
+				border="0">
+		</div>
+		<%
+			}
+		%>
+
+		<div class="space"></div>
+		<div align="center">
+			<div>
+				<b><label class="subTotalesTitle">SubTotal:</label></b>
+				<s:label cssClass="subTotales" id="transac.netoGrav"
+					name="transac.netoGrav" />
+			</div>
+			<div>
+				<b><label class="subTotalesTitle">Impuestos:</label></b>
+				<s:label cssClass="subTotales" id="transac.iva" name="transac.iva" />
+			</div>
+			<div>
+				<b><label class="totalesTitle">Total:</label></b> <b><s:label
+						cssClass="totales" id="transac.iva" name="transac.total" /></b>
+			</div>
+		</div>
+		<div align="center">
 			<%
-				
-					if (usaCadenaBonif == -1){
-%>
-						<ec:column width="60" property="obser" title="Cadena Bonif"
-			sortable="false" filterable="false" >
-			</ec:column>
-<%				
-					}
-%>
-		<ec:column width="60" property="totalItem" title="SubTotal"
-			sortable="false" filterable="false" >
-			</ec:column>
-		
-			
-	</ec:row>
-</ec:table>
-<%
-				if ( usaCambioMasivo == -1){
-					if (usaCadenaBonif == -1){
-%>
-						<div id="idSelectItems" align="right" style="display: inline;"><img
-							src="images/general/icon_editar_cadena_bonif.png" alt="Editar Cadena de Modificación" border="0">
-						</div>
-						
-						<div id="idSelectAddCadenaItems" align="right" style="display: inline;"><img
-							src="images/general/icon_agregar_cadena.png" alt="Agregar Cadena de Bonificación" border="0">
-						</div>
-<%				
-					}else{
-%>
-						<div id="idSelectBonifItems" align="right" style="display: inline;"><img
-							src="images/general/icon_editar_bonificacion.png" alt="Editar Bonificación" border="0">
-						</div>
-<%				
-					}
-%>
-					<div id="idSelectPrecioItems" align="right" style="display: inline;"><img
-						src="images/general/icon_edita_precio.png" alt="Editar Precio" border="0">
-					</div>
-<% 					
+				if ((List<Items>) request.getSession().getAttribute("items_CARR") != null
+						&& ((List<Items>) request.getSession().getAttribute(
+								"items_CARR")).size() > 0) {
+			%>
+			<div id="idVaciarCarritoButton" style="display: inline;">
+				<img src="images/general/icon_usa_items_carrito.gif"
+					alt="Usar Items del Carrito" border="0">
+			</div>
+			<%
+				} else {
+			%>
+			<div id="idAgregarProductoButton" style="display: inline;">
+				<img id="idAgregarProductos"
+					src="<%=request.getContextPath()%>/images/general/icon_agregar_productos_btn.png"
+					alt="Agregar Productos" title="Agregar Productos" border="0"></img>
+			</div>
+			<%
 				}
-%>
+			%>
+			<div id="agregarItem" style="display: inline;">
+				<img src="images/general/icon_nuevo_item.png" alt="Agregar Item"
+					border="0">
+			</div>
 
-<div class="space"></div>
-<div align="center">
-<div>
-<b><label class="subTotalesTitle">SubTotal:</label></b>
-<s:label cssClass="subTotales"  id="transac.netoGrav" name="transac.netoGrav" />
-</div>
-<div>
-<b><label class="subTotalesTitle">Impuestos:</label></b>
-<s:label cssClass="subTotales" id="transac.iva" name="transac.iva" />
-</div>
-<div>
-<b><label class="totalesTitle">Total:</label></b>
-<b><s:label cssClass="totales" id="transac.iva" name="transac.total" /></b>
-</div>
-</div>
-<div align="center">
-<% if ((List<Items>)request.getSession().getAttribute("items_CARR") != null && ((List<Items>)request.getSession().getAttribute("items_CARR")).size() > 0){%>
-<div id="idVaciarCarritoButton" style="display: inline;"><img src="images/general/icon_usa_items_carrito.gif" alt="Usar Items del Carrito" border="0">
-</div>
-<% }else{%>
-<div id="idAgregarProductoButton" style="display: inline;"><img id = "idAgregarProductos" src="<%=request.getContextPath()%>/images/general/icon_agregar_productos_btn.png" alt="Agregar Productos" title="Agregar Productos" border="0"></img>
-</div>
-<%} %>
-<div id="agregarItem" style="display: inline;"><img
-	src="images/general/icon_nuevo_item.png" alt="Agregar Item" border="0">
-</div>
+			<div id="idVolverImage" style="display: inline;">
+				<a href="menuAgendado_Tran" onclick="this.blur();"> <img
+					src="images/general/icon_volver.png" alt="Volver" border="0">
+				</a>
+			</div>
 
-<div id="idVolverImage" style="display: inline;" > 
-	<a href="menuAgendado_Tran" onclick="this.blur();">
-		<img src="images/general/icon_volver.png" alt="Volver" border="0" >
-	</a>
-</div>
+			<div id="idFinTransacButton" style="display: inline;">
+				<img src="images/general/icon_continuar.png" alt="Continuar"
+					border="0">
+			</div>
 
-<div id="idFinTransacButton" style="display: inline;"><img
-	src="images/general/icon_continuar.png" alt="Continuar" border="0">
+
+
+		</div>
+		</center>
+	</fieldset>
 </div>
 
 
 
-</div>
-</center>
-</fieldset>
-</div>
-
-
-
-<div style="display: none" align="center" id="resultCerrarTransacId" >
-		<h1 id="idMsgSave" >Transacción</h1>		
-		<div id="buttonDown" >
-				<a href="preparedFindAgendadoPorNombre_OP" onclick="this.blur();">
-					<img src="images/general/icon_nuevo_compro.png" alt="Nueva Solicitud" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
-				<a href="home" onclick="this.blur();">
-					<img src="images/general/icon_ir_menu.png" alt="Ir a Pendientes" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
-		</div>						
+<div style="display: none" align="center" id="resultCerrarTransacId">
+	<h1 id="idMsgSave">Transacción</h1>
+	<div id="buttonDown">
+		<a href="preparedFindAgendadoPorNombre_OP" onclick="this.blur();">
+			<img src="images/general/icon_nuevo_compro.png" alt="Nueva Solicitud"
+			border="0" style="float: center; margin-top: 0px;"></img>
+		</a> <a href="home" onclick="this.blur();"> <img
+			src="images/general/icon_ir_menu.png" alt="Ir a Pendientes"
+			border="0" style="float: center; margin-top: 0px;"></img>
+		</a>
+	</div>
 </div>
 
 <div style="display: none" id="idCambiaBonificaciones">
 
-		<div class="panel_100 tab">
-	    	<div class="space"></div>
+	<div class="panel_100 tab">
+		<div class="space"></div>
 
-<fieldset class="defaultFieldset"><legend><b id = "idTituloItem">Modificar Bonificación</b></legend>
-<s:form	id="changeValorMasivo_BForm" action="changeValorMasivo" theme="simple" cssClass="inline" method="post"  autocomplete="off">
-	<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_B"/>
-	<s:hidden key="tipoValorMasivo" value="2"/>
-	
+		<fieldset class="defaultFieldset">
+			<legend>
+				<b id="idTituloItem">Modificar Bonificación</b>
+			</legend>
+			<s:form id="changeValorMasivo_BForm" action="changeValorMasivo"
+				theme="simple" cssClass="inline" method="post" autocomplete="off">
+				<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_B" />
+				<s:hidden key="tipoValorMasivo" value="2" />
 
-	<fieldset class="defaultFieldset"><legend></legend>
-	<table>
-		<tr>
-			<td><label for="precio1">Bonificación:</label></td>
-			<td><s:textfield id="bonif_M" name="items.bonif" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-		</tr>
-	</table>
-	</fieldset>
-	
-	
-	
-	
-	<div align="center">
-		<div id="idGuardarCambioBonif" ><img
-			src="images/general/icon_guardar.png" alt="Guardar Cambio" border="0">
-		</div>
-		<div id="idCancelarCambioBonif" ><img
-			src="images/general/icon_cancelar.png" alt="Cancelar Item" border="0">
-		</div>
+
+				<fieldset class="defaultFieldset">
+					<legend></legend>
+					<table>
+						<tr>
+							<td><label for="precio1">Bonificación:</label></td>
+							<td><s:textfield id="bonif_M" name="items.bonif" size="5"
+									maxlength="3" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+						</tr>
+					</table>
+				</fieldset>
+
+
+
+
+				<div align="center">
+					<div id="idGuardarCambioBonif">
+						<img src="images/general/icon_guardar.png" alt="Guardar Cambio"
+							border="0">
+					</div>
+					<div id="idCancelarCambioBonif">
+						<img src="images/general/icon_cancelar.png" alt="Cancelar Item"
+							border="0">
+					</div>
+				</div>
+			</s:form>
+		</fieldset>
 	</div>
-</s:form>
-</fieldset>
-</div>
 </div>
 
 
 <div style="display: none" id="idAddCadena">
-<div class="panel_100 tab">
-	    	<div class="space"></div>
-	
-<fieldset class="defaultFieldset"><legend><b id = "idTituloItem">Agregar bonificación a cadena</b></legend>
-<s:form	id="changeValorMasivo_A_CForm" action="changeValorMasivo" theme="simple" cssClass="inline" method="post"  autocomplete="off">
-	<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_A_C"/>
-	<s:hidden key="tipoValorMasivo" value="4"/>
-	
+	<div class="panel_100 tab">
+		<div class="space"></div>
 
-	<br>
-	<table>
-		<tr>
-			<td><label for="precio1">Bonificación:</label></td>
-			<td><s:textfield id="bonif_A_C" name="items.bonif" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-		</tr>
-	</table>
-	
-	
-	
-	
-	<div align="center">
-		<div id="idGuardarAddCadena" ><img
-			src="images/general/icon_guardar.png" alt="Guardar Cambio" border="0">
-		</div>
-		<div id="idCancelarAddCadena" ><img
-			src="images/general/icon_cancelar.png" alt="Cancelar Item" border="0">
-		</div>
+		<fieldset class="defaultFieldset">
+			<legend>
+				<b id="idTituloItem">Agregar bonificación a cadena</b>
+			</legend>
+			<s:form id="changeValorMasivo_A_CForm" action="changeValorMasivo"
+				theme="simple" cssClass="inline" method="post" autocomplete="off">
+				<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_A_C" />
+				<s:hidden key="tipoValorMasivo" value="4" />
+
+
+				<br>
+				<table>
+					<tr>
+						<td><label for="precio1">Bonificación:</label></td>
+						<td><s:textfield id="bonif_A_C" name="items.bonif" size="5"
+								maxlength="3" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" /></td>
+					</tr>
+				</table>
+
+
+
+
+				<div align="center">
+					<div id="idGuardarAddCadena">
+						<img src="images/general/icon_guardar.png" alt="Guardar Cambio"
+							border="0">
+					</div>
+					<div id="idCancelarAddCadena">
+						<img src="images/general/icon_cancelar.png" alt="Cancelar Item"
+							border="0">
+					</div>
+				</div>
+			</s:form>
+		</fieldset>
 	</div>
-</s:form>
-</fieldset>
-</div>
 </div>
 
 
 
 <div style="display: none" id="idCambiaPrecio">
 	<div class="panel_100 tab">
-	    	<div class="space"></div>
-	
-<fieldset class="defaultFieldset"><legend><b id = "idTituloItem">Modificar Precio</b></legend>
-<s:form	id="changeValorMasivo_PForm" action="changeValorMasivo" theme="simple" cssClass="inline" method="post"  autocomplete="off">
-	<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_P"/>
-	<s:hidden key="tipoValorMasivo" value="3"/>
+		<div class="space"></div>
 
-	<table>
-		<tr>			
-			<td><s:radio id="adi_valor_P"  list="#{'1':'Adicionar importe al Precio','2':'Restar importe al Precio','3':'Adicionar % al Precio','4':'Restar % al Precio','5':'Sustituir precio'}" name="items.tipoVariacionPrecio"  value="1" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
+		<fieldset class="defaultFieldset">
+			<legend>
+				<b id="idTituloItem">Modificar Precio</b>
+			</legend>
+			<s:form id="changeValorMasivo_PForm" action="changeValorMasivo"
+				theme="simple" cssClass="inline" method="post" autocomplete="off">
+				<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados_P" />
+				<s:hidden key="tipoValorMasivo" value="3" />
+
+				<table>
+					<tr>
+						<td><s:radio id="adi_valor_P"
+								list="#{'1':'Adicionar importe al Precio','2':'Restar importe al Precio','3':'Adicionar % al Precio','4':'Restar % al Precio','5':'Sustituir precio'}"
+								name="items.tipoVariacionPrecio" value="1" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" /></td>
+						<br>
+					</tr>
+				</table>
 				<br>
-		</tr>
-	</table>
-	<br>
-	<table align="center">
-		<tr align="center">
-			<td><label for="precio1"><b>Valor:</b></label></td>
-			<td><s:textfield id="valor_P" name="items.variacionPrecio" size="10"
-				maxlength="10" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-		</tr>
-	</table>
+				<table align="center">
+					<tr align="center">
+						<td><label for="precio1"><b>Valor:</b></label></td>
+						<td><s:textfield id="valor_P" name="items.variacionPrecio"
+								size="10" maxlength="10" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" /></td>
+					</tr>
+				</table>
 
-	
-	
-	
-	<div align="center">
-		<div id="idGuardarCambioPrecio" ><img
-			src="images/general/icon_guardar.png" alt="Guardar Cambio" border="0">
-		</div>
-		<div id="idCancelarCambioPrecio" ><img
-			src="images/general/icon_cancelar.png" alt="Cancelar Item" border="0">
-		</div>
+
+
+
+				<div align="center">
+					<div id="idGuardarCambioPrecio">
+						<img src="images/general/icon_guardar.png" alt="Guardar Cambio"
+							border="0">
+					</div>
+					<div id="idCancelarCambioPrecio">
+						<img src="images/general/icon_cancelar.png" alt="Cancelar Item"
+							border="0">
+					</div>
+				</div>
+			</s:form>
+		</fieldset>
 	</div>
-</s:form>
-</fieldset>
-</div>
 </div>
 
 <div style="display: none" id="idCambiaCadenaBonificaciones">
-<div class="panel_100 tab">
-	    	<div class="space"></div>
-	
-<fieldset class="defaultFieldset"><legend><b id = "idTituloItem">Modificar Cadena de Bonificaciones</b></legend>
-<s:form	id="changeValorMasivoForm" action="changeValorMasivo" theme="simple" cssClass="inline" method="post"  autocomplete="off">
-	<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados"/>
-	<s:hidden key="tipoValorMasivo" value="1"/>
-	
+	<div class="panel_100 tab">
+		<div class="space"></div>
 
-	<fieldset class="defaultLegendChico"><legend></legend>
-	<table>
-		<tr>
-			<td><label for="precio1">Bonif1:</label></td>
-			<td><s:textfield id="bonif1_M" name="items.bonif1" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif2:</label></td>
-			<td><s:textfield id="bonif2_M" name="items.bonif2" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif3:</label></td>
-			<td><s:textfield id="bonif3_M" name="items.bonif3" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif4:</label></td>
-			<td><s:textfield id="bonif4_M" name="items.bonif4" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-		</tr>
-	</table>
-	</fieldset>
-	
-	
-	
-	
-	<div align="center">
-		<div id="idGuardarCambioCadena" ><img
-			src="images/general/icon_guardar.png" alt="Guardar Cambio" border="0">
-		</div>
-		<div id="idCancelarCambioCadena" ><img
-			src="images/general/icon_cancelar.png" alt="Cancelar Item" border="0">
-		</div>
+		<fieldset class="defaultFieldset">
+			<legend>
+				<b id="idTituloItem">Modificar Cadena de Bonificaciones</b>
+			</legend>
+			<s:form id="changeValorMasivoForm" action="changeValorMasivo"
+				theme="simple" cssClass="inline" method="post" autocomplete="off">
+				<s:hidden key="itemsSelecionados" id="idsItemsSeleccionados" />
+				<s:hidden key="tipoValorMasivo" value="1" />
+
+
+				<fieldset class="defaultLegendChico">
+					<legend></legend>
+					<table>
+						<tr>
+							<td><label for="precio1">Bonif1:</label></td>
+							<td><s:textfield id="bonif1_M" name="items.bonif1" size="5"
+									maxlength="3" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+							<td><label for="precio1">Bonif2:</label></td>
+							<td><s:textfield id="bonif2_M" name="items.bonif2" size="5"
+									maxlength="3" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+							<td><label for="precio1">Bonif3:</label></td>
+							<td><s:textfield id="bonif3_M" name="items.bonif3" size="5"
+									maxlength="3" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+							<td><label for="precio1">Bonif4:</label></td>
+							<td><s:textfield id="bonif4_M" name="items.bonif4" size="5"
+									maxlength="3" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+						</tr>
+					</table>
+				</fieldset>
+
+
+
+
+				<div align="center">
+					<div id="idGuardarCambioCadena">
+						<img src="images/general/icon_guardar.png" alt="Guardar Cambio"
+							border="0">
+					</div>
+					<div id="idCancelarCambioCadena">
+						<img src="images/general/icon_cancelar.png" alt="Cancelar Item"
+							border="0">
+					</div>
+				</div>
+			</s:form>
+		</fieldset>
 	</div>
-</s:form>
-</fieldset>
-</div>
 </div>
 
 
 <div style="display: none" align="left" id="agregarItemForm">
-<br>
-<div class="space"></div>
-		<div class="panel_100 tab">
-	    	<div class="space"></div>
-
-
-<fieldset class="defaultFieldset"><legend><b id = "idTituloItem">Agregar un nuevo Item</b></legend>
-<p id="validateTips"></p>
-<s:form	id="adminOrdenPedidoForm" action="addItem_OP" theme="simple" cssClass="inline" method="post"  autocomplete="off" >
-
-	<s:hidden key="gente.genteNr" id="idAgendado" />
-	<s:hidden key="gente.bonifStd" id="idBonif" />
-	<s:hidden key="items.id.itemNr" id="idItemNr" />
-	<s:hidden key="items.articulo" id="idClave" />
-	<s:hidden key="items.descrip" id="descripArtNameId" />
-	<s:hidden key="items.colores.nr" id="idItemsColor" />
-	<s:hidden key="items.colores.descrip" id="idItemsColorDescrip" />
-	<s:hidden id="idCierreCarga" />
 	<br>
-	<table>
-		<tr>
-			<td><label for="articuloAuto1">Cod. Art:</label></td>
-			<td><s:textfield id="codArt" name="items.clave"
-				size="20" maxlength="20" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td style="display: none" id="idLoadArt"><img alt="" src="images/general/loading1.gif"></td>
-			<td style="display: inline" id="idBuscarPorCodigoImage"><img alt=""
-					src="images/general/view.gif"></td>
-				
+	<div class="space"></div>
+	<div class="panel_100 tab">
+		<div class="space"></div>
 
-			<td><label for="articuloAuto1">Articulo:</label></td>
-			<td><s:textfield id="articuloAuto" 
-				size="60" maxlength="60" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-				<div id="listAutoComplete" class="ui" style="display: none;"/>
-			<td style="display: none" id="idAutoCompleteLoad"><img alt=""
-				src="images/general/loading1.gif"></td>
-			<td style="display: inline" id="idBuscarPorNombreImage"><img alt=""
-					src="images/general/view.gif"></td>	
 
-		</tr>
-		</table>
-		<table>		
-		<tr>
-			<td><b for="descripArt" id= "descripArtID"/></td>
-			<%
-				if (logicaColor == -1){
-			%>	
-			<td><b for="descripColor" id= "descripColorID"/></td>
-			<%
-				}
-			%>
-		</tr>
-		</table>
-		<div id = "idDivCantidad" style="display: none;">
-		<table>
-		<tr align="center">
-			<td><label for="cantidad1">Cantidad:</label></td>
-			<td><s:textfield id="cantidad" name="items.cant1" size="15" value="1"
-				maxlength="15" cssErrorClass="error" 
- 				cssClass="ui-widget-content ui-corner-all" /></td>
- 				<td style="display: none" id="idLoadStock"><img alt=""
-				src="images/general/loading1.gif"></td>
- 				<td><div id = "idShowStock"/></td>
- 				
-		</tr>
-		</table>
-		</div>
-		<table>
-			<tr>
-				<div align="center" id="idImageLoadStockColor" style="display: none;">					
-					<img alt=""	src="images/general/loading1.gif">
+		<fieldset class="defaultFieldset">
+			<legend>
+				<b id="idTituloItem">Agregar un nuevo Item</b>
+			</legend>
+			<p id="validateTips"></p>
+			<s:form id="adminOrdenPedidoForm" action="addItem_OP" theme="simple"
+				cssClass="inline" method="post" autocomplete="off">
+
+				<s:hidden key="gente.genteNr" id="idAgendado" />
+				<s:hidden key="gente.bonifStd" id="idBonif" />
+				<s:hidden key="items.id.itemNr" id="idItemNr" />
+				<s:hidden key="items.articulo" id="idClave" />
+				<s:hidden key="items.descrip" id="descripArtNameId" />
+				<s:hidden key="items.colores.nr" id="idItemsColor" />
+				<s:hidden key="items.colores.descrip" id="idItemsColorDescrip" />
+				<s:hidden id="idCierreCarga" />
+				<br>
+				<table>
+					<tr>
+						<td><label for="articuloAuto1">Cod. Art:</label></td>
+						<td><s:textfield id="codArt" name="items.clave" size="20"
+								maxlength="20" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" /></td>
+						<td style="display: none" id="idLoadArt"><img alt=""
+							src="images/general/loading1.gif"></td>
+						<td style="display: inline" id="idBuscarPorCodigoImage"><img
+							alt="" src="images/general/view.gif"></td>
+
+
+						<td><label for="articuloAuto1">Articulo:</label></td>
+						<td><s:textfield id="articuloAuto" size="60" maxlength="60"
+								cssErrorClass="error" cssClass="ui-widget-content ui-corner-all" /></td>
+						<div id="listAutoComplete" class="ui" style="display: none;" />
+						<td style="display: none" id="idAutoCompleteLoad"><img alt=""
+							src="images/general/loading1.gif"></td>
+						<td style="display: inline" id="idBuscarPorNombreImage"><img
+							alt="" src="images/general/view.gif"></td>
+
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><b for="descripArt" id="descripArtID" /></td>
+						<%
+							if (logicaColor == -1) {
+						%>
+						<td><b for="descripColor" id="descripColorID" /></td>
+						<%
+							}
+						%>
+					</tr>
+				</table>
+				<div id="idDivCantidad" style="display: none;">
+					<table>
+						<tr align="center">
+							<td><label for="cantidad1">Cantidad:</label></td>
+							<td><s:textfield id="cantidad" name="items.cant1" size="15"
+									value="1" maxlength="15" cssErrorClass="error"
+									cssClass="ui-widget-content ui-corner-all" /></td>
+							<td style="display: none" id="idLoadStock"><img alt=""
+								src="images/general/loading1.gif"></td>
+							<td><div id="idShowStock" /></td>
+
+						</tr>
+					</table>
 				</div>
-				<div align="center" id="idTableStockColor" style="display: none;">					
+				<table>
+					<tr>
+						<div align="center" id="idImageLoadStockColor"
+							style="display: none;">
+							<img alt="" src="images/general/loading1.gif">
+						</div>
+						<div align="center" id="idTableStockColor" style="display: none;">
+						</div>
+						<div id="idTableComprobante" class="uiComprob"
+							style="display: none;" />
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><label for="precio1">Precio:</label></td>
+						<td><s:textfield id="precio" name="items.precio" size="15"
+								maxlength="15" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" disabled="true" /></td>
+						<td style="display: none" id="idLoadPrecio"><img alt=""
+							src="images/general/loading1.gif"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><label for="precio1">Bonificación:</label></td>
+						<td><s:textfield id="bonificacion" name="items.bonif"
+								size="8" maxlength="15" cssErrorClass="error"
+								cssClass="ui-widget-content ui-corner-all" />
+						<td style="display: none" id="loadBonificacion"><img alt=""
+							src="images/general/loading1.gif"></td>
+						<td id="addCadena"><img
+							title="Mostrar Cadena de Bonificación"
+							src="images/general/add.png"></td>
+						<td id="deleteCadena"><img alt=""
+							src="images/general/delete.png"
+							title="Ocultar Cadena de Bonificación"></td>
+					</tr>
+				</table>
+
+				<div style="display: none" align="left" id="cadenaBonifId">
+
+					<fieldset class="defaultLegendChico">
+						<legend>
+							<b>Cadena de Bonificaciones</b>
+						</legend>
+						<table>
+							<tr>
+								<td><label for="precio1">Bonif1:</label></td>
+								<td><s:textfield id="bonif1" name="items.bonif1" size="5"
+										maxlength="3" cssErrorClass="error"
+										cssClass="ui-widget-content ui-corner-all" /></td>
+								<td><label for="precio1">Bonif2:</label></td>
+								<td><s:textfield id="bonif2" name="items.bonif2" size="5"
+										maxlength="3" cssErrorClass="error"
+										cssClass="ui-widget-content ui-corner-all" /></td>
+								<td><label for="precio1">Bonif3:</label></td>
+								<td><s:textfield id="bonif3" name="items.bonif3" size="5"
+										maxlength="3" cssErrorClass="error"
+										cssClass="ui-widget-content ui-corner-all" /></td>
+								<td><label for="precio1">Bonif4:</label></td>
+								<td><s:textfield id="bonif4" name="items.bonif4" size="5"
+										maxlength="3" cssErrorClass="error"
+										cssClass="ui-widget-content ui-corner-all" /></td>
+							</tr>
+						</table>
+					</fieldset>
 				</div>
-				<div id="idTableComprobante" class="uiComprob" style="display: none;"/>
-			</tr>
-		</table>
-		<table>
-		<tr>
-			<td><label for="precio1">Precio:</label></td>
-			<td><s:textfield id="precio" name="items.precio" size="15"
-				maxlength="15" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" disabled="true"/></td>
-			<td style="display: none" id="idLoadPrecio"><img alt=""
-				src="images/general/loading1.gif"></td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td><label for="precio1">Bonificación:</label></td>
-			<td><s:textfield id="bonificacion" name="items.bonif" size="8"
-				maxlength="15" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" />
-				<td style="display: none" id="loadBonificacion"><img alt=""
-				src="images/general/loading1.gif"></td>
-				<td id="addCadena">
-				<img title="Mostrar Cadena de Bonificación" 	src="images/general/add.png"></td>
-				<td id="deleteCadena">
-				<img alt=""	src="images/general/delete.png" title="Ocultar Cadena de Bonificación"></td>
-		</tr>
-	</table>
-		
-	<div style="display: none" align="left" id="cadenaBonifId">
-	
-	<fieldset class="defaultLegendChico"><legend><b>Cadena de Bonificaciones</b></legend>
-	<table>
-		<tr>
-			<td><label for="precio1">Bonif1:</label></td>
-			<td><s:textfield id="bonif1" name="items.bonif1" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif2:</label></td>
-			<td><s:textfield id="bonif2" name="items.bonif2" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif3:</label></td>
-			<td><s:textfield id="bonif3" name="items.bonif3" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-			<td><label for="precio1">Bonif4:</label></td>
-			<td><s:textfield id="bonif4" name="items.bonif4" size="5"
-				maxlength="3" cssErrorClass="error"
-				cssClass="ui-widget-content ui-corner-all" /></td>
-		</tr>
-	</table>
-	</fieldset>
+
+
+				<div align="center">
+					<div id="guardarItem" style="display: inline;">
+						<img src="images/general/icon_guardar.png" alt="Guardar Item"
+							border="0" id="guardarItemImg">
+					</div>
+					<div id="idCancelarItem" style="display: inline;">
+						<img src="images/general/icon_cancelar.png" alt="Cancelar Item"
+							border="0">
+					</div>
+				</div>
+			</s:form>
+		</fieldset>
 	</div>
-	
-	
-	<div align="center">
-		<div id="guardarItem" style="display: inline;"><img
-			src="images/general/icon_guardar.png" alt="Guardar Item" border="0" id = "guardarItemImg">
-		</div>
-		<div id="idCancelarItem" style="display: inline;"><img
-			src="images/general/icon_cancelar.png" alt="Cancelar Item" border="0">
-		</div>
-	</div>
-</s:form>
-</fieldset>
-</div>
 </div>
 
 
 
 
 <center>
-<div style="display: none" align="center" id="idDivGuardoItems" >
-		<h1 id="idMsgSave" >Desea guardar los items ya seleccionados en el carrito?</h1>		
-		<div id="buttonDown" >
-				<a >
-					<img onclick="guardar_Carr();" src="images/general/icon_guardar_v1.png" alt="Guardar" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
-				<a onclick="descartar_Carr();">
-					<img src="images/general/icon_descartar.png" alt="Descartar" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
-				<a onclick="cancelar_Carr();">
-					<img src="images/general/icon_cancelar_v1.png" alt="Cancelar" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
+	<div style="display: none" align="center" id="idDivGuardoItems">
+		<h1 id="idMsgSave">Desea guardar los items ya seleccionados en
+			el carrito?</h1>
+		<div id="buttonDown">
+			<a> <img onclick="guardar_Carr();"
+				src="images/general/icon_guardar_v1.png" alt="Guardar" border="0"
+				style="float: center; margin-top: 0px;"></img>
+			</a> <a onclick="descartar_Carr();"> <img
+				src="images/general/icon_descartar.png" alt="Descartar" border="0"
+				style="float: center; margin-top: 0px;"></img>
+			</a> <a onclick="cancelar_Carr();"> <img
+				src="images/general/icon_cancelar_v1.png" alt="Cancelar" border="0"
+				style="float: center; margin-top: 0px;"></img>
+			</a>
 
-		</div>						
-</div>
+		</div>
+	</div>
 </center>
 
 
 
 
 <center>
-<div style="display: none" align="center" id="idDivConfirmVaciarCarrito" >
-		<h1 id="idMsgSave" >Esta seguro que desea usar los items cargados al carrito?</h1>		
-		<div id="buttonDown" >
-				<a onclick="aceptarVaciarCarrito();">
-					<img src="images/general/icon_aceptar_v1.png" alt="Aceptar" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
-				<a onclick="cancelar_Carr();">
-					<img src="images/general/icon_cancelar_v1.png" alt="Cancelar" border="0" style="float:center;margin-top:0px;"></img>
-				</a>						
+	<div style="display: none" align="center"
+		id="idDivConfirmVaciarCarrito">
+		<h1 id="idMsgSave">Esta seguro que desea usar los items cargados
+			al carrito?</h1>
+		<div id="buttonDown">
+			<a onclick="aceptarVaciarCarrito();"> <img
+				src="images/general/icon_aceptar_v1.png" alt="Aceptar" border="0"
+				style="float: center; margin-top: 0px;"></img>
+			</a> <a onclick="cancelar_Carr();"> <img
+				src="images/general/icon_cancelar_v1.png" alt="Cancelar" border="0"
+				style="float: center; margin-top: 0px;"></img>
+			</a>
 
-		</div>						
-</div>
+		</div>
+	</div>
 </center>
 </html>
 

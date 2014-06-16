@@ -16,7 +16,7 @@ public class Constants {
 	
 	public final static int ID_USR_CLIENTE = 5;
 	
-	public final static int ID_USR_ADMIN = 10;
+	public final static int ID_USR_ADMIN = 3;
 	
 	public final static int ID_USR_TRAZA = 20;
 	
@@ -43,7 +43,7 @@ public class Constants {
 	public final static Integer ID_TIPO_COMP_PEDIDO_COMPRA=15;
 	public final static Integer ID_TIPO_COMP_REMITO=3;
 	
-	//Envío de Mail
+	//Envï¿½o de Mail
 	public final static Long ID_PARAM_SUBJECT_NEW_TRANSAC=20l;
 	public final static Long ID_PARAM_MSG_NEW_TRANSAC=21l;
 	
