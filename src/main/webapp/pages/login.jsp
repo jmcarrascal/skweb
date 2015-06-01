@@ -2,24 +2,6 @@
 
 <link href="<%=request.getContextPath()%>/css/loginForm.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript">
-	$(document).ready(function () {
-		//txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
-		//txt+= "<p>Browser Name: " + navigator.appName + "</p>";
-		//txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
-		//txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
-		//txt+= "<p>Platform: " + navigator.platform + "</p>";
-		//txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
-		//alert(txt);
-		//alert(navigator.userAgent);
-		//if ((/Netscape/.test(navigator.userAgent)))
-		if (0) {
-			$("#pNavegador").show();
-		} else {	
-			$("#validateMS table").show();	
-		}
-	});
-</script>
 
 <div class="main" style="background: #EBEBEB;">
 	<div class="separator"></div>
