@@ -3,17 +3,13 @@ package jmc.skweb.util;
 
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.List;
@@ -22,9 +18,6 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
-import javax.media.jai.NullOpImage;
-import javax.media.jai.OpImage;
-import javax.media.jai.PlanarImage;
 
 import jmc.skweb.core.model.Items;
 import jmc.skweb.core.model.Stock;
@@ -39,12 +32,6 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-import com.sun.media.jai.codec.FileSeekableStream;
-import com.sun.media.jai.codec.ImageCodec;
-import com.sun.media.jai.codec.ImageDecoder;
-import com.sun.media.jai.codec.SeekableStream;
-import com.sun.media.jai.codec.TIFFDecodeParam;
-
 public class FormatUtil {
 	
 	
@@ -52,7 +39,7 @@ public class FormatUtil {
     {
         String formattedString;
 
-        // La serie es más corta que la anchura especificada,
+        // La serie es mï¿½s corta que la anchura especificada,
         // por lo que tenemos que rellenarla con blancos.
         if (s.length() < width) {
             StringBuffer buffer = new StringBuffer (s);
@@ -287,68 +274,8 @@ public class FormatUtil {
         return array;
     }
 	
-	public static Image getImage(byte[] bytes, boolean isThumbnail) throws IOException {
 
-		ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-		Iterator readers = ImageIO.getImageReadersByFormatName("jpeg");
-		ImageReader reader = (ImageReader) readers.next();
-		Object source = bis; // File or InputStream
-		ImageInputStream iis = ImageIO.createImageInputStream(source);
-		reader.setInput(iis, true);
-		ImageReadParam param = reader.getDefaultReadParam();
-		if (isThumbnail) {
-
-		param.setSourceSubsampling(4, 4, 0, 0);
-
-		}
-		return reader.read(0, param);
-
-	}
-
-	public static byte[] convertJPG(String filename, int parte) throws IOException {
-
-        File file = new File(filename);
-        SeekableStream s = new FileSeekableStream(file);
-
-        TIFFDecodeParam param = null;
-                
-        
-        ImageDecoder dec = ImageCodec.createImageDecoder("tiff", s, param);
-
-        
-        System.out.println("Number of images in this TIFF: " +
-                           dec.getNumPages());
-
-        
-        // Which of the multiple images in the TIFF file do we want to load
-        // 0 refers to the first, 1 to the second and so on.
-        int imageToLoad = parte;
-
-        RenderedImage op =
-            new NullOpImage(dec.decodeAsRenderedImage(imageToLoad),
-                            null,
-                            OpImage.OP_IO_BOUND,
-                            null);
-        
-        
-        PlanarImage pi = PlanarImage.wrapRenderedImage(op);
-               
-        BufferedImage bi = pi.getAsBufferedImage();
-                
-        Graphics2D g = (Graphics2D)bi.getGraphics();
-        
-        g.drawLine(0,0,50,50);
-        
-        g.scale(20, 20);
-                        
-        g.dispose();
-        
-        ByteArrayOutputStream bas =	new ByteArrayOutputStream();
-		ImageIO.write(bi, "jpg", bas);
-		byte[] data = bas.toByteArray();
-		
-		return data;
-    }
+	
 
 		
 		
@@ -592,7 +519,7 @@ public class FormatUtil {
 				"<th>Orden</th>" +
 				"<th>Clave</th>" +
 				"<th>Cantidad</th>" +
-				"<th>Descripción</th>" +
+				"<th>Descripciï¿½n</th>" +
 				"<th>Precio</th>" +
 				"<th>Por Impuesto</th>" +
 				"<th>Bonif</th>" +
