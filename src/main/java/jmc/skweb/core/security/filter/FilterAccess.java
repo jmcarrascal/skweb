@@ -70,6 +70,8 @@ public final class FilterAccess implements Filter
 			String action = getAction(requestHttp.getRequestURI());
 			System.out.println(requestHttp.getRequestURI());
 			Boolean valida = ValidacionCache.getInstance().validateUrl(action, String.valueOf(idPerfil));
+			//tmp
+			valida = true;
 			if (!valida){
 				String finalurl = (this.getPrefix(requestHttp) + deploySistem + "/out");
 				System.out.println("URL no valido " + action);
