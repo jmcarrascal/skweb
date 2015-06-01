@@ -4,8 +4,6 @@ package jmc.skweb.core.security.filter;
 
 
 import java.io.IOException;
-import java.security.KeyStoreException;
-import java.security.cert.CRLException;
 import java.security.cert.X509Certificate;
 
 import javax.servlet.Filter;
@@ -20,9 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import jmc.skweb.core.model.Usuario;
 import jmc.skweb.core.security.filter.validate.ValidacionCache;
 import jmc.skweb.core.security.filter.validate.ValidateDataCertificate;
-import jmc.skweb.util.Constants;
-import jmc.skweb.util.FileUtil;
-import jmc.skweb.util.ValidateCertificate;
 
 
 /**
@@ -49,7 +44,7 @@ public final class FilterAccess implements Filter
 	   
 	   try{		   
 		   	/*
-		   	 * Pregunta si el usuario está logeado	   		   	
+		   	 * Pregunta si el usuario estï¿½ logeado	   		   	
 		   	 */
 		   	Usuario usuario = null;
 		   	try{
@@ -61,7 +56,7 @@ public final class FilterAccess implements Filter
 		   	
 		   	
 		   	/*
-			 * Validar el rol del usuario en base a su URL (Implementación fuera del ambiente de Prueba Piloto).
+			 * Validar el rol del usuario en base a su URL (Implementaciï¿½n fuera del ambiente de Prueba Piloto).
 			 */
 			
 		   	//System.out.println(requestHttp.getRequestURI());				
@@ -88,7 +83,7 @@ public final class FilterAccess implements Filter
 			   	if ( usuario != null){
 		   								
 					/*
-					 * En el caso que el usuario esté logeado pasa y tiene los permisos correspondientes pasa a la URL requerida	   							
+					 * En el caso que el usuario estï¿½ logeado pasa y tiene los permisos correspondientes pasa a la URL requerida	   							
 					 */
 					
 					chain.doFilter(request, response);	   			
@@ -127,15 +122,15 @@ public final class FilterAccess implements Filter
 					   		}else{
 					   			String salida = "";
 					   			
-					   			//Validación de CRL
-					   			ValidateCertificate validateCertificate = new ValidateCertificate();
-					   								   			
-					   			try{ 
-					   				salida = validateCertificate.validateCertificate(certs[0]);
-					   			}catch(Exception e){
-					   				e.printStackTrace();
-					   				salida = "No se ha podido validar la autenticidad del certificado. Comuniquese con el administrador del Sistema";					   			
-					   			}
+					   			//Validaciï¿½n de CRL
+//					   			ValidateCertificate validateCertificate = new ValidateCertificate();
+//					   								   			
+//					   			try{ 
+//					   				salida = validateCertificate.validateCertificate(certs[0]);
+//					   			}catch(Exception e){
+//					   				e.printStackTrace();
+//					   				salida = "No se ha podido validar la autenticidad del certificado. Comuniquese con el administrador del Sistema";					   			
+//					   			}
 					   			if (salida.equals("")){
 						   			requestHttp.getSession().setAttribute("usuario", usuarioCert);				
 						   			//Pasa derecho a la URL requerida	   	
@@ -204,7 +199,7 @@ public final class FilterAccess implements Filter
 	 *  3- En el caso que sea igual a LOGIN_P tomo el certificado desde el request y autentico.
 	 *  4- Esta fuera de alcance
 	 *  
-	 *  Esta implementación va a ser modificadas cuando los roles sean persistentes en la base de datos
+	 *  Esta implementaciï¿½n va a ser modificadas cuando los roles sean persistentes en la base de datos
 	 *  FALTA ANALIZAR INVOCACION POR PARAMETROS PARA PODER FILTRAR	
      */
     public Integer getTipoRequest(String url)
@@ -220,7 +215,7 @@ public final class FilterAccess implements Filter
     		//tomo el ultimo requerimiento
     		urlAnalisis = listaCarpetas[listaCarpetas.length - 1];
     		//pregunto si esta divido por un punto analizando las exteniones
-    		//En el caso que tenga un punto analizo la extención
+    		//En el caso que tenga un punto analizo la extenciï¿½n
     		String[] listaPalabras = urlAnalisis.split("\\.");
     		
     		String extencion = "";
