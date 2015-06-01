@@ -69,8 +69,16 @@ public final class FilterAccess implements Filter
 		   	
 			String action = getAction(requestHttp.getRequestURI());
 			System.out.println(requestHttp.getRequestURI());
-			Boolean valida = ValidacionCache.getInstance().validateUrl(action, String.valueOf(idPerfil));
+			System.out.println("Entro a la accion out");
+			Boolean valida = false;
+			if(action.equals("out")){
+				valida = true;
+			}else{
+				valida = ValidacionCache.getInstance().validateUrl(action, String.valueOf(idPerfil));	
+			}
+			
 //			//tmp
+			
 //			valida = true;
 			if (!valida){
 				String finalurl = (this.getPrefix(requestHttp) + deploySistem + "/out");
@@ -90,69 +98,7 @@ public final class FilterAccess implements Filter
 					
 					chain.doFilter(request, response);	   			
 				}else{			
-					/*
-					 * Obtengo el URL solicitado, analizo segun los siguientes criterios
-					 * 	1- En el caso que sea el HTML del formulario de Login por MS pasa el requerimiento (En etapa de prueba piloto van a 
-					 *     pasar todos los *.html,*.js, *.css).
-					 * 	2- En el caso que sea igual a LOGIN_MS pasa el requerimiento
-					 *  3- En el caso que sea igual a LOGIN_P tomo el certificado desde el request y autentico.
-					 *  
-					 *  En la prcatica el caso 1 y 2 pasan el requerimiento
-					 */
-								
-				   	Integer tipoRequest = getTipoRequest(requestHttp.getRequestURI());
-					switch (tipoRequest) {
-					case 1:
-			   			//Pasa derecho a la URL requerida	   	
-				   		chain.doFilter(request, response);	   							
-						break;
-					case 2:
-			   			//Pasa derecho a la URL requerida	   	
-				   		chain.doFilter(request, response);	   							
-						break;
-					case 3:
-						X509Certificate[] certs = (X509Certificate[]) request.getAttribute("javax.servlet.request.X509Certificate");
-		
-					   	if (certs != null){	   			   		
-					   		ValidateDataCertificate validate = new ValidateDataCertificate();
-					   		
-					   		Usuario usuarioCert = validate.getUsuariobyCert(certs[0]);
-					   		
-					   		if (usuarioCert == null){
-					   			//Bloqueo la APP 
-					   			response.getWriter().write("El certificado es invalido");
-					   		}else{
-					   			String salida = "";
-					   			
-					   			//Validaci�n de CRL
-//					   			ValidateCertificate validateCertificate = new ValidateCertificate();
-//					   								   			
-//					   			try{ 
-//					   				salida = validateCertificate.validateCertificate(certs[0]);
-//					   			}catch(Exception e){
-//					   				e.printStackTrace();
-//					   				salida = "No se ha podido validar la autenticidad del certificado. Comuniquese con el administrador del Sistema";					   			
-//					   			}
-					   			if (salida.equals("")){
-						   			requestHttp.getSession().setAttribute("usuario", usuarioCert);				
-						   			//Pasa derecho a la URL requerida	   	
-							   		chain.doFilter(request, response);	   			
-					   			}else{
-					   				response.getWriter().write(salida);
-					   				
-					   			}
-					   		}
-				
-					   	}else{
-							String finalurl = (this.getPrefix(requestHttp) + deploySistem +"/login");
-							System.out.println("finalUrl " + finalurl);
-							responseHttp.sendRedirect(finalurl);				   		
-					   	}				
-					   	break;
-					case 4:
-						chain.doFilter(request, response);	
-						break;
-					} 
+					chain.doFilter(request, response);			
 				}
 			}
 	   }catch(Exception e){
