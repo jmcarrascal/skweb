@@ -4,6 +4,7 @@ package jmc.skweb.core.model;
 
 import java.sql.Blob;
 import java.sql.Clob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ import javax.persistence.Transient;
 //@Table(name = "SubFam", schema = "ComunSql.dbo")
 //Simpa Plasticos
 //@Table(name = "SubFam", schema = "ArtPlas.dbo")
-@Table(name = "SubFam", schema = "ComunSql.dbo")
+@Table(name = "SubFam", schema = "ArtHerr.dbo")
 public class SubFam implements java.io.Serializable {
 
 	private Long nrsubfam;
@@ -26,6 +27,7 @@ public class SubFam implements java.io.Serializable {
 	private Blob foto;
 	private Clob leyenda;
 	private String descripC;
+	private Integer skWebVisible;
 
 	public SubFam() {
 	}
@@ -96,6 +98,14 @@ public class SubFam implements java.io.Serializable {
 
 	public void setDescripC(String descripC) {
 		this.descripC = descripC;
+	}
+	
+	public Integer getSkWebVisible() {
+		return skWebVisible;
+	}
+
+	public void setSkWebVisible(Integer skWebVisible) {
+		this.skWebVisible = skWebVisible;
 	}
 
 

@@ -27,10 +27,10 @@ public class SetSchema {
 		String rutaModel = "/Users/juanmanuelcarrascal/projects/jmc/skweb/src/main/java/jmc/skweb/core/model/";
 //		String empresa = "local.txt";
 //		String empresa = "plasticos.txt";
-//		String empresa = "herramientas.txt";
+		String empresa = "herramientas.txt";
 //		String empresa = "texsur.txt";
 //		String empresa = "localL.txt";
-		String empresa= "drofar.txt";
+//		String empresa= "drofar.txt";
 		File repositorio = new File(rutaModel);
 		File[] fileList = repositorio.listFiles();
 		SetSchema setSchema = new SetSchema();

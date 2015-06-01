@@ -24,7 +24,7 @@ import javax.persistence.Transient;
  *
  */
 @Entity
-@Table(name = "StockPiezas", schema = " ComunSql.dbo ")
+@Table(name = "StockPiezas", schema = "")
 public class StockPiezas implements java.io.Serializable {
 
 	private StockPiezasId id;

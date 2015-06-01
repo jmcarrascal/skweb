@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 //@Table(name = "Imagenes", schema = "ComunSql.dbo")
 //Simpa
-@Table(name = "Imagenes", schema = "ComunSql.dbo")
+@Table(name = "Imagenes", schema = "Imagenes.dbo")
 
 public class Imagenes implements java.io.Serializable {
 

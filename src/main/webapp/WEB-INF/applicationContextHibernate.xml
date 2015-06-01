@@ -10,7 +10,7 @@
 			<value>net.sourceforge.jtds.jdbc.Driver</value>
 		</property>
 		<property name="jdbcUrl">
-			<value>jdbc:jtds:sqlserver://server:1433</value>
+			<value>jdbc:jtds:sqlserver://192.168.121.31:1433</value>
 		</property>
 		<property name="minPoolSize">
 			<value>1</value>
@@ -31,7 +31,7 @@
 			<value>sa</value>
 		</property>
 		<property name="password">
-			<value>drofarsak05</value>
+			<value>simpasak05</value>
 		</property>
 	</bean>
 

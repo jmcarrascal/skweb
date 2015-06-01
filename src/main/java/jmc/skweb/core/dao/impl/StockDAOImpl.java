@@ -68,9 +68,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 			try{
 				String sql = "";
 				if (activos)
-					sql ="select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 order by s.descripcion " ;				 
+					sql ="select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and sf.skWebVisible = -1 and preEsp6 <> -1 order by s.descripcion " ;				 
 				else
-					sql ="select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 order by s.descripcion " ;
+					sql ="select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 order by s.descripcion " ;
 				
 				stockList = getHibernateTemplate().find(sql);
 				
@@ -439,9 +439,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 			try{								
 				String q = "";
 				if (activos)
-					q = "select count(s) from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+					q = "select count(s) from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 				else
-					q = "select count(s) from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 " +GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+					q = "select count(s) from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 " +GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 			     
 				List<Long> saldoList= getHibernateTemplate().find(q);
 				count = saldoList.get(0);
@@ -476,9 +476,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 
 			String q = "";
 			if (activos)
-				q = "select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+				q = "select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 			else
-				q = "select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+				q = "select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 		
 			List<Stock> stockList = null; 
 				try{
@@ -519,9 +519,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 			try{
 				String sql = "";
 				if (articuloActivo)
-					sql ="select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 order by s.clave " ;				 
+					sql ="select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 order by s.clave " ;				 
 				else
-					sql ="select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 order by s.clave " ;
+					sql ="select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 order by s.clave " ;
 				
 				stockList = getHibernateTemplate().find(sql);
 				
@@ -552,9 +552,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 			try{								
 				String q = "";
 				if (articuloActivo)
-					q = "select count(s) from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+					q = "select count(s) from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 				else
-					q = "select count(s) from Stock s, Fam f where " + whereSql + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+					q = "select count(s) from Stock s, Fam f, SubFam sf where " + whereSql + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 			     
 				List<Long> saldoList= getHibernateTemplate().find(q);
 				count = saldoList.get(0);
@@ -589,9 +589,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 
 			String q = "";
 			if (articuloActivo)
-				q = "select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+				q = "select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 			else
-				q = "select s from Stock s, Fam f where " + whereSql + " and s.fam = f.nrfam and f.skWebVisible = -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
+				q = "select s from Stock s, Fam f, SubFam sf where " + whereSql + " and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 " + GenerateHqlFilterAndSort.getHqlFilterAndSort("Stock",propertySort,orderSort,"s",propertyFilter,"s",valueFilter,false);
 		
 			List<Stock> stockList = null; 
 				try{
@@ -619,9 +619,9 @@ import jmc.skweb.util.GenerateHqlFilterAndSort;
 			
 			String q = "";
 			if (articuloActivo)
-				q = "select s from Stock s, Fam f where clave = '" + clave + "' and s.fam = f.nrfam and f.skWebVisible = -1 and preEsp6 <> -1 " ;
+				q = "select s from Stock s, Fam f, SubFam sf where clave = '" + clave + "' and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 and preEsp6 <> -1 " ;
 			else
-				q = "select s from Stock s, Fam f where clave = '" + clave + "' and s.fam = f.nrfam and f.skWebVisible = -1 " ;
+				q = "select s from Stock s, Fam f, SubFam sf where clave = '" + clave + "' and s.fam = f.nrfam and s.subFam = sf.nrsubfam and f.skWebVisible = -1 " ;
 		
 			List<Stock> stockList = null; 
 				try{
