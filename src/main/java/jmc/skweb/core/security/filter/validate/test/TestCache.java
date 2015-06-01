@@ -10,8 +10,8 @@ public class TestCache {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Boolean respuesta = ValidacionCache.getInstance().validateUrl("msAotip", "9");
-		System.out.println("Para msAotip y role 9 respuesta es: " + respuesta);
+		Boolean respuesta = ValidacionCache.getInstance().validateUrl("out", "0");
+		System.out.println("Para out y role 0 respuesta es: " + respuesta);
 		Boolean respuesta1 = ValidacionCache.getInstance().validateUrl("msAotip", "18");
 		System.out.println("Para msAotip y role 9 respuesta es: " + respuesta1);
 	}
