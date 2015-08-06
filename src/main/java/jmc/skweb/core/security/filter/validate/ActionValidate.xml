@@ -120,6 +120,8 @@
 	
 	<!-- Cuenta Corriente Compras -->
 	<entry><url>preparedFindGentePorNombre_CC_C</url><rolEnable>4,2,5</rolEnable></entry>
+	<entry><url>getPedidoVtaPendiente</url><rolEnable>4,2,5</rolEnable></entry>
+	
 	<entry><url>preparedFindAgendadoPorNombre_Resumen_CC_C</url><rolEnable>4,2,5</rolEnable></entry>
 	<entry><url>findGentePorNombre_CC_C</url><rolEnable>4,2,5</rolEnable></entry>
 	<entry><url>getSoloImpagosPorGente_CC_C</url><rolEnable>4,2,5</rolEnable></entry>

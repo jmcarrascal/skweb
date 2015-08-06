@@ -110,6 +110,8 @@
    		<put-attribute name="body" value="/pages/preparedFindAgendadoPorNombre_Resumen_CC_C.jsp"/>
 	</definition>
 	
+	
+	
 	<definition name="preparedFindAgendadoPorNombre_Resumen_CC_P_CPage" extends="definition">
    		<put-attribute name="body" value="/pages/preparedFindAgendadoPorNombre_Resumen_CC_P_C.jsp"/>
 	</definition>
@@ -144,6 +146,11 @@
 	<definition name="resumen_CC_CPage" extends="definition">
    		<put-attribute name="body" value="/pages/showResumen_CC_C.jsp"/>
 	</definition>
+	
+	<definition name="getPedidoVtaPendientePage" extends="definition">
+   		<put-attribute name="body" value="/pages/reportes/getPedidoVtaPendiente.jsp"/>
+	</definition>
+	
 	
 	<definition name="estadisticaArtGentePage" extends="definition">
    		<put-attribute name="body" value="/pages/estadistica/estadisticaArtGente.jsp"/>

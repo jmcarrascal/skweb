@@ -327,6 +327,9 @@ public class FormatUtil {
 	}
 	
 	public static String getSignoPorNegativoRow(Double valor){
+		if (valor == null){
+			return "black";
+		}
 		if (valor <  0){
 			return "red";
 		}else{

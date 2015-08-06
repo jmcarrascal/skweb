@@ -93,4 +93,7 @@ public interface TransaccionManager {
 	List<Items> changeValorMasivo(List<Items> itemsSessionList, Items items, Integer tipoValorMasivo,
 			String itemsSelecionados, Usuario usuarioSesion);
 
+	List<Transac> getPedidosVtaPendienteAprobar(Gente gente,
+			Usuario usuarioSesion);
+
 	}

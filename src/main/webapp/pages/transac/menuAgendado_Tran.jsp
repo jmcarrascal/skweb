@@ -138,6 +138,13 @@ $(document).ready(function(){
 			
 		});
 		
+		$("#idContinuarPedidoVtaPendiente").click(function (){
+			setTab();			
+			$("#idReportePedidoVtaPendienteForm").submit();
+
+			
+		});
+		
 		
 		$("#idCodAgendadoText").focus();
 	
@@ -468,7 +475,14 @@ function closeBlock(){
 					<td>					
 						<img id = "idContinuarRepoComprobImage" src="<%=request.getContextPath()%>/images/general/icon_continuar.png" alt="Continuar" title="Continuar" border="0"></img> 					
 					</td>
+					</tr>
+					<tr>
+						<td><label for="forTipoComprob">Pedidos de venta pendientes de aprobación:</label></td>	
+						<td>															
+						<img id = "idContinuarPedidoVtaPendiente" src="<%=request.getContextPath()%>/images/general/icon_continuar.png" alt="Continuar" title="Continuar" border="0"></img> 					
+					</td>
 					</tr>	 
+						 
 					</table>
 
 				</s:form> 
@@ -588,6 +602,9 @@ function closeBlock(){
 	<s:hidden key="gente.genteNr" id="idESTGenteHidden"/>
 	<s:hidden key="fechaDesde" id ="idESTfechaDesdeHidden"/>
 	<s:hidden key="fechaHasta" id ="idESTfechaHastaHidden"/>		
+</s:form>
+<s:form	id="idReportePedidoVtaPendienteForm" action="getPedidoVtaPendiente">
+	<s:hidden key="gente.genteNr" id="idRSPVGenteHidden"/>
 </s:form>
 
 

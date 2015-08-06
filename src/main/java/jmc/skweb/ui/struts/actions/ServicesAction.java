@@ -2721,6 +2721,23 @@ public class ServicesAction extends ActionSupport  {
 		
 		return "success";
 	}
+	
+	/**
+	 * Muestra los pedidos de venta desde un agendado 
+	 * 
+	 */
+	public String getPedidoVtaPendiente() throws Exception {	        						
+		
+		HttpServletRequest request =(HttpServletRequest)ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_REQUEST);
+				
+		gente = articuloManager.getGentePorPK(gente.getGenteNr());
+		
+		List<Transac> transacList = transaccionManager.getPedidosVtaPendienteAprobar(gente, getUsuarioSesion());
+		
+		request.setAttribute("transacList", transacList);
+		
+		return "success";
+	}
 
 	/**
 	 * Muestra la cuenta corriente de ventas en base a una persona  

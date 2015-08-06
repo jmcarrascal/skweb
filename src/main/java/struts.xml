@@ -335,6 +335,10 @@
 			<result name="success" type="tiles">resumen_CC_CPage</result>						
 		</action>
 		
+		<action name="getPedidoVtaPendiente" method="getPedidoVtaPendiente" class="services">
+			<result name="success" type="tiles">getPedidoVtaPendientePage</result>						
+		</action>
+		
 		
 		<action name="estadisticaArtGente" method="estadisticaArtGente" class="services">
 			<result name="success" type="tiles">estadisticaArtGentePage</result>						

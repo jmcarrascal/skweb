@@ -426,7 +426,7 @@ public class TransaccionManagerImpl implements TransaccionManager {
 		}
 		if (muestraEnPesos){
 			if (stock.getTipoCalculo().equals(Short.parseShort("6"))){
-				//Tomo el valor de conversión del dolar 
+				//Tomo el valor de conversiï¿½n del dolar 
 				Double valorMoneda = PreferenciasUtil.comparePreferencia(usuario.getListPreferencias(), Constants.PREF_ID_VALOR_DOLAR);
 				precio = precio.multiply(new BigDecimal(valorMoneda));
 			}
@@ -440,7 +440,7 @@ public class TransaccionManagerImpl implements TransaccionManager {
 			Integer empresaNrSk, String fechaEntrega, Transac transacRequest, int tipoComprobNr, Usuario usuario) throws Exception {
 		Transac transac = new Transac();
 		//
-		// Obtengo el numero de transacción
+		// Obtengo el numero de transacciï¿½n
 		Integer transacNr = getUltimaNumeracion(Constants.ID_NUMERACIONES_TRANSAC);
 		transacNr = Integer.parseInt(String.valueOf(transacNr) + empresaNrSk);
 		
@@ -456,7 +456,7 @@ public class TransaccionManagerImpl implements TransaccionManager {
 		String result = "error";
 		try {
 			String oficialCuentaIdOpe= null;
-			//Envío el Mail al Oficial de Cuenta
+			//Envï¿½o el Mail al Oficial de Cuenta
 			UsuarioWeb activUser = usuarioManager.getUsuarioByPK(usuario.getIdUsuario());
 			String subject = "";
 			String msg = "";					
@@ -882,7 +882,7 @@ public class TransaccionManagerImpl implements TransaccionManager {
 		List<EstadiTipoReporte> estadiTipoReporteListF = new ArrayList<EstadiTipoReporte>();
 		
 		EstadiTipoReporte e1 = new EstadiTipoReporte();
-		e1.setDescrip("[0] Seleccione una opción");
+		e1.setDescrip("[0] Seleccione una opciï¿½n");
 		e1.setNr(0);
 		
 		estadiTipoReporteListF.add(e1);
@@ -1019,6 +1019,15 @@ public class TransaccionManagerImpl implements TransaccionManager {
 			
 
 		return itemsListFinal;
+	}
+
+	
+	public List<Transac> getPedidosVtaPendienteAprobar(Gente gente,
+			Usuario usuario) {
+		List<Transac> transacList = extendedTransacDAO.getPedidosVtaPendienteAprobar(gente);
+		
+		
+		return transacList;		
 	}
 
 }

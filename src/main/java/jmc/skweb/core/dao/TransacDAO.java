@@ -50,4 +50,6 @@ public interface TransacDAO extends GenericDAO<Transac> {
 
 	List<EstadisticaPedido> getEstadisticaVentas(DatosReporte datosReporte);
 
+	List<Transac> getPedidosVtaPendienteAprobar(Gente gente);
+
 }

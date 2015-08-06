@@ -297,6 +297,24 @@ import jmc.skweb.util.DateUtil;
 				}
 			return transacList;
 		}
+		
+		public List<Transac> getPedidosVtaPendienteAprobar(Gente gente) {
+			List<Transac> transacList = null; 	
+			try{								
+				String sql ="select tr from Transac tr where tr.transacNr in ( " +
+				" select distinct(t.transacNr) from  Transac t, Items i " +
+				" where t.transacNr = i.id.transac.transacNr " + 				
+				" and i.tipoComprob = 8 " +
+				" and destino = -5) " +
+				" and tr.gente.genteNr = " + gente.getGenteNr() + " order by tr.fecha, tr.transacNr";
+				transacList = getHibernateTemplate().find(sql);
+				
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+			}finally{
+				}
+			return transacList;
+		}
 
 
 		public List<Items> getEstadisticaArtGente(Integer genteNr,
