@@ -414,8 +414,7 @@ import jmc.skweb.util.DateUtil;
 				}else{
 					sql = sql + " g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and ";
 				}
-				sql = sql + " g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and " +
-				" i.articulo Between '" + datosReporte.getArtDesde() + "' And '" + datosReporte.getArtHasta() + "'" +
+				sql = sql + " i.articulo Between '" + datosReporte.getArtDesde() + "' And '" + datosReporte.getArtHasta() + "'" +
 				" group by g.genteNr,g.razonSocial,i.articulo, s.descripcion " + 
 				" order by g.genteNr,i.articulo";
 				
