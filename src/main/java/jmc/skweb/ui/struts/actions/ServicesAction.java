@@ -2567,15 +2567,15 @@ public class ServicesAction extends ActionSupport  {
 					String clientes = "";
 					for(GenteBasic gb: clienteList){
 						if (clientes.equals("")){
-							clientes = "[" + gb.getGenteNr();
+							clientes = "(" + gb.getGenteNr();
 						}else{
 							clientes = clientes + "," + gb.getGenteNr();
 						}
 					}
 					if (clientes.equals("")){
-						clientes = "[]";
+						clientes = "()";
 					}else{
-						clientes = clientes + "]";
+						clientes = clientes + ")";
 					}
 					datosReporte.setClientes(clientes);
 				}

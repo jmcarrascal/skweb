@@ -269,7 +269,7 @@ $(document).ready(function(){
 		if (validarCampos()){	
 			$('#idFormatoReporte').val('P');
 			$('#generateEstadiReportForm').submit();
-		}
+		}	
 	});
  	
 	
