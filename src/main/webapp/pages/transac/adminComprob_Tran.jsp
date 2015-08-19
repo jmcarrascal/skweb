@@ -134,7 +134,7 @@ function loadPrecio(articuloClave) {
 				$("#precio").val(msg);
 			}
 		});
-		//callGetStock(articuloClave);
+		callGetStock(articuloClave);
 	}
 }
 

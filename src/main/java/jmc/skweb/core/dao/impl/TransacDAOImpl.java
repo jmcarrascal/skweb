@@ -361,8 +361,16 @@ import jmc.skweb.util.DateUtil;
 					sql = sql + " (i.cant1 - i.cant1entregado) > 0  and ";
 				}
 				sql = sql + 
-				" (i.fecha Between  convert(smalldatetime,CONVERT(varchar(6),'"+ fechaDesde + "', 112),112) And convert(smalldatetime,CONVERT(varchar(6),'"+ fechaHasta + "', 112),112))  and " +
-				" g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and " +
+				" (i.fecha Between  convert(smalldatetime,CONVERT(varchar(6),'"+ fechaDesde + "', 112),112) And convert(smalldatetime,CONVERT(varchar(6),'"+ fechaHasta + "', 112),112))  and ";
+				
+				
+				if (datosReporte.getTodosClientes().equals("true")){
+					sql = sql + " g.genteNr in " + datosReporte.getClientes() + " and ";
+				}else{
+					sql = sql + " g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and ";
+				}
+				
+				sql = sql +
 				" i.articulo Between '" + datosReporte.getArtDesde() + "' And '" + datosReporte.getArtHasta() + "'" +
 				" group by g.genteNr,g.razonSocial,i.articulo, s.descripcion " + 
 				" order by g.genteNr,i.articulo";
@@ -399,8 +407,14 @@ import jmc.skweb.util.DateUtil;
 				" i.articulo  = s.clave and " + 
 				" i.genteNr = g.genteNr and " +
 				" i.tipoComprob.nr IN (1,2,7,9) and " +
-				" (i.fecha Between  convert(smalldatetime,CONVERT(varchar(6),'"+ fechaDesde + "', 112),112) And convert(smalldatetime,CONVERT(varchar(6),'"+ fechaHasta + "', 112),112))  and " +
-				" g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and " +
+				" (i.fecha Between  convert(smalldatetime,CONVERT(varchar(6),'"+ fechaDesde + "', 112),112) And convert(smalldatetime,CONVERT(varchar(6),'"+ fechaHasta + "', 112),112))  and ";
+				
+				if (datosReporte.getTodosClientes().equals("true")){
+					sql = sql + " g.genteNr in " + datosReporte.getClientes() + " and ";
+				}else{
+					sql = sql + " g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and ";
+				}
+				sql = sql + " g.genteNr Between " + datosReporte.getAgendadoDesde() + " And " + datosReporte.getAgendadoHasta() + " and " +
 				" i.articulo Between '" + datosReporte.getArtDesde() + "' And '" + datosReporte.getArtHasta() + "'" +
 				" group by g.genteNr,g.razonSocial,i.articulo, s.descripcion " + 
 				" order by g.genteNr,i.articulo";

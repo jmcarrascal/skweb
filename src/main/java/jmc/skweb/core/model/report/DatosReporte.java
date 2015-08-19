@@ -17,6 +17,8 @@ public class DatosReporte {
 	private String pedidosPendientes;
 	private String artDesde;
 	private String artHasta;
+	private String todosClientes;
+	private String clientes;
 	
 	
 	
@@ -87,6 +89,19 @@ public class DatosReporte {
 	public void setAgendadoHasta(Integer agendadoHasta) {
 		this.agendadoHasta = agendadoHasta;
 	}
+	public String getTodosClientes() {
+		return todosClientes;
+	}
+	public void setTodosClientes(String todosClientes) {
+		this.todosClientes = todosClientes;
+	}
+	public String getClientes() {
+		return clientes;
+	}
+	public void setClientes(String clientes) {
+		this.clientes = clientes;
+	}
+	
 	
 	
 }

@@ -85,6 +85,10 @@
 					%>
 					<table>
 					<tr>
+						<td ><label for="forTipoReporte">Todos los clientes</label>
+						<s:checkbox name="datosReporte.todosClientes" id="todosClientes" checked="false"/></td>
+					</tr>
+					<tr>
 						<td><label for="forClientePorVendedor"><b>Seleccione el Cliente:</b></label></td>
 						<td><s:select id="idAgendadoDesde" name="datosReporte.agendadoDesde" cssErrorClass="error" cssClass="ui-widget-content ui-corner-all" list="%{#session['clienteList']}" listKey="genteNr" listValue="descripC" onchange=""/></td>				
 					</tr>	

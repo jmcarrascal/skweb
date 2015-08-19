@@ -2560,6 +2560,27 @@ public class ServicesAction extends ActionSupport  {
 		
 			HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_RESPONSE);									
 			
+			if (getUsuarioSesion().getRol() == Constants.ID_USR_VENDEDOR){
+				if (datosReporte.getTodosClientes().equals("true")){
+					//Cargo los valores de Tipo de Reporte 
+					List<GenteBasic> clienteList = articuloManager.getClienteBasicPorVendedor(getUsuarioSesion().getVendedorNr());
+					String clientes = "";
+					for(GenteBasic gb: clienteList){
+						if (clientes.equals("")){
+							clientes = "[" + gb.getGenteNr();
+						}else{
+							clientes = clientes + "," + gb.getGenteNr();
+						}
+					}
+					if (clientes.equals("")){
+						clientes = "[]";
+					}else{
+						clientes = clientes + "]";
+					}
+					datosReporte.setClientes(clientes);
+				}
+			}
+			
 			byte[] fileDownload = reportManager.generateEstadiReport(datosReporte, getUsuarioSesion());						
 	    		
 			ServletOutputStream sos;

@@ -238,7 +238,7 @@ public class ReportManagerImpl implements ReportManager {
 				Usuario usuarioSesion) {
 			byte[] result = null;
 			
-			if(usuarioSesion.getRol() == Constants.ID_USR_VENDEDOR){
+			if(usuarioSesion.getRol() == Constants.ID_USR_VENDEDOR && !datosReporte.getTodosClientes().equals("true")){
 				datosReporte.setAgendadoHasta(datosReporte.getAgendadoDesde());
 			} 
 			
