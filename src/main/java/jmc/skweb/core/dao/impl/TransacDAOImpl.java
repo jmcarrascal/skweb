@@ -374,8 +374,11 @@ import jmc.skweb.util.DateUtil;
 				" i.articulo Between '" + datosReporte.getArtDesde() + "' And '" + datosReporte.getArtHasta() + "'" +
 				" group by g.genteNr,g.razonSocial,i.articulo, s.descripcion " + 
 				" order by g.genteNr,i.articulo";
+				System.out.println("SQL Reportes: " + sql);
+				
 				
 				estadisticaPedidoList = getHibernateTemplate().find(sql);
+				System.out.println("Registros recuperados: " + estadisticaPedidoList.size());
 				
 			}catch(Exception e){
 				System.out.println(e.getMessage());

@@ -879,7 +879,7 @@ public class ArticuloManagerImpl implements ArticuloManager{
 			if (usaSeleccion == -1 ){
 				OptionsSelect option = new OptionsSelect();
 				option.setId(String.valueOf(0));
-				option.setValue("[0] Seleccione una opción");
+				option.setValue("[0] Seleccione una opcion");
 				optionsList.add(option);				
 			}
 			if (subFamList != null){
@@ -899,7 +899,7 @@ public class ArticuloManagerImpl implements ArticuloManager{
 			if (usaSeleccion == -1 ){
 				OptionsSelect option = new OptionsSelect();
 				option.setId(String.valueOf(0));
-				option.setValue("[0] Seleccione una opción");
+				option.setValue("[0] Seleccione una opcion");
 				optionsList.add(option);				
 			}
 			if (origenList != null){
@@ -919,7 +919,7 @@ public class ArticuloManagerImpl implements ArticuloManager{
 			if (usaSeleccion == -1 ){
 				OptionsSelect option = new OptionsSelect();
 				option.setId(String.valueOf(0));
-				option.setValue("[0] Seleccione una opción");
+				option.setValue("[0] Seleccione una opcion");
 				optionsList.add(option);				
 			}
 			if (reporteList != null){
@@ -935,7 +935,7 @@ public class ArticuloManagerImpl implements ArticuloManager{
 
 		public List<SubFam> getOptionsDefault() {
 			SubFam subFam = new SubFam();
-			subFam.setDesubfa("Seleccione una opción");
+			subFam.setDesubfa("Seleccione una opcion");
 			subFam.setNrsubfam(0l);
 			List<SubFam> subFamList = new ArrayList<SubFam>();
 			subFamList.add(subFam);

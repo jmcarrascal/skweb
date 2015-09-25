@@ -882,7 +882,7 @@ public class TransaccionManagerImpl implements TransaccionManager {
 		List<EstadiTipoReporte> estadiTipoReporteListF = new ArrayList<EstadiTipoReporte>();
 		
 		EstadiTipoReporte e1 = new EstadiTipoReporte();
-		e1.setDescrip("[0] Seleccione una opci�n");
+		e1.setDescrip("[0] Seleccione una opcion");
 		e1.setNr(0);
 		
 		estadiTipoReporteListF.add(e1);
