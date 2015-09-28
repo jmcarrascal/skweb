@@ -179,7 +179,9 @@ public class ReportManagerImpl implements ReportManager {
 				// Definimos cual sera nuestra fuente de datos
 				JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(aux);
 				// Recuperamos el fichero fuente 
+				
 				JasperDesign jd=JRXmlLoader.load(rutaReporte);
+				//JasperDesign jd=JRXmlLoader.load(rutaReporte);
 				// Compilamos el informe jrxml
 				JasperReport report = JasperCompileManager.compileReport(jd);
 				// Rellenamos el informe con la conexion creada y sus parametros establecidos

@@ -2561,6 +2561,9 @@ public class ServicesAction extends ActionSupport  {
 			HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_RESPONSE);									
 			
 			if (getUsuarioSesion().getRol() == Constants.ID_USR_VENDEDOR){
+				if (datosReporte.getTodosClientes() == null){
+					datosReporte.setTodosClientes("true");
+				}
 				if (datosReporte.getTodosClientes().equals("true")){
 					//Cargo los valores de Tipo de Reporte 
 					List<GenteBasic> clienteList = articuloManager.getClienteBasicPorVendedor(getUsuarioSesion().getVendedorNr());
@@ -2579,6 +2582,8 @@ public class ServicesAction extends ActionSupport  {
 					}
 					datosReporte.setClientes(clientes);
 				}
+			}else{
+				datosReporte.setTodosClientes("false");
 			}
 			
 			byte[] fileDownload = reportManager.generateEstadiReport(datosReporte, getUsuarioSesion());						
