@@ -10,7 +10,6 @@ import java.util.List;
 import jmc.skweb.core.dao.GenericDAO;
 import jmc.skweb.util.exception.DataAccessDPIv1Exception;
 
-
 import org.hibernate.Criteria;
 import org.hibernate.FlushMode;
 import org.hibernate.criterion.DetachedCriteria;
@@ -18,7 +17,6 @@ import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Juan Manuel Carrascal

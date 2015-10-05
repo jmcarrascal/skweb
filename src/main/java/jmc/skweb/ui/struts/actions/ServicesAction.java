@@ -3,19 +3,12 @@ package jmc.skweb.ui.struts.actions;
 
 
 import java.io.DataInputStream;
-
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang.xwork.StringUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,27 +17,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jmc.skweb.core.model.ArtMadre;
-import jmc.skweb.core.model.ExiArt;
-import jmc.skweb.core.model.shortEntities.GenteBasic;
-import jmc.skweb.core.model.shortEntities.OptionsSelect;
-import jmc.skweb.core.model.traza.Trazabi;
 import jmc.skweb.core.model.Condi;
 import jmc.skweb.core.model.Domicilios;
 import jmc.skweb.core.model.EstadiTipoReporte;
-import jmc.skweb.core.model.ImagenesArticulos;
-import jmc.skweb.core.model.StockPiezas;
-import jmc.skweb.core.model.TipoComprob;
+import jmc.skweb.core.model.ExiArt;
 import jmc.skweb.core.model.Fam;
 import jmc.skweb.core.model.Gente;
+import jmc.skweb.core.model.ImagenesArticulos;
 import jmc.skweb.core.model.Items;
 import jmc.skweb.core.model.Paseban;
+import jmc.skweb.core.model.Stock;
+import jmc.skweb.core.model.StockPiezas;
 import jmc.skweb.core.model.SubFam;
+import jmc.skweb.core.model.TipoComprob;
 import jmc.skweb.core.model.Transac;
 import jmc.skweb.core.model.Usuario;
-import jmc.skweb.core.model.Stock;
 import jmc.skweb.core.model.report.DatosReporte;
 import jmc.skweb.core.model.report.SaldoAcumulado;
+import jmc.skweb.core.model.report.SaldoAcumuladoReport;
 import jmc.skweb.core.model.report.TipoReporte;
+import jmc.skweb.core.model.report.TransacReport;
+import jmc.skweb.core.model.shortEntities.GenteBasic;
+import jmc.skweb.core.model.shortEntities.OptionsSelect;
+import jmc.skweb.core.model.traza.Trazabi;
 import jmc.skweb.core.service.ArticuloManager;
 import jmc.skweb.core.service.CuentaCorrienteManager;
 import jmc.skweb.core.service.ParametrizacionManager;
@@ -52,15 +47,15 @@ import jmc.skweb.core.service.ReportManager;
 import jmc.skweb.core.service.TesoreriaManager;
 import jmc.skweb.core.service.TransaccionManager;
 import jmc.skweb.core.service.UsuarioManager;
-import jmc.skweb.util.CallUrl;
 import jmc.skweb.util.Constants;
-import jmc.skweb.util.FileUtil;
 import jmc.skweb.util.FormatUtil;
+import jmc.skweb.util.HibernateProxyTypeAdapter;
 import jmc.skweb.util.MathUtil;
 import jmc.skweb.util.PreferenciasUtil;
 import jmc.skweb.util.email.Email;
-import jmc.skweb.util.email.SendEmailThread;
 
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.extremecomponents.table.context.Context;
 import org.extremecomponents.table.context.HttpServletRequestContext;
@@ -71,6 +66,8 @@ import org.extremecomponents.table.limit.LimitFactory;
 import org.extremecomponents.table.limit.TableLimit;
 import org.extremecomponents.table.limit.TableLimitFactory;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -571,8 +568,13 @@ public class ServicesAction extends ActionSupport  {
 	public String login(){	        
 	    return "success";
 	}
+			
+	public String preparedReportes(){				
+	    return "success";
+	}
 	
-	public String preparedEstadistica(){
+	
+public String preparedEstadistica(){
 		
 		//Cargo los valores de Tipo de Reporte 
 		List<EstadiTipoReporte> tipoReporteList = transaccionManager.getEstadiTipoReporte();
@@ -605,7 +607,6 @@ public class ServicesAction extends ActionSupport  {
 		}
 	    return "success";
 	}
-	
 	
 	
 	/**
@@ -2439,6 +2440,71 @@ public class ServicesAction extends ActionSupport  {
 		
 		
 		response.setContentType("text/html; charset=iso-8859-1");
+        //Imprime el resultado
+        try {
+			sos.print(salida.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+			
+	}	
+	
+	
+	public String getSoloImpagoClientes() throws Exception {	        								
+		
+		HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_RESPONSE);
+		HttpServletRequest request =(HttpServletRequest)ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_REQUEST);
+		
+		List<GenteBasic> clienteList = articuloManager.getClienteBasicPorVendedor(getUsuarioSesion().getVendedorNr());
+		
+		List<SaldoAcumuladoReport> saldoAcumuladoReportList = new ArrayList<SaldoAcumuladoReport>();
+		for (GenteBasic genteBasic: clienteList){
+			
+			
+			SaldoAcumulado saldoAcumulado = cuentaCorrienteManager.getCuentaCorrienteVentasPorGente(genteBasic.getGenteNr(), getUsuarioSesion());
+	
+			if (saldoAcumulado.getListTransac().size() > 0){
+				SaldoAcumuladoReport saldoAcumuladoReport = new SaldoAcumuladoReport();
+				List<TransacReport> transacReportList = new ArrayList<TransacReport>();
+				for (Transac transac : saldoAcumulado.getListTransac()){
+					TransacReport transacReport = new TransacReport();
+					transacReport.setTransacNr(transac.getTransacNr());
+					transacReport.setFecha(transac.getFecha());
+					transacReport.setLetra(transac.getLetra());
+					transacReport.setNrComprob(transac.getNrComprob());
+					transacReport.setPrefijo(transac.getPrefijo());
+					transacReport.setSaldoArrastre(transac.getSaldoAcumulado());
+					transacReport.setSaldoComprob(transac.getSaldoCalculado());
+					transacReport.setTipoComprob(transac.getTipoComprob().getDescripcion());
+					transacReport.setTotalComprob(transac.getTotalCalculado());
+					transacReportList.add(transacReport);			
+				}
+				
+				saldoAcumuladoReport.setFinAcumulado(saldoAcumulado.getFinAcumulado());
+				saldoAcumuladoReport.setIncioAcumulado(saldoAcumulado.getIncioAcumulado());
+				saldoAcumuladoReport.setListTransac(transacReportList);
+				saldoAcumuladoReport.setGente(genteBasic.getDescripC());
+				saldoAcumuladoReportList.add(saldoAcumuladoReport);
+			}
+			
+		}
+		Gson gson = new Gson();
+		
+		String s = gson.toJson(saldoAcumuladoReportList);
+		
+		ServletOutputStream sos = null;
+		try {
+			sos = response.getOutputStream();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		StringBuilder salida = new StringBuilder();
+
+		salida.append(s);
+		response.setContentType("application/json; charset=iso-8859-1");
         //Imprime el resultado
         try {
 			sos.print(salida.toString());

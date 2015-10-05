@@ -5,7 +5,7 @@ import java.security.cert.X509Certificate;
 
 import jmc.skweb.core.model.Usuario;
 
-import bsh.This;
+
 
 public class CertificadoProc extends Certificado{
 
@@ -44,7 +44,7 @@ public class CertificadoProc extends Certificado{
 		certificadoProc.setO(cert.getO());
 		certificadoProc.setOu(cert.getOu());
 		try{
-			String[] parrafos = cert.getOu().split("Se desempeña como ");
+			String[] parrafos = cert.getOu().split("Se desempeï¿½a como ");
 			String[] titulos = parrafos[1].split("en la oficina ");
 			certificadoProc.setCargo(titulos[0].trim());
 			certificadoProc.setOficina(titulos[1].trim());

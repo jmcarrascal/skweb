@@ -3,19 +3,8 @@ package jmc.skweb.core.dao.impl;
 
 import java.util.List;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-
-import jmc.skweb.core.dao.FamDAO;
 import jmc.skweb.core.dao.GenteBasicDAO;
-import jmc.skweb.core.dao.GenteDAO;
-import jmc.skweb.core.dao.ParametrizacionDAO;
-import jmc.skweb.core.model.Fam;
-import jmc.skweb.core.model.Gente;
 import jmc.skweb.core.model.shortEntities.GenteBasic;
-import jmc.skweb.core.model.Parametrizacion;
 
 	/**
 	 * 

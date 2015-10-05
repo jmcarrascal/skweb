@@ -76,8 +76,10 @@
    		<put-attribute name="body" value="/pages/estadistica/preparedEstadistica.jsp"/>
 	</definition>
 	
-		
-	
+	<definition name="preparedReportesPage" extends="definition">
+   		<put-attribute name="body" value="/pages/reportes/preparedReportes.jsp"/>
+	</definition>
+
 	<definition name="preparedFindAgendadoPorNombre_TranPage" extends="definition">
    		<put-attribute name="body" value="/pages/transac/preparedFindAgendadoPorNombre_Tran.jsp"/>
 	</definition>

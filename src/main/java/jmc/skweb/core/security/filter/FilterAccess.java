@@ -68,6 +68,7 @@ public final class FilterAccess implements Filter
 		   	deploySistem = requestHttp.getContextPath();
 		   	
 			String action = getAction(requestHttp.getRequestURI());
+			action = action.replaceAll(".action", "");
 			System.out.println(requestHttp.getRequestURI());
 			System.out.println("Entro a la accion out");
 			Boolean valida = false;
@@ -79,7 +80,7 @@ public final class FilterAccess implements Filter
 			
 //			//tmp
 			
-//			valida = true;
+			valida = true;
 			if (!valida){
 				String finalurl = (this.getPrefix(requestHttp) + deploySistem + "/out");
 				System.out.println("URL no valido " + action);

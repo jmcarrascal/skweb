@@ -96,7 +96,7 @@ public class CuentaCorrienteManagerImpl implements CuentaCorrienteManager{
 			String rutaComprobantePdf = "";
 			
 			try{
-				rutaComprobantePdf = dondeEstaFactuMailDAO.getByPrimaryKey(usuario.getEmpresaNrSk()).getDonde();	
+				//rutaComprobantePdf = dondeEstaFactuMailDAO.getByPrimaryKey(usuario.getEmpresaNrSk()).getDonde();	
 			}catch (Exception e){
 				e.printStackTrace();
 			}

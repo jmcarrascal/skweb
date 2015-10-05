@@ -2,13 +2,12 @@ package jmc.skweb.core.dao.impl;
 
 import java.util.List;
 
+import jmc.skweb.core.dao.ParametrizacionDAO;
+import jmc.skweb.core.model.Parametrizacion;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-
-import jmc.skweb.core.dao.ParametrizacionDAO;
-import jmc.skweb.core.model.Parametrizacion;
 
 	/**
 	 * 

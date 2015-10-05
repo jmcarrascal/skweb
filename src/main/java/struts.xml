@@ -81,13 +81,18 @@
 			<result name="success" type="tiles">preparedEstadisticaPage</result>			
 		</action>
 		
+		<action name="preparedReportes" method="preparedReportes" class="services">
+			<result name="success" type="tiles">preparedReportesPage</result>			
+		</action>
+		
+		<action name="getSoloImpagoClientes" method="getSoloImpagoClientes" class="services">						
+		</action>
+		
 		
 		
 		<action name="preparedDownloadFactura" method="preparedDownloadFactura" class="services">
 			<result name="success" type="tiles">preparedDownloadFacturaPage</result>			
 		</action>		
-		
-		
 		
 		<action name="getStockPorPiezasList" method="getStockPorPiezasList" class="services">
 		</action>		

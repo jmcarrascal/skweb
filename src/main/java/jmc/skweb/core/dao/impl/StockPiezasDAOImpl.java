@@ -4,9 +4,7 @@ package jmc.skweb.core.dao.impl;
 import java.util.List;
 
 import jmc.skweb.core.dao.StockPiezasDAO;
-import jmc.skweb.core.model.Colores;
 import jmc.skweb.core.model.StockPiezas;
-import jmc.skweb.core.model.StockPiezasId;
 
 	/**
 	 * 

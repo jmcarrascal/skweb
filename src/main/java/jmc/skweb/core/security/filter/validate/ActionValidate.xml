@@ -136,6 +136,8 @@
 	<entry><url>viewTrazaIngreso</url><rolEnable>20</rolEnable></entry>
 			
 <!-- Entradas publicas -->
+	<entry><url>getSoloImpagoClientes</url><rolEnable>0,1,2,10,3,4,20,5</rolEnable></entry>
+
 	<entry><url>ajax</url><rolEnable>0,1,2,10,3,4,20,5</rolEnable></entry>	
 	<entry><url>themes</url><rolEnable>0,1,2,10,3,4,20,5</rolEnable></entry>
 	<entry><url>blueprint</url><rolEnable>0,1,2,10,3,4,20,5</rolEnable></entry>

@@ -659,11 +659,6 @@
 		<property name="articuloManager" ref="ArticuloManager" />
     </bean>
     
-    <wss:binding url="/webServices.services">
-        <wss:service>
-            <ws:service bean="#serviceArticuloWS"/>
-        </wss:service>
-    </wss:binding>
-    
+   
 	
 </beans>

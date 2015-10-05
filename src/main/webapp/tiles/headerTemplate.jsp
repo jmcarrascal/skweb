@@ -48,6 +48,7 @@
 		            </ul>
 		        </li>
 				<li class="last" ><a href="preparedEstadistica"><span>Estadisticas</span></a></li>
+				<li class="last" ><a href="preparedReportes"><span>Solo Impago Clientes</span></a></li>
 		    </ul>
 		    
 		    <ul style="float:right;"> 
@@ -114,6 +115,7 @@
 		        </li>
 		       	        
 		       <li class="last" ><a href="preparedEstadistica"><span>Estadisticas</span></a></li>
+		      
 		        	        		        
 		    </ul>
 		    <ul style="float:right;"> 
@@ -172,26 +174,7 @@
     		</ul>
 		</div>
 		
-		<%
-			break;
-			case Constants.ID_USR_TRAZA:
-			
-		%>
-			<div id="menu" >
-		    <ul class="menu">
-		        <li><a href="#" class="parent"><span>Trazabilidad de Medicamentos</span></a>
-		            <ul>
-		                <li><a href="preparedListRemitosPendientes"><span>Recepcionar Remito(SK)</span></a></li>
-		                <li><a href="preparedNewUsuario"><span>Recepcionar por Caja</span></a></li>		                
-		                <li><a href="getUsuarios"><span>Enviar Remito(SK)</span></a></li>
-		                <li><a href="preparedNewUsuario"><span>Enviar por Caja</span></a></li>
-		            </ul>
-		        </li>
-		    </ul>
-		    <ul style="float:right;"> 
-        		<li class="last" ><a href="out"><span><b>Cerrar Sesión</b></span></a></li>
-    		</ul>
-		</div>
+		
 		<%
 			break;
 			}

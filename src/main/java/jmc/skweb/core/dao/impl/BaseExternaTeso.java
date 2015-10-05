@@ -1,7 +1,5 @@
 package jmc.skweb.core.dao.impl;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
