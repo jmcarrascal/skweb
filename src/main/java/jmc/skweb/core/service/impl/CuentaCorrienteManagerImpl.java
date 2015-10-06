@@ -85,7 +85,7 @@ public class CuentaCorrienteManagerImpl implements CuentaCorrienteManager{
 		/**
 		 * Obtiene los resgistros de transac..... para Clientes
 		 */
-		public SaldoAcumulado getCuentaCorrienteVentasPorGente(Integer genteNr, Usuario usuario) {
+		public SaldoAcumulado getCuentaCorrienteVentasPorGente(Integer genteNr, Usuario usuario, Boolean cargarPdf) {
 			//Obtengo los registros de Transac del cliente genteNr donde
 			//el tipo de comporbante de 1,2,4,5,6,7 donde 2,4,6 restan.
 			SaldoAcumulado saldoAcumulado = new SaldoAcumulado();
@@ -96,7 +96,9 @@ public class CuentaCorrienteManagerImpl implements CuentaCorrienteManager{
 			String rutaComprobantePdf = "";
 			
 			try{
-				//rutaComprobantePdf = dondeEstaFactuMailDAO.getByPrimaryKey(usuario.getEmpresaNrSk()).getDonde();	
+				if (cargarPdf){
+					rutaComprobantePdf = dondeEstaFactuMailDAO.getByPrimaryKey(usuario.getEmpresaNrSk()).getDonde();
+				}
 			}catch (Exception e){
 				e.printStackTrace();
 			}

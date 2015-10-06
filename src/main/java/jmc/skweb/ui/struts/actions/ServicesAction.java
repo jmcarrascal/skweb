@@ -2463,30 +2463,32 @@ public String preparedEstadistica(){
 		for (GenteBasic genteBasic: clienteList){
 			
 			
-			SaldoAcumulado saldoAcumulado = cuentaCorrienteManager.getCuentaCorrienteVentasPorGente(genteBasic.getGenteNr(), getUsuarioSesion());
+			SaldoAcumulado saldoAcumulado = cuentaCorrienteManager.getCuentaCorrienteVentasPorGente(genteBasic.getGenteNr(), getUsuarioSesion(), false);
 	
 			if (saldoAcumulado.getListTransac().size() > 0){
+				if (saldoAcumulado.getFinAcumulado() > 1){
 				SaldoAcumuladoReport saldoAcumuladoReport = new SaldoAcumuladoReport();
 				List<TransacReport> transacReportList = new ArrayList<TransacReport>();
-				for (Transac transac : saldoAcumulado.getListTransac()){
-					TransacReport transacReport = new TransacReport();
-					transacReport.setTransacNr(transac.getTransacNr());
-					transacReport.setFecha(transac.getFecha());
-					transacReport.setLetra(transac.getLetra());
-					transacReport.setNrComprob(transac.getNrComprob());
-					transacReport.setPrefijo(transac.getPrefijo());
-					transacReport.setSaldoArrastre(transac.getSaldoAcumulado());
-					transacReport.setSaldoComprob(transac.getSaldoCalculado());
-					transacReport.setTipoComprob(transac.getTipoComprob().getDescripcion());
-					transacReport.setTotalComprob(transac.getTotalCalculado());
-					transacReportList.add(transacReport);			
+					for (Transac transac : saldoAcumulado.getListTransac()){
+						TransacReport transacReport = new TransacReport();
+						transacReport.setTransacNr(transac.getTransacNr());
+						transacReport.setFecha(transac.getFecha());
+						transacReport.setLetra(transac.getLetra());
+						transacReport.setNrComprob(transac.getNrComprob());
+						transacReport.setPrefijo(transac.getPrefijo());
+						transacReport.setSaldoArrastre(transac.getSaldoAcumulado());
+						transacReport.setSaldoComprob(transac.getSaldoCalculado());
+						transacReport.setTipoComprob(transac.getTipoComprob().getDescripcion());
+						transacReport.setTotalComprob(transac.getTotalCalculado());
+						transacReportList.add(transacReport);			
+					}
+					
+					saldoAcumuladoReport.setFinAcumulado(saldoAcumulado.getFinAcumulado());
+					saldoAcumuladoReport.setIncioAcumulado(saldoAcumulado.getIncioAcumulado());
+					saldoAcumuladoReport.setListTransac(transacReportList);
+					saldoAcumuladoReport.setGente(genteBasic.getDescripC());
+					saldoAcumuladoReportList.add(saldoAcumuladoReport);
 				}
-				
-				saldoAcumuladoReport.setFinAcumulado(saldoAcumulado.getFinAcumulado());
-				saldoAcumuladoReport.setIncioAcumulado(saldoAcumulado.getIncioAcumulado());
-				saldoAcumuladoReport.setListTransac(transacReportList);
-				saldoAcumuladoReport.setGente(genteBasic.getDescripC());
-				saldoAcumuladoReportList.add(saldoAcumuladoReport);
 			}
 			
 		}
@@ -2784,7 +2786,7 @@ public String preparedEstadistica(){
 				
 		gente = articuloManager.getGentePorPK(gente.getGenteNr());
 		
-		SaldoAcumulado saldoAcumulado = cuentaCorrienteManager.getCuentaCorrienteVentasPorGente(gente.getGenteNr(), getUsuarioSesion());
+		SaldoAcumulado saldoAcumulado = cuentaCorrienteManager.getCuentaCorrienteVentasPorGente(gente.getGenteNr(), getUsuarioSesion(), true);
 		
 		//totalSaldo = cuentaCorrienteManager.getTotalSaldoVentasPorGente(saldoAcumulado.getListTransac());
 		

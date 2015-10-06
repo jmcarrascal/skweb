@@ -77,7 +77,7 @@ import jmc.skweb.core.model.report.SaldoAcumulado;
  */
 public interface CuentaCorrienteManager {
 
-	SaldoAcumulado getCuentaCorrienteVentasPorGente(Integer genteNr, Usuario usuario);
+	SaldoAcumulado getCuentaCorrienteVentasPorGente(Integer genteNr, Usuario usuario, Boolean cargaPdf);
 
 	public Double getTotalSaldoVentasPorGente(List<Transac> transacVentasList);
 
