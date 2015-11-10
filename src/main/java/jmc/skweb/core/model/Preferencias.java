@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 //@Table(name = "Preferencias", schema = "Empresa1.dbo")
 //@Table(name = "Preferencias", schema = "Plasticos.dbo")
-@Table(name = "Preferencias", schema = "Herramientas.dbo")
+@Table(name = "Preferencias", schema = "Empresa1.dbo")
 
 public class Preferencias implements java.io.Serializable {
 

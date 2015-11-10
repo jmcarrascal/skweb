@@ -26,6 +26,10 @@
 	type="text/javascript"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/js/jquery.alphanumeric.js?n=2"></script>
+	
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/js/jquery.alphanumeric.js?n=2"></script>
+
 
 <%
 	//Tomar el usuario desde el Request
@@ -120,6 +124,13 @@ form{
 	$(document).ready(function() {
 		var initTable = "<table ><caption>@caption</caption><tr><th>TransacNr</th><th>Fecha</th><th>TipoComprob</th><th>Letra</th><th>Prefijo</th><th>NrComprob</th><th>Total Comprob</th><th>Saldo Comprob</th><th>Saldo Arrastre</th></tr>";
 		var result ="";
+		$.blockUI({
+			theme:   true, 
+			title: 'Buscando Solo Impago Clientes',
+	        message: "Aguarde unos instantest...", 
+	        opacity: .1, 
+	        color: 'black'
+		});
 		$.ajax({
 			type : "GET",
 			url : "getSoloImpagoClientes",
@@ -143,6 +154,8 @@ form{
 					result = "";
 				});
 				$('#listaSaloImpago').html(resultfinal);
+				console.log(resultfinal);
+				$.unblockUI();
 			}
 		});
 	});

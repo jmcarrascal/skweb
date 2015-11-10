@@ -18,7 +18,7 @@ import javax.persistence.Transient;
 //@Table(name = "SubFam", schema = "ComunSql.dbo")
 //Simpa Plasticos
 //@Table(name = "SubFam", schema = "ArtPlas.dbo")
-@Table(name = "SubFam", schema = "ArtHerr.dbo")
+@Table(name = "SubFam", schema = "ComunSql.dbo")
 public class SubFam implements java.io.Serializable {
 
 	private Long nrsubfam;

@@ -33,7 +33,7 @@ import jmc.skweb.util.MathUtil;
 //@Table(name = "Transac", schema="Empresa1.dbo")
 //Simpa Plsticos
 //@Table(name = "Transac", schema="Plasticos.dbo")
-@Table(name = "Transac", schema = "Herramientas.dbo")
+@Table(name = "Transac", schema = "Empresa1.dbo")
 
 public class Transac implements java.io.Serializable {
 

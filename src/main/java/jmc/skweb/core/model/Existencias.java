@@ -14,7 +14,7 @@ import javax.persistence.Table;
 //@Table(name = "Existencias", schema = "ComunSql.dbo")
 //Simpa
 //@Table(name = "Existencias", schema = "ArtPlas.dbo")
-@Table(name = "Existencias", schema = "ArtHerr.dbo")
+@Table(name = "Existencias", schema = "ComunSql.dbo")
 public class Existencias implements java.io.Serializable {
 
 	private int nr;

@@ -15,7 +15,7 @@ import javax.persistence.Transient;
 //@Table(name = "Fam", schema = "ComunSql.dbo")
 //Simpa
 //@Table(name = "Fam", schema = "ArtPlas.dbo")
-@Table(name = "Fam", schema = "ArtHerr.dbo")
+@Table(name = "Fam", schema = "ComunSql.dbo")
 public class Fam implements java.io.Serializable {
 
 	private Long nrfam;

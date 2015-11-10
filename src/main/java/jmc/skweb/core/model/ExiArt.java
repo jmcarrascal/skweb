@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 //@Table(name = "ExiArt", schema = "ComunSql.dbo")
 //Solo para Simpa Plasticos
 //@Table(name = "ExiArt", schema = "ArtPlas.dbo")
-@Table(name = "ExiArt", schema = "ArtHerr.dbo")
+@Table(name = "ExiArt", schema = "ComunSql.dbo")
 public class ExiArt implements java.io.Serializable {
 
 	private ExiArtId id;
