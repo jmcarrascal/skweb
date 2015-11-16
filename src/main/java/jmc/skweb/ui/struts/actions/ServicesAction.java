@@ -2055,21 +2055,23 @@ public String preparedEstadistica(){
 		if (PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1d){			
 			List<StockPiezas> stockPiezasList = articuloManager.getStockPiezasPorArt(stock.getClave(), getUsuarioSesion());		
 			Double muestraCantidad = PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_MUESTRA_CANTIDAD);
-			result = FormatUtil.getListHTMLStockPiezas(stockPiezasList, muestraCantidad, false,false,null,muestroBarraLateral);	
-						
+			result = FormatUtil.getListHTMLStockPiezas(stockPiezasList, muestraCantidad, false,false,null,muestroBarraLateral);			
+			Integer genteNr = null;
+			
+			try{
+				genteNr = getUsuarioSesion().getGenteSession().getGenteNr();
+			}catch(Exception ee){
+				
+			}
+			
+			result = result + articuloManager.getTableResumenPedidos(stock.getClave(),getUsuarioSesion(),3 );
+			
+			result = result + "<h4>Precio: $" + transaccionManager.getPrecioClienteArticulo(genteNr, stock.getClave(),getUsuarioSesion(), false) + "</h4>";
 		}else{
 			result = articuloManager.getFormulaStock(stock.getClave(), getUsuarioSesion(), carrito);
 			
 		}
-		Integer genteNr = null;
 		
-		try{
-			genteNr = getUsuarioSesion().getGenteSession().getGenteNr();
-		}catch(Exception ee){
-			
-		}
-		
-		result = result + "<h4>Precio: $" + transaccionManager.getPrecioClienteArticulo(genteNr, stock.getClave(),getUsuarioSesion(), false) + "</h4>";
 		
 		ServletOutputStream sos = null;
 		try {

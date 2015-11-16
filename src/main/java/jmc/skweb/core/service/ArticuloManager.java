@@ -175,6 +175,7 @@ public interface ArticuloManager {
 	public List<SubFam> getOptionsDefault();
 
 	public List<GenteBasic> getClienteBasicPorVendedor(Integer vendedorNr);
+	
 
 	
 	
