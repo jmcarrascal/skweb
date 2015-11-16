@@ -2049,16 +2049,19 @@ public String preparedEstadistica(){
 		
 		HttpServletResponse response = (HttpServletResponse) ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_RESPONSE);
 		
-		HttpServletRequest request =(HttpServletRequest)ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_REQUEST);						
+		HttpServletRequest request = (HttpServletRequest)ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_REQUEST);						
 		String result = "";
 		//Pregunto si tiene implementada la logica de Stock
-		if (PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1d){
+		if (PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1d){			
 			List<StockPiezas> stockPiezasList = articuloManager.getStockPiezasPorArt(stock.getClave(), getUsuarioSesion());		
 			Double muestraCantidad = PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_MUESTRA_CANTIDAD);
 			result = FormatUtil.getListHTMLStockPiezas(stockPiezasList, muestraCantidad, false,false,null,muestroBarraLateral);	
+						
 		}else{
 			result = articuloManager.getFormulaStock(stock.getClave(), getUsuarioSesion(), carrito);
+			
 		}
+		result = result + "<h4>Precio: $" + transaccionManager.getPrecioClienteArticulo(getUsuarioSesion().getGenteSession().getGenteNr(), stock.getClave(),getUsuarioSesion(), false) + "</h4>";
 		
 		ServletOutputStream sos = null;
 		try {
