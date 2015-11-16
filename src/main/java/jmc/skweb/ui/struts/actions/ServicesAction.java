@@ -2061,7 +2061,15 @@ public String preparedEstadistica(){
 			result = articuloManager.getFormulaStock(stock.getClave(), getUsuarioSesion(), carrito);
 			
 		}
-		result = result + "<h4>Precio: $" + transaccionManager.getPrecioClienteArticulo(getUsuarioSesion().getGenteSession().getGenteNr(), stock.getClave(),getUsuarioSesion(), false) + "</h4>";
+		Integer genteNr = null;
+		
+		try{
+			genteNr = getUsuarioSesion().getGenteSession().getGenteNr();
+		}catch(Exception ee){
+			
+		}
+		
+		result = result + "<h4>Precio: $" + transaccionManager.getPrecioClienteArticulo(genteNr, stock.getClave(),getUsuarioSesion(), false) + "</h4>";
 		
 		ServletOutputStream sos = null;
 		try {

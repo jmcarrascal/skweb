@@ -32,6 +32,7 @@ public class Constants {
 	public final static Integer PREF_ID_MUESTRA_OTROS_ART_SI_HAY_UNO_IGUAL=196;
 	public final static Integer PREF_ID_USA_CAMBIOS_MASIVO=195;
 	public final static Integer PREF_ID_USA_CADENA_BONIF=75;
+	public final static Integer PREF_ID_LISTA_DEFAULT_PRECIO=194;
 	//Numeraciones
 	public final static Integer ID_NUMERACIONES_TRANSAC=13;
 	public final static Integer ID_NUMERACIONES_PEDIDO_VTA=4;

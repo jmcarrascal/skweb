@@ -365,13 +365,26 @@ public class TransaccionManagerImpl implements TransaccionManager {
 	}
 
 	public BigDecimal getPrecioClienteArticulo(Integer genteNr, String clave, Usuario usuario, boolean muestraEnPesos) {
+		
 		BigDecimal precio = new BigDecimal(0);
 		// Obtengo la lista de Precios
-		Gente gente = extendedGenteDAO.getByPrimaryKey(genteNr);
-		Integer listaPrecio = gente.getListaPrecio();
+		
+		
+		ClieArticPrecio clieArticPrecio = null;
+		Integer listaPrecio = 1;
+		try{
+			listaPrecio = Integer.valueOf(String.valueOf(PreferenciasUtil.comparePreferencia(usuario.getListPreferencias(), Constants.PREF_ID_LISTA_DEFAULT_PRECIO)));
+		}catch(Exception we){
+			
+		}
+			
 		Stock stock = extendedStockDAO.getByPrimaryKey(clave);
-		ClieArticPrecio clieArticPrecio = extendedClieArticPrecioDAO
-				.getPrecioClienteArticulo(genteNr, clave);
+		if (genteNr != null){
+			Gente gente = extendedGenteDAO.getByPrimaryKey(genteNr);
+			clieArticPrecio = extendedClieArticPrecioDAO
+					.getPrecioClienteArticulo(genteNr, clave);
+			listaPrecio = gente.getListaPrecio();			
+		}
 
 		if (clieArticPrecio != null) {
 			switch (listaPrecio) {

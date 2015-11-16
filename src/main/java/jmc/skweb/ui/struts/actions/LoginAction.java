@@ -15,9 +15,10 @@ import jmc.skweb.core.service.ParametrizacionManager;
 import jmc.skweb.core.service.UsuarioManager;
 import jmc.skweb.util.CallUrl;
 import jmc.skweb.util.Constants;
+import jmc.skweb.util.PreferenciasUtil;
 import jmc.skweb.core.model.Preferencias;
-import org.apache.struts2.ServletActionContext;
 
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -160,6 +161,7 @@ public class LoginAction extends ActionSupport  {
 			HttpServletRequest request =(HttpServletRequest)ActionContext.getContext().getActionInvocation().getInvocationContext().get(ServletActionContext.HTTP_REQUEST);
 			List<Preferencias> listPreferencias = usuarioManager.getListPreferencias();
 			userA.setListPreferencias(listPreferencias);
+			userA.setTipoCambio(PreferenciasUtil.comparePreferencia(userA.getListPreferencias(), Constants.PREF_ID_VALOR_DOLAR));
 			request.getSession().setAttribute("usuario", userA);						
 			return "ok";
 		}				
@@ -189,6 +191,9 @@ public class LoginAction extends ActionSupport  {
 			List<Preferencias> listPreferencias = usuarioManager.getListPreferencias();
 
 			user.setListPreferencias(listPreferencias);
+			
+			user.setTipoCambio(PreferenciasUtil.comparePreferencia(user.getListPreferencias(), Constants.PREF_ID_VALOR_DOLAR));
+			
 
 			request.getSession().setAttribute("usuario", user);
 						

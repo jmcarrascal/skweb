@@ -8,7 +8,6 @@ import java.util.Properties;
 
 import org.springframework.transaction.annotation.Transactional;
 
-
 import jmc.skweb.core.dao.GenericDAO;
 import jmc.skweb.core.dao.OperadoresDAO;
 import jmc.skweb.core.dao.VendedorDAO;
@@ -23,6 +22,7 @@ import jmc.skweb.core.model.UsuarioWeb;
 import jmc.skweb.core.model.Vendedor;
 import jmc.skweb.core.service.UsuarioManager;
 import jmc.skweb.util.Constants;
+import jmc.skweb.util.PreferenciasUtil;
 import jmc.skweb.util.email.Email;
 import jmc.skweb.util.email.SendEmailThread;
 
@@ -140,6 +140,8 @@ public class UsuarioManagerImpl implements UsuarioManager{
 		}
 		usuario.setEmpresaNrSk(usuarioWeb.getEmpresaWeb().getEmpresaNrSk());
 		usuario.setListPreferencias(getListPreferencias());
+		usuario.setTipoCambio(PreferenciasUtil.comparePreferencia(usuario.getListPreferencias(), Constants.PREF_ID_VALOR_DOLAR));
+		
 		usuario.setVendedorNr(usuarioWeb.getVendedorNr());
 		usuario.setGenteNr(usuarioWeb.getGenteNr());
 		usuario.setOperadorNr(usuarioWeb.getOperadorNr());

@@ -18,7 +18,8 @@
 	
 	<div style="margin:0 2% 0 0;color:white;float:right;text-align:right;width:75%;line-height: 1.8;">
 		Versi&oacute;n: <b>8.3</b> <br />
-		Usuario:&nbsp;<b> <%=usuarioActual.getNombre()%> </b> 		
+		Usuario:&nbsp;<b> <%=usuarioActual.getNombre()%> </b>				
+		Tipo de Cambio DOLAR del dia: <b>$<%=usuarioActual.getTipoCambio()%><b>
 	</div>
 	</div>
 	

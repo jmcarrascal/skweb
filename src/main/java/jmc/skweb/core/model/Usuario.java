@@ -29,9 +29,16 @@ private Integer operadorNr;
 private Integer tabSelected = 0;
 private List<Stock> articulosTmpList = new ArrayList<Stock>();
 private Boolean permisoTransac;
+private Double tipoCambio;
 
 
 
+public Double getTipoCambio() {
+	return tipoCambio;
+}
+public void setTipoCambio(Double tipoCambio) {
+	this.tipoCambio = tipoCambio;
+}
 public Boolean getPermisoTransac() {
 	return permisoTransac;
 }
