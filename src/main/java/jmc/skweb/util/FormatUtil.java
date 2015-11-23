@@ -409,7 +409,7 @@ public class FormatUtil {
 	 * Metodo que devuelve un array de String con las suggestions en el vector 0
 	 * y  data en el vector 1
 	 */
-	public static String getTableHTMLPedidoResumen(List<TransacJoin> transacJoinList, String tipoComprob){			
+	public static String getTableHTMLPedidoResumen(List<TransacJoin> transacJoinList, String tipoComprob, boolean usaLogicaColor){			
 
 		
 		String data = "";
@@ -419,25 +419,61 @@ public class FormatUtil {
 			sizeVertical = "200px";
 		
 		String style = "<style type=\"text/css\">#scroller {width:250px;height:"+sizeVertical+";overflow:auto;}</style>";
-		
-		String header = "<div id=\"scroller\">" +
-				"<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class = \"uiTableBlue\">" +
-				"<tr><th width=\"100%\" colspan=\"9\">"+tipoComprob+"</th></tr>" +
-				"<th>Saldo</th>" +
-				"<th>Fecha Entrega</th></tr>";
-//		String options = "<tr><td>122</td><td>La Filomena</td><td>0000090/123432</td><td>10/01/2012</td><td>1</td><td>1232.00</td><td>123.00</td><td>123.89</td><td>10/08/2012</td></tr></table>";
+		String header ="";
+				
+		if (!usaLogicaColor){
+			header = "<div id=\"scroller\">" +
+					"<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class = \"uiTableBlue\">" +
+					"<tr><th width=\"100%\" colspan=\"9\">"+tipoComprob+"</th></tr>" +
+					"<th>Saldo</th>" +
+					"<th>Fecha Entrega</th></tr>";
+			
+		}else{
+			header = "<div id=\"scroller\">" +
+					"<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class = \"uiTableBlue\">" +
+					"<tr><th width=\"100%\" colspan=\"9\">"+tipoComprob+"</th></tr>" +
+					"<th>Saldo</th>" +
+					"<th>Fecha Entrega</th>"+
+					"<th>Colores</th>"
+					+ "</tr>";
+
+		}
 		String options = "";
 		int i = 0;
 		for(TransacJoin transac : transacJoinList){
+			
 			String color = "";
 			if (MathUtil.esPar(i))
 				color = "#BDBDBD";
 			else
 				color = "#83aec0";
-			String option = "<tr>" +
-					"<td bgcolor=\""+color+ "\">"+transac.getSaldoCantidad()+"</td>" +
-					"<td bgcolor=\""+color+ "\">"+transac.getFormatFechaEntrega()+"</td>" +
-					"</tr>";
+			String option = "";
+			
+			if(usaLogicaColor){
+				String resumenColor = "";
+				for(Items item: transac.getItemsList()){
+					if (resumenColor == ""){
+						resumenColor = "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
+					}else{
+						resumenColor = resumenColor + "/n" +  "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
+					}
+				
+					
+				}
+				
+				option = "<tr>" +
+						"<td bgcolor=\""+color+ "\">"+transac.getSaldoCantidad()+"</td>" +
+						"<td bgcolor=\""+color+ "\">"+transac.getFormatFechaEntrega()+"</td>" +
+						"<td bgcolor=\""+color+ "\">"+resumenColor+"</td>" +
+						"</tr>";
+				
+			}else{
+				option = "<tr>" +
+						"<td bgcolor=\""+color+ "\">"+transac.getSaldoCantidad()+"</td>" +
+						"<td bgcolor=\""+color+ "\">"+transac.getFormatFechaEntrega()+"</td>" +
+						"</tr>";
+				
+			}
 			options = options + option;
 			i++;
 		}
@@ -607,6 +643,8 @@ public class FormatUtil {
 				color = "#BDBDBD";
 			else
 				color = "#83aec0";
+			
+			stockPiezas.getId().getColores().getDescrip();
 			String option = "<tr>" +
 					"<td bgcolor=\""+color+ "\">"+"["+stockPiezas.getId().getColores().getNr() + "]" +stockPiezas.getId().getColores().getDescrip()+"</td>";
 					if (semaforizado == 0d){

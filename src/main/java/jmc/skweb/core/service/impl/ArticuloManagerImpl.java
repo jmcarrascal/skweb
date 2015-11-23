@@ -615,7 +615,14 @@ public class ArticuloManagerImpl implements ArticuloManager{
 					//Tomar de la base variable de resultante sin pedido de compra
 				}else{
 					//Convierto en Tabla HTML
-					result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad");
+					if (PreferenciasUtil.comparePreferencia(usuarioSesion.getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1d){
+						for(TransacJoin transaJoin: resultList){
+							Transac transac = extendedTransacDAO.getByPrimaryKey(transaJoin.getTransacNr());
+							transaJoin.setItemsList(transac.getItemsList());
+							result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad", true);
+						}
+					}
+					result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad", false);
 				}
 			}
 			

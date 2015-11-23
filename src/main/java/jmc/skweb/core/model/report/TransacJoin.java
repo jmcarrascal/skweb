@@ -1,10 +1,13 @@
 package jmc.skweb.core.model.report;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Transient;
 
+import jmc.skweb.core.model.Items;
 import jmc.skweb.util.DateUtil;
 
 
@@ -28,6 +31,7 @@ public class TransacJoin {
 	private String formatFecha;
 	private String formatFechaEntrega;
 	private Boolean delete;
+	private List<Items> itemsList = new ArrayList<Items>();
 	
 	public TransacJoin(){
 		
@@ -152,6 +156,14 @@ public class TransacJoin {
 
 	public void setDelete(Boolean delete) {
 		this.delete = delete;
+	}
+
+	public List<Items> getItemsList() {
+		return itemsList;
+	}
+
+	public void setItemsList(List<Items> itemsList) {
+		this.itemsList = itemsList;
 	}
 
 	
