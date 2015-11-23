@@ -418,7 +418,7 @@ public class FormatUtil {
 		if (sizeList > 8)
 			sizeVertical = "200px";
 		
-		String style = "<style type=\"text/css\">#scroller {width:250px;height:"+sizeVertical+";overflow:auto;}</style>";
+		String style = "<style type=\"text/css\">#scroller {width:450px;height:"+sizeVertical+";overflow:auto;}</style>";
 		String header ="";
 				
 		if (!usaLogicaColor){
@@ -455,7 +455,7 @@ public class FormatUtil {
 					if (resumenColor == ""){
 						resumenColor = "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
 					}else{
-						resumenColor = resumenColor + "/n" +  "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
+						resumenColor = resumenColor + "<br>" +  "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
 					}
 				
 					
