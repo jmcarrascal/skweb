@@ -2409,9 +2409,10 @@ public String preparedEstadistica(){
 	
 		Double usaLogicaPiezas = PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_MUESTRA_CANTIDAD);
 		if (carrito != null && carrito == 1){
-			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, true,request.getContextPath(),muestroBarraLateral));
+			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, true,request.getContextPath(),muestroBarraLateral));			
 		}else{
-			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, false,null,muestroBarraLateral));	
+			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, false,null,muestroBarraLateral));
+			salida.append(articuloManager.getTableResumenPedidos(stock.getClave(),getUsuarioSesion(),3 ));
 		}
 			
 		

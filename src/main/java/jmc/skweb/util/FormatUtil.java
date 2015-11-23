@@ -450,7 +450,7 @@ public class FormatUtil {
 			String option = "";
 			
 			if(usaLogicaColor){
-				String resumenColor = "[" + transac.getColores().getNr() + "] " + transac.getColores().getDescrip() + " Cant: " + transac.getCant1();;
+				String resumenColor = "[" + transac.getColores().getNr() + "] " + transac.getColores().getDescrip() + "   ";
 //				for(Items item: transac.getItemsList()){
 //					if (resumenColor == ""){
 //						resumenColor = "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
