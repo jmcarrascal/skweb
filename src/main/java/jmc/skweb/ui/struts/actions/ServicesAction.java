@@ -2393,7 +2393,11 @@ public String preparedEstadistica(){
 		String filter = (String) request.getParameter("q");
 		
 		List<StockPiezas> stockPiezasList = articuloManager.getStockPiezasPorArt(filter, getUsuarioSesion());		
-		
+		String clave = "";
+		if (stockPiezasList != null && stockPiezasList.size() > 0){
+			StockPiezas stockPiezas=stockPiezasList.get(0);
+			clave = stockPiezas.getId().getStock().getClave();
+		}
 		//Seteo la lista de Stock Piezas a utilizar
 		request.getSession().setAttribute("stockPiezasList", stockPiezasList);
 
@@ -2412,7 +2416,7 @@ public String preparedEstadistica(){
 			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, true,request.getContextPath(),muestroBarraLateral));			
 		}else{
 			salida.append(FormatUtil.getListHTMLStockPiezas(stockPiezasList, usaLogicaPiezas, true, false,null,muestroBarraLateral));
-			salida.append(articuloManager.getTableResumenPedidos(stock.getClave(),getUsuarioSesion(),3 ));
+			salida.append(articuloManager.getTableResumenPedidos(clave,getUsuarioSesion(),3 ));
 		}
 			
 		
