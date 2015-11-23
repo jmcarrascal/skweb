@@ -621,8 +621,9 @@ public class ArticuloManagerImpl implements ArticuloManager{
 							transaJoin.setItemsList(transac.getItemsList());
 							result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad", true);
 						}
+					}else{
+						result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad", false);
 					}
-					result = FormatUtil.getTableHTMLPedidoResumen(resultList,"Pedidos de Compra con disponibilidad", false);
 				}
 			}
 			
