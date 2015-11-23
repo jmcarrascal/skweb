@@ -213,7 +213,7 @@ import jmc.skweb.util.DateUtil;
 			try{						
 				
 				String sql ="select new jmc.skweb.core.model.report.TransacJoin(T.gente.genteNr, G.razonSocial," +
-						" T.nrComprob, T.transacNr, T.fecha, I.nrInt, I.cant1, I.cant1entregado, T.fechaEntrega) " +
+						" T.nrComprob, T.transacNr, T.fecha, I.nrInt, I.cant1, I.cant1entregado, T.fechaEntrega, I.colores) " +
 						"FROM Items I, Transac T, Gente G WHERE " +
 						"I.id.transac.transacNr = T.transacNr " +
 						"AND T.gente.genteNr = G.genteNr " +

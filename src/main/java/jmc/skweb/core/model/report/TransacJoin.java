@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.Transient;
 
+import jmc.skweb.core.model.Colores;
 import jmc.skweb.core.model.Items;
 import jmc.skweb.util.DateUtil;
 
@@ -32,7 +33,16 @@ public class TransacJoin {
 	private String formatFechaEntrega;
 	private Boolean delete;
 	private List<Items> itemsList = new ArrayList<Items>();
+	private Colores colores;
 	
+	public Colores getColores() {
+		return colores;
+	}
+
+	public void setColores(Colores colores) {
+		this.colores = colores;
+	}
+
 	public TransacJoin(){
 		
 	}
@@ -42,7 +52,7 @@ public class TransacJoin {
 	}
 
 	
-	public TransacJoin(Integer genteNr, String razonSocial,String nrComprob,Integer transacNr,Date fecha, Integer nrInt,BigDecimal cant1,BigDecimal cant1Entregado,Date fechaEntrega){
+	public TransacJoin(Integer genteNr, String razonSocial,String nrComprob,Integer transacNr,Date fecha, Integer nrInt,BigDecimal cant1,BigDecimal cant1Entregado,Date fechaEntrega, Colores colores){
 		this.genteNr = genteNr;
 		this.razonSocial = razonSocial;
 		this.nrComprob = nrComprob;
@@ -52,6 +62,7 @@ public class TransacJoin {
 		this.cant1 = cant1;
 		this.cant1Entregado = cant1Entregado;		
 		this.fechaEntrega = fechaEntrega;
+		this.colores = colores;
 	}
 	
 	public Integer getGenteNr() {

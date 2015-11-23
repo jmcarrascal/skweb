@@ -450,16 +450,16 @@ public class FormatUtil {
 			String option = "";
 			
 			if(usaLogicaColor){
-				String resumenColor = "";
-				for(Items item: transac.getItemsList()){
-					if (resumenColor == ""){
-						resumenColor = "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
-					}else{
-						resumenColor = resumenColor + "<br>" +  "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
-					}
-				
-					
-				}
+				String resumenColor = "[" + transac.getColores().getNr() + "] " + transac.getColores().getDescrip() + " Cant: " + transac.getCant1();;
+//				for(Items item: transac.getItemsList()){
+//					if (resumenColor == ""){
+//						resumenColor = "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
+//					}else{
+//						resumenColor = resumenColor + "<br>" +  "[" + item.getColores().getNr() + "] " + item.getColores().getDescrip() + " Cant: " + item.getCant1();
+//					}
+//				
+//					
+//				}
 				
 				option = "<tr>" +
 						"<td bgcolor=\""+color+ "\">"+transac.getSaldoCantidad()+"</td>" +
