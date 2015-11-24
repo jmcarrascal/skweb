@@ -462,7 +462,7 @@ public class FormatUtil {
 //				}
 				
 				option = "<tr>" +
-						"<td bgcolor=\""+color+ "\">"+transac.getSaldoCantidad()+"</td>" +
+						"<td bgcolor=\""+color+ "\">"+MathUtil.redondearEn2BD(transac.getSaldoCantidad())+"</td>" +
 						"<td bgcolor=\""+color+ "\">"+transac.getFormatFechaEntrega()+"</td>" +
 						"<td bgcolor=\""+color+ "\">"+resumenColor+"</td>" +
 						"</tr>";

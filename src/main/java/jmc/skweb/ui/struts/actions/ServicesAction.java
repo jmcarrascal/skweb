@@ -2076,7 +2076,7 @@ public String preparedEstadistica(){
 					if(stockpieza.getId().getColores().getNr().equals(compra.getColo())){
 						System.out.println("IGUALES----" +stockpieza.getId().getColores().getNr());
 						System.out.println("COMPRA - VENTA ----" +compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
-						stockpieza.setComprasmenosventas(compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
+						stockpieza.setComprasmenosventas(FormatUtil.redondearEn2(compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue()));
 					}
 					
 				}
