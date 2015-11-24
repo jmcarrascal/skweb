@@ -621,7 +621,8 @@ public class FormatUtil {
 				"<table cellpadding=\"0\" cellspacing=\"0\" border=\"1\" class = \"uiTableBlue\">" +
 				"<tr><th width=\"100%\" colspan=\"18\">"+"Stock Por Piezas"+"</th></tr>" +
 				"<th>Color</th>" +
-				"<th>Stock</th>";
+				"<th>Stock</th>" +
+				"<th>Compra - Venta</th>" ;
 		if (isCarrito){
 			header = header + "<th>Cantidad</th>";
 			header = header + "<th>Accion</th></tr>";	
@@ -652,6 +653,7 @@ public class FormatUtil {
 					}else{
 						option = option + "<td align = \"right\" bgcolor=\""+color+ "\">"+MathUtil.redondearEn2(stockPiezas.getCant1())+"</td>";
 					}
+					options = options + "<td bgcolor=\""+color+ "\">"+" " + stockPiezas.getComprasmenosventas() + " " + "</td>";
 					if (isCarrito){
 						option = option + "<td bgcolor=\""+color+ "\">"+ "<input type=\"text\" size=\"10\" maxlength=\"10\" name=\"piezas\" id = '"+ "cantCarr" + stockPiezas.getId().getStock().getClaveSBarras()+ stockPiezas.getId().getColores().getNr() +"'>"+"</td>";
 						//Agrego imagen para adicionar item.

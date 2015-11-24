@@ -33,6 +33,7 @@ import jmc.skweb.core.model.TipoComprob;
 import jmc.skweb.core.model.Transac;
 import jmc.skweb.core.model.Usuario;
 import jmc.skweb.core.model.report.DatosReporte;
+import jmc.skweb.core.model.report.GroupCantTransac;
 import jmc.skweb.core.model.report.SaldoAcumulado;
 import jmc.skweb.core.model.report.SaldoAcumuladoReport;
 import jmc.skweb.core.model.report.TipoReporte;
@@ -49,7 +50,6 @@ import jmc.skweb.core.service.TransaccionManager;
 import jmc.skweb.core.service.UsuarioManager;
 import jmc.skweb.util.Constants;
 import jmc.skweb.util.FormatUtil;
-import jmc.skweb.util.HibernateProxyTypeAdapter;
 import jmc.skweb.util.MathUtil;
 import jmc.skweb.util.PreferenciasUtil;
 import jmc.skweb.util.email.Email;
@@ -67,7 +67,6 @@ import org.extremecomponents.table.limit.TableLimit;
 import org.extremecomponents.table.limit.TableLimitFactory;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -2055,6 +2054,30 @@ public String preparedEstadistica(){
 		if (PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_USA_LOGICA_STOCK_COLOR) == -1d){			
 			List<StockPiezas> stockPiezasList = articuloManager.getStockPiezasPorArt(stock.getClave(), getUsuarioSesion());		
 			Double muestraCantidad = PreferenciasUtil.comparePreferencia(getUsuarioSesion().getListPreferencias(), Constants.PREF_ID_MUESTRA_CANTIDAD);
+			//Obtengo Compras y Ventas
+			//Obtengo la lista de las compras del articulo
+			List<GroupCantTransac> compras = articuloManager.getOperacionByArtTipoCompr(stock.getClave(), Constants.ID_TIPO_COMP_PEDIDO_COMPRA);
+			//Obtengo la lista de ventas del articulo
+			List<GroupCantTransac> ventas = articuloManager.getOperacionByArtTipoCompr(stock.getClave(), Constants.ID_TIPO_COMP_PEDIDO_VENTA);
+			//Recorro compras
+			for (GroupCantTransac compra: compras){
+				//pregunto si tengo pedido de venta
+				GroupCantTransac ventaObtenida = new GroupCantTransac(0d, compra.getColo());
+				for (GroupCantTransac venta: ventas){
+					if (compra.getColo() == venta.getColo()){
+						ventaObtenida = venta;
+					}					
+				}
+
+				//pregunto si tengo stock
+				for (StockPiezas stockpieza: stockPiezasList){
+					if(stockpieza.getId().getColores().getNr() == compra.getColo()){
+						stockpieza.setComprasmenosventas(compra.getCant1() - ventaObtenida.getCant1());
+					}
+					
+				}
+			}
+			
 			result = FormatUtil.getListHTMLStockPiezas(stockPiezasList, muestraCantidad, false,false,null,muestroBarraLateral);			
 			Integer genteNr = null;
 			

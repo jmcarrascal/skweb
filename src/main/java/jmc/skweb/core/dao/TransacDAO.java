@@ -9,6 +9,7 @@ import jmc.skweb.core.model.Stock;
 import jmc.skweb.core.model.Transac;
 import jmc.skweb.core.model.report.DatosReporte;
 import jmc.skweb.core.model.report.EstadisticaPedido;
+import jmc.skweb.core.model.report.GroupCantTransac;
 import jmc.skweb.core.model.report.TransacJoin;
 
 
@@ -51,5 +52,8 @@ public interface TransacDAO extends GenericDAO<Transac> {
 	List<EstadisticaPedido> getEstadisticaVentas(DatosReporte datosReporte);
 
 	List<Transac> getPedidosVtaPendienteAprobar(Gente gente);
+
+	List<GroupCantTransac> getOperacionByArtTipoCompr(String clave,
+			Integer idTipoCompPedidoCompra);
 
 }

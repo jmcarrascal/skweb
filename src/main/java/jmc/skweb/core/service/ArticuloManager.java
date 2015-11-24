@@ -67,6 +67,7 @@ import jmc.skweb.core.model.Fam;
 import jmc.skweb.core.model.Gente;
 import jmc.skweb.core.model.ImagenesArticulos;
 import jmc.skweb.core.model.StockPiezas;
+import jmc.skweb.core.model.report.GroupCantTransac;
 import jmc.skweb.core.model.shortEntities.GenteBasic;
 import jmc.skweb.core.model.shortEntities.OptionsSelect;
 import jmc.skweb.core.model.Stock;
@@ -175,6 +176,9 @@ public interface ArticuloManager {
 	public List<SubFam> getOptionsDefault();
 
 	public List<GenteBasic> getClienteBasicPorVendedor(Integer vendedorNr);
+
+	public List<GroupCantTransac> getOperacionByArtTipoCompr(String clave,
+			Integer idTipoCompPedidoCompra);
 	
 
 	

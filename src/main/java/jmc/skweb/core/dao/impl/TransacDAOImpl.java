@@ -10,6 +10,7 @@ import jmc.skweb.core.model.Items;
 import jmc.skweb.core.model.Transac;
 import jmc.skweb.core.model.report.DatosReporte;
 import jmc.skweb.core.model.report.EstadisticaPedido;
+import jmc.skweb.core.model.report.GroupCantTransac;
 import jmc.skweb.core.model.report.TransacJoin;
 import jmc.skweb.util.Constants;
 import jmc.skweb.util.DateUtil;
@@ -402,6 +403,32 @@ import jmc.skweb.util.DateUtil;
 				}
 			return estadisticaPedidoList;
 			
+		}
+
+
+		
+		public List<GroupCantTransac> getOperacionByArtTipoCompr(String clave,
+				Integer idTipoComp) {
+			List<GroupCantTransac> groupCantTransacList = null; 
+			try{						
+				
+				String sql ="select new jmc.skweb.core.model.report.GroupCantTransac(I.cant1, I.colores.nr) " +
+						"FROM Items I, Transac T, Gente G WHERE " +
+						"I.id.transac.transacNr = T.transacNr " +
+						"AND T.gente.genteNr = G.genteNr " +
+						"AND ((I.cant1 - I.cant1entregado) > 0 ) " +
+						"AND I.articulo = '"+ clave +"' " +
+						"AND (T.tipoComprob.nr = " + idTipoComp +" ) " +
+						"AND (T.destino= -1) " +
+						"GROUP BY I.colores.nr";	  
+				
+				groupCantTransacList = getHibernateTemplate().find(sql);
+				
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+			}finally{
+				}
+			return groupCantTransacList;			
 		}
 
 		

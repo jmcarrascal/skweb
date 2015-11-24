@@ -30,7 +30,7 @@ public class StockPiezas implements java.io.Serializable {
 	private StockPiezasId id;
 	private Double cant1;
 	private String imagenSemaforo;
-	
+	private Double comprasmenosventas;
 	
 	
 	public StockPiezas(){
@@ -66,6 +66,15 @@ public class StockPiezas implements java.io.Serializable {
 		this.imagenSemaforo = imagenSemaforo;
 	}
 	
+	
+	@Transient
+	public Double getComprasmenosventas() {
+		return comprasmenosventas;
+	}
+	public void setComprasmenosventas(Double comprasmenosventas) {
+		this.comprasmenosventas = comprasmenosventas;
+	}
+
 	
 		
 	

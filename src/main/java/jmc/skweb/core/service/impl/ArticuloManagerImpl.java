@@ -41,13 +41,13 @@ import jmc.skweb.core.model.StockPiezas;
 import jmc.skweb.core.model.StockPiezasId;
 import jmc.skweb.core.model.Transac;
 import jmc.skweb.core.model.UsuarioWeb;
+import jmc.skweb.core.model.report.GroupCantTransac;
 import jmc.skweb.core.model.report.TransacJoin;
 import jmc.skweb.core.model.shortEntities.GenteBasic;
 import jmc.skweb.core.model.shortEntities.OptionsSelect;
 import jmc.skweb.core.model.Stock;
 import jmc.skweb.core.model.SubFam;
 import jmc.skweb.core.model.Usuario;
-
 import jmc.skweb.core.service.ArticuloManager;
 import jmc.skweb.core.service.TransaccionManager;
 import jmc.skweb.core.service.UsuarioManager;
@@ -557,6 +557,9 @@ public class ArticuloManagerImpl implements ArticuloManager{
 			return rojo;
 		}
 		
+
+		
+		
 		public String getTableResumenPedidos(String clave, Usuario usuarioSesion, Integer carrito){
 			//Defino el objeto de salida
 			String result = "<br>No posee pedidos de compra";
@@ -954,6 +957,13 @@ public class ArticuloManagerImpl implements ArticuloManager{
 
 			
 			return extendedGenteBasicDAO.getClienteBasicPorVendedor(vendedorNr);
+		}
+		
+		public List<GroupCantTransac> getOperacionByArtTipoCompr(String clave,
+				Integer idTipoCompPedidoCompra) {
+			return extendedTransacDAO.getOperacionByArtTipoCompr(clave,
+					idTipoCompPedidoCompra);
+			
 		}
 
 }
