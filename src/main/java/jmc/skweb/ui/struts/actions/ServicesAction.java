@@ -2065,7 +2065,7 @@ public String preparedEstadistica(){
 				//pregunto si tengo pedido de venta
 				GroupCantTransac ventaObtenida = new GroupCantTransac(BigDecimal.ZERO, compra.getColo());
 				for (GroupCantTransac venta: ventas){
-					if (compra.getColo() == venta.getColo()){
+					if (compra.getColo().equals(venta.getColo())){
 						ventaObtenida = venta;
 					}					
 				}
@@ -2073,7 +2073,9 @@ public String preparedEstadistica(){
 				//pregunto si tengo stock
 				for (StockPiezas stockpieza: stockPiezasList){
 					System.out.println("STOCK----" +stockpieza.getId().getColores().getNr());
-					if(stockpieza.getId().getColores().getNr() == compra.getColo()){
+					if(stockpieza.getId().getColores().getNr().equals(compra.getColo())){
+						System.out.println("IGUALES----" +stockpieza.getId().getColores().getNr());
+						System.out.println("COMPRA - VENTA ----" +compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
 						stockpieza.setComprasmenosventas(compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
 					}
 					
