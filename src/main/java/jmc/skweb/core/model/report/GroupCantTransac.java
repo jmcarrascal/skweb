@@ -5,6 +5,8 @@ public class GroupCantTransac {
 	private Double cant1;
 	private Integer colo;
 	
+	public GroupCantTransac(){
+	}
 	
 	public GroupCantTransac( Double cant1, Integer colo){
 		this.cant1 = cant1;
