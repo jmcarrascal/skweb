@@ -28,6 +28,7 @@ import jmc.skweb.core.model.Items;
 import jmc.skweb.core.model.Paseban;
 import jmc.skweb.core.model.Stock;
 import jmc.skweb.core.model.StockPiezas;
+import jmc.skweb.core.model.StockPiezasId;
 import jmc.skweb.core.model.SubFam;
 import jmc.skweb.core.model.TipoComprob;
 import jmc.skweb.core.model.Transac;
@@ -2060,26 +2061,34 @@ public String preparedEstadistica(){
 			//Obtengo la lista de ventas del articulo
 			List<GroupCantTransac> ventas = articuloManager.getOperacionByArtTipoCompr(stock.getClave(), Constants.ID_TIPO_COMP_PEDIDO_VENTA);
 			//Recorro compras
-			for (GroupCantTransac compra: compras){
-				System.out.println("COMPRA----" + compra.getColo() + " " + compra.getCant1());
+			for (GroupCantTransac compra: compras){				
 				//pregunto si tengo pedido de venta
 				GroupCantTransac ventaObtenida = new GroupCantTransac(BigDecimal.ZERO, compra.getColo());
 				for (GroupCantTransac venta: ventas){
 					if (compra.getColo().equals(venta.getColo())){
 						ventaObtenida = venta;
 					}					
-				}
-				System.out.println("VENTA OBTENIDA----" + ventaObtenida.getColo() + " " + ventaObtenida.getCant1());
+				}				
+				boolean tieneStock = false;
 				//pregunto si tengo stock
-				for (StockPiezas stockpieza: stockPiezasList){
-					System.out.println("STOCK----" +stockpieza.getId().getColores().getNr());
+				for (StockPiezas stockpieza: stockPiezasList){					
 					if(stockpieza.getId().getColores().getNr().equals(compra.getColo())){
+						tieneStock =true;
 						System.out.println("IGUALES----" +stockpieza.getId().getColores().getNr());
 						System.out.println("COMPRA - VENTA ----" +compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
 						stockpieza.setComprasmenosventas(FormatUtil.redondearEn2(compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue()));
 					}
 					
 				}
+				if (!tieneStock){
+					StockPiezas stockpieza = new StockPiezas();
+					StockPiezasId stockpiezaId = new StockPiezasId();
+					Stock stock = new Stock();
+					
+//					stockpiezaId.setColores();
+//					stockpiezaId.setStock();
+				}
+				
 			}
 			
 			result = FormatUtil.getListHTMLStockPiezas(stockPiezasList, muestraCantidad, false,false,null,muestroBarraLateral);			

@@ -582,34 +582,35 @@ public class ArticuloManagerImpl implements ArticuloManager{
 			//Defino flag de salida por si alguna de las fechas de entrega es nula
 			boolean entregaNull = false;
 			//Recorro Pedido de Compra
-			for(TransacJoin com: compraList){
-				if(com.getFechaEntrega() == null)
-					entregaNull = true;
-				vtaTemp =  com.getCant1().subtract(cantVtaBD);
-				int subtract = vtaTemp.compareTo(BigDecimal.ZERO);
-				switch (subtract) {
-				case -1:
-					//En caso que el p de Compra sea menor al de vta
-					cantVtaBD =  cantVtaBD.subtract(com.getCant1());
-					//com.setDelete(true);
-					//compraList.remove(com);
-					break;
-				case 0:
-					//En caso que el p de Compra sea igual al de vta
-					//Elimino el p de compra para no mostrarlo
-					//compraList.remove(com);
-					//com.setDelete(true);
-					cantVtaBD= BigDecimal.ZERO;
-					break;
-				case 1:
-					//En caso que el p de Compra sea mayor al de vta
-					com.setCant1(vtaTemp);
-					cantVtaBD= BigDecimal.ZERO;
-					resultList.add(com);
-					break;
-				}
-				
-			}
+//			for(TransacJoin com: compraList){
+//				if(com.getFechaEntrega() == null)
+//					entregaNull = true;
+//				vtaTemp =  com.getCant1().subtract(cantVtaBD);
+//				int subtract = vtaTemp.compareTo(BigDecimal.ZERO);
+//				switch (subtract) {
+//				case -1:
+//					//En caso que el p de Compra sea menor al de vta
+//					cantVtaBD =  cantVtaBD.subtract(com.getCant1());
+//					//com.setDelete(true);
+//					//compraList.remove(com);
+//					break;
+//				case 0:
+//					//En caso que el p de Compra sea igual al de vta
+//					//Elimino el p de compra para no mostrarlo
+//					//compraList.remove(com);
+//					//com.setDelete(true);
+//					cantVtaBD= BigDecimal.ZERO;
+//					break;
+//				case 1:
+//					//En caso que el p de Compra sea mayor al de vta
+//					com.setCant1(vtaTemp);
+//					cantVtaBD= BigDecimal.ZERO;
+//					resultList.add(com);
+//					break;
+//				}
+//				
+//			}
+			resultList = compraList;
 			
 			if (entregaNull){
 				result = "<br>No se pudo realizar el analisis de entrega ya que existen ordenes de compra sin fecha de entrega cargada";
