@@ -1,22 +1,24 @@
 package jmc.skweb.core.model.report;
 
+import java.math.BigDecimal;
+
 public class GroupCantTransac {
 
-	private Double cant1;
+	private BigDecimal cant1;
 	private Integer colo;
 	
 	public GroupCantTransac(){
 	}
 	
-	public GroupCantTransac( Double cant1, Integer colo){
+	public GroupCantTransac( BigDecimal cant1, Integer colo){
 		this.cant1 = cant1;
 		this.colo = colo;
 	}
 	
-	public Double getCant1() {
+	public BigDecimal getCant1() {
 		return cant1;
 	}
-	public void setCant1(Double cant1) {
+	public void setCant1(BigDecimal cant1) {
 		this.cant1 = cant1;
 	}
 	public Integer getColo() {
