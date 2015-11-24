@@ -2069,8 +2069,10 @@ public String preparedEstadistica(){
 						ventaObtenida = venta;
 					}					
 				}
+				System.out.println("VENTA OBTENIDA----" + ventaObtenida.getColo() + " " + ventaObtenida.getCant1());
 				//pregunto si tengo stock
 				for (StockPiezas stockpieza: stockPiezasList){
+					System.out.println("STOCK----" +stockpieza.getId().getColores().getNr());
 					if(stockpieza.getId().getColores().getNr() == compra.getColo()){
 						stockpieza.setComprasmenosventas(compra.getCant1().subtract(ventaObtenida.getCant1()).doubleValue());
 					}
