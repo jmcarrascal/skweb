@@ -653,7 +653,7 @@ public class FormatUtil {
 					}else{
 						option = option + "<td align = \"right\" bgcolor=\""+color+ "\">"+MathUtil.redondearEn2(stockPiezas.getCant1())+"</td>";
 					}
-					options = options + "<td bgcolor=\""+color+ "\">"+" " + stockPiezas.getComprasmenosventas() + " " + "</td>";
+					option = option + "<td bgcolor=\""+color+ "\">"+" " + stockPiezas.getComprasmenosventas() + " " + "</td>";
 					if (isCarrito){
 						option = option + "<td bgcolor=\""+color+ "\">"+ "<input type=\"text\" size=\"10\" maxlength=\"10\" name=\"piezas\" id = '"+ "cantCarr" + stockPiezas.getId().getStock().getClaveSBarras()+ stockPiezas.getId().getColores().getNr() +"'>"+"</td>";
 						//Agrego imagen para adicionar item.

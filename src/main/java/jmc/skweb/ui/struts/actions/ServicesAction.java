@@ -2061,6 +2061,7 @@ public String preparedEstadistica(){
 			List<GroupCantTransac> ventas = articuloManager.getOperacionByArtTipoCompr(stock.getClave(), Constants.ID_TIPO_COMP_PEDIDO_VENTA);
 			//Recorro compras
 			for (GroupCantTransac compra: compras){
+				System.out.println("COMPRA----" + compra.getColo() + " " + compra.getCant1());
 				//pregunto si tengo pedido de venta
 				GroupCantTransac ventaObtenida = new GroupCantTransac(BigDecimal.ZERO, compra.getColo());
 				for (GroupCantTransac venta: ventas){
