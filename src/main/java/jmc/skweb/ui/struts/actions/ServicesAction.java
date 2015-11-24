@@ -2068,7 +2068,6 @@ public String preparedEstadistica(){
 						ventaObtenida = venta;
 					}					
 				}
-
 				//pregunto si tengo stock
 				for (StockPiezas stockpieza: stockPiezasList){
 					if(stockpieza.getId().getColores().getNr() == compra.getColo()){

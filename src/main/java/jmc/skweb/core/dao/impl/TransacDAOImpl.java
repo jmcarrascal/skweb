@@ -412,7 +412,7 @@ import jmc.skweb.util.DateUtil;
 			List<GroupCantTransac> groupCantTransacList = null; 
 			try{						
 				
-				String sql ="select new jmc.skweb.core.model.report.GroupCantTransac(I.cant1, I.colores.nr) " +
+				String sql ="select new jmc.skweb.core.model.report.GroupCantTransac(SUM(I.cant1), I.colores.nr) " +
 						"FROM Items I, Transac T, Gente G WHERE " +
 						"I.id.transac.transacNr = T.transacNr " +
 						"AND T.gente.genteNr = G.genteNr " +
