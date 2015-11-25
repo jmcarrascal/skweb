@@ -2179,9 +2179,7 @@ public class ServicesAction extends ActionSupport {
 				if (!tieneStock) {					
 					StockPiezas stockpieza = new StockPiezas();
 					StockPiezasId stockpiezaId = new StockPiezasId();										
-					Colores colores = new Colores();
-					colores.setDescrip("CCCCCCCC");
-					colores.setNr(compra.getColo());
+					Colores colores = transaccionManager.getColor(compra.getColo());					
 					stockpiezaId.setColores(colores);
 					stockpiezaId.setStock(stock);
 					stockpieza.setCant1(compra.getCant1().multiply(new BigDecimal(-1)).doubleValue());
@@ -2193,9 +2191,7 @@ public class ServicesAction extends ActionSupport {
 				for (GroupCantTransac ventaP : ventasPendientes) {
 					StockPiezas stockpieza = new StockPiezas();
 					StockPiezasId stockpiezaId = new StockPiezasId();										
-					Colores colores = new Colores();
-					colores.setDescrip("VVVVVVVVV");
-					colores.setNr(ventaP.getColo());
+					Colores colores = transaccionManager.getColor(ventaP.getColo());
 					stockpiezaId.setColores(colores);
 					stockpiezaId.setStock(stock);
 					stockpieza.setCant1(ventaP.getCant1().multiply(new BigDecimal(-1)).doubleValue());

@@ -1043,4 +1043,9 @@ public class TransaccionManagerImpl implements TransaccionManager {
 		return transacList;		
 	}
 
+	
+	public Colores getColor(Integer colo) {
+		return coloresDAO.getByPrimaryKey(colo);
+	}
+
 }

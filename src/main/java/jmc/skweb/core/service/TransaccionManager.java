@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import jmc.skweb.core.model.ClieArticPrecio;
+import jmc.skweb.core.model.Colores;
 import jmc.skweb.core.model.Condi;
 import jmc.skweb.core.model.Domicilios;
 import jmc.skweb.core.model.EstadiTipoReporte;
@@ -95,5 +96,7 @@ public interface TransaccionManager {
 
 	List<Transac> getPedidosVtaPendienteAprobar(Gente gente,
 			Usuario usuarioSesion);
+
+	Colores getColor(Integer colo);
 
 	}
