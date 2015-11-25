@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
@@ -2159,7 +2160,14 @@ public class ServicesAction extends ActionSupport {
 				for (GroupCantTransac venta : ventas) {
 					if (compra.getColo().equals(venta.getColo())) {
 						ventaObtenida = venta;
-						ventasPendientes.remove(venta);
+						
+						for (Iterator<GroupCantTransac> iter = ventasPendientes.listIterator(); iter.hasNext(); ) {
+							GroupCantTransac a = iter.next();
+						    if (a.equals(venta)) {
+						        iter.remove();
+						    }
+						}												
+						
 					}
 				}
 
