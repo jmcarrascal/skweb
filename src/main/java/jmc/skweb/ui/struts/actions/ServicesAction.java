@@ -2159,17 +2159,15 @@ public class ServicesAction extends ActionSupport {
 
 				for (GroupCantTransac venta : ventas) {
 					if (compra.getColo().equals(venta.getColo())) {
-						ventaObtenida = venta;
-						
-						for (Iterator<GroupCantTransac> iter = ventasPendientes.listIterator(); iter.hasNext(); ) {
-							GroupCantTransac a = iter.next();
-						    if (a.equals(venta)) {
-						        iter.remove();
-						    }
-						}												
-						
+						ventaObtenida = venta;						
 					}
 				}
+				for (Iterator<GroupCantTransac> iter = ventasPendientes.listIterator(); iter.hasNext(); ) {
+					GroupCantTransac a = iter.next();
+				    if (a.equals(ventaObtenida)) {
+				        iter.remove();
+				    }
+				}	
 
 				boolean tieneStock = false;
 				// pregunto si tengo stock
