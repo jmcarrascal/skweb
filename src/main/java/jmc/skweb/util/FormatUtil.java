@@ -644,8 +644,6 @@ public class FormatUtil {
 				color = "#BDBDBD";
 			else
 				color = "#83aec0";
-			
-			stockPiezas.getId().getColores().getDescrip();
 			String option = "<tr>" +
 					"<td bgcolor=\""+color+ "\">"+"["+stockPiezas.getId().getColores().getNr() + "]" +stockPiezas.getId().getColores().getDescrip()+"</td>";
 					if (semaforizado == 0d){
