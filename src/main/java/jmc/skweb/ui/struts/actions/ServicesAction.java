@@ -2192,7 +2192,7 @@ public class ServicesAction extends ActionSupport {
 						stockpiezaId.setColores(colores);
 						stockpiezaId.setStock(stock);
 						stockpieza.setId(stockpiezaId);
-						stockpieza.setCant1(compra.getCant1()
+						stockpieza.setComprasmenosventas(compra.getCant1()
 								.multiply(new BigDecimal(-1)).doubleValue());
 						stockPiezasList.add(stockpieza);
 					}
@@ -2209,7 +2209,7 @@ public class ServicesAction extends ActionSupport {
 						stockpiezaId.setColores(colores);
 						stockpiezaId.setStock(stock);
 						stockpieza.setId(stockpiezaId);
-						stockpieza.setCant1(ventaP.getCant1()
+						stockpieza.setComprasmenosventas(ventaP.getCant1()
 								.multiply(new BigDecimal(-1)).doubleValue());
 						stockPiezasList.add(stockpieza);
 					}
