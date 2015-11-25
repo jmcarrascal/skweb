@@ -2176,6 +2176,7 @@ public class ServicesAction extends ActionSupport {
 					if (stockpieza.getId().getColores().getNr()
 							.equals(compra.getColo())) {
 						tieneStock = true;
+						stockpieza.setCant1(0d);
 						stockpieza.setComprasmenosventas(FormatUtil
 								.redondearEn2(compra.getCant1()
 										.subtract(ventaObtenida.getCant1())
@@ -2192,6 +2193,7 @@ public class ServicesAction extends ActionSupport {
 						stockpiezaId.setColores(colores);
 						stockpiezaId.setStock(stock);
 						stockpieza.setId(stockpiezaId);
+						stockpieza.setCant1(0d);
 						stockpieza.setComprasmenosventas(compra.getCant1()
 								.multiply(new BigDecimal(-1)).doubleValue());
 						stockPiezasList.add(stockpieza);
