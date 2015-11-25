@@ -2159,15 +2159,16 @@ public class ServicesAction extends ActionSupport {
 
 				for (GroupCantTransac venta : ventas) {
 					if (compra.getColo().equals(venta.getColo())) {
-						ventaObtenida = venta;						
+						ventaObtenida = venta;
 					}
 				}
-				for (Iterator<GroupCantTransac> iter = ventasPendientes.listIterator(); iter.hasNext(); ) {
+				for (Iterator<GroupCantTransac> iter = ventasPendientes
+						.listIterator(); iter.hasNext();) {
 					GroupCantTransac a = iter.next();
-				    if (a.equals(ventaObtenida)) {
-				        iter.remove();
-				    }
-				}	
+					if (a.equals(ventaObtenida)) {
+						iter.remove();
+					}
+				}
 
 				boolean tieneStock = false;
 				// pregunto si tengo stock
@@ -2182,26 +2183,35 @@ public class ServicesAction extends ActionSupport {
 					}
 
 				}
-				if (!tieneStock) {					
+				if (!tieneStock) {
 					StockPiezas stockpieza = new StockPiezas();
-					StockPiezasId stockpiezaId = new StockPiezasId();										
-					Colores colores = transaccionManager.getColor(compra.getColo());					
-					stockpiezaId.setColores(colores);
-					stockpiezaId.setStock(stock);
-					stockpieza.setCant1(compra.getCant1().multiply(new BigDecimal(-1)).doubleValue());
-					stockPiezasList.add(stockpieza);
+					StockPiezasId stockpiezaId = new StockPiezasId();
+					Colores colores = transaccionManager.getColor(compra
+							.getColo());
+					if (colores != null) {
+						stockpiezaId.setColores(colores);
+						stockpiezaId.setStock(stock);
+						stockpieza.setCant1(compra.getCant1()
+								.multiply(new BigDecimal(-1)).doubleValue());
+						stockPiezasList.add(stockpieza);
+					}
 				}
 
 			}
 			if (ventasPendientes != null && ventasPendientes.size() > 0) {
 				for (GroupCantTransac ventaP : ventasPendientes) {
 					StockPiezas stockpieza = new StockPiezas();
-					StockPiezasId stockpiezaId = new StockPiezasId();										
-					Colores colores = transaccionManager.getColor(ventaP.getColo());
-					stockpiezaId.setColores(colores);
-					stockpiezaId.setStock(stock);
-					stockpieza.setCant1(ventaP.getCant1().multiply(new BigDecimal(-1)).doubleValue());
-					stockPiezasList.add(stockpieza);
+					StockPiezasId stockpiezaId = new StockPiezasId();
+					Colores colores = transaccionManager.getColor(ventaP
+							.getColo());					
+					if (colores != null) {
+						stockpiezaId.setColores(colores);
+						stockpiezaId.setStock(stock);
+						stockpieza.setCant1(ventaP.getCant1()
+								.multiply(new BigDecimal(-1)).doubleValue());
+						stockPiezasList.add(stockpieza);
+					}
+
 				}
 
 			}
